@@ -6,7 +6,7 @@ DST="${1:-/workspace/parlays_app_repo}"
 mkdir -p "$DST"
 # clear the old copy (keep its git history and screenshots), then copy without secrets / caches / snapshots
 find "$DST" -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'screenshot_*.png' -exec rm -rf {} +
-tar -C "$SRC" \
+tar -C "$SRC" --no-wildcards-match-slash \
   --exclude='./.git' --exclude='./screenshot_*.png' \
   --exclude='./.parlayapi_key' --exclude='./.streamlit/secrets.toml' --exclude='__pycache__' --exclude='*.pyc' \
   --exclude='./reports/cache' --exclude='./reports/snapshot_*.json' --exclude='./reports/*.md' --exclude='./reports/*.log' \

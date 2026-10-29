@@ -1206,6 +1206,7 @@ def execute(args, write_out=True, echo=True):
         canon_college(quotes, args.sports)
         status = f"LIVE (fetched {gen})"
         if args.save_snapshot:
+            os.makedirs(os.path.dirname(os.path.abspath(args.save_snapshot)), exist_ok=True)
             json.dump({"captured": gen, "quotes": quotes, "log": LOG}, open(args.save_snapshot, "w"))
     res = {"generated": gen, "status": status, "live": live, "credits": dict(OA_SPENT), "log": LOG, "slips": [], "md": None,
            "ledger": None, "strategy": STRATEGY, "check_prices": [], "reasons": {}, "out": None}
@@ -1232,6 +1233,7 @@ def execute(args, write_out=True, echo=True):
                                 "gap_pp": round(gap * 100, 1)} for l, b, gap, med in info["flagged"][:30]]
     if write_out:
         out = args.out or f"/workspace/parlays/reports/parlays_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}.md"
+        os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
         open(out, "w", encoding="utf-8").write(md); res["out"] = out
         print(f"[saved] {out}", file=sys.stderr)
     if echo: print(md)
