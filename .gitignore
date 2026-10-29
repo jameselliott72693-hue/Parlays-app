@@ -1,0 +1,17 @@
+# secrets - never commit
+.parlayapi_key
+.streamlit/secrets.toml
+*.key
+.env
+# caches / snapshots / bulky raw data
+__pycache__/
+*.pyc
+reports/cache/
+reports/snapshot_*.json
+reports/*.md
+!reports/archive/
+ledger/espn_cache/
+ledger/*.tmp
+probe/
+screenshot_*.png
+reports/*.log

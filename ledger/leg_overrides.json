@@ -1,0 +1,15 @@
+{
+ "overrides": [
+  {
+   "player": "Olamide Zaccheaus",
+   "event": "San Francisco 49ers @ Atlanta Falcons",
+   "date": "2026-10-25",
+   "stat": "receiving_rec",
+   "side": "under",
+   "line": 1.5,
+   "result": "void",
+   "reason": "DNP/inactive; confirmed by user 2026-10-26",
+   "note": "Not in the ESPN box score; user confirmed he was inactive. Applies to every slip containing this leg."
+  }
+ ]
+}

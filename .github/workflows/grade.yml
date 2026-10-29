@@ -1,0 +1,64 @@
+# Grades every logged slip from ESPN box scores once a day and saves the results to the ledger data branch.
+# 13:00 UTC = 9:00 AM Eastern while daylight saving time is on (8:00 AM Eastern in winter; change to "0 14 * * *" then if you like).
+# No Odds API credits are used. You can also run it by hand: GitHub -> Actions -> "Grade slips daily" -> Run workflow.
+name: Grade slips daily
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: ledger
+  cancel-in-progress: false
+env:
+  DATA_BRANCH: ledger-data   # must match GH_DATA_BRANCH in the app (default ledger-data)
+  FILES: "ledger/slips.jsonl ledger/user_results.jsonl ledger/grades.json ledger/page_contents.tsx.txt ledger/leg_overrides.json"
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore ESPN box-score cache
+        uses: actions/cache@v4
+        with:
+          path: ledger/espn_cache
+          key: espn-${{ github.run_id }}
+          restore-keys: espn-
+      - name: Load the latest ledger from the data branch
+        run: |
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null; then
+            git fetch origin "$DATA_BRANCH"
+            for f in $FILES; do
+              if git show "origin/$DATA_BRANCH:$f" > /tmp/f 2>/dev/null; then cp /tmp/f "$f"; fi
+            done
+          else
+            echo "No $DATA_BRANCH branch yet: grading the ledger on the default branch and creating it."
+          fi
+      - name: Grade
+        run: python grade_slips.py
+      - name: Save results to the data branch
+        run: |
+          git config user.name "parlay-grader"
+          git config user.email "parlay-grader@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null; then
+            git worktree add -B "$DATA_BRANCH" /tmp/data "origin/$DATA_BRANCH"
+          else
+            git worktree add -B "$DATA_BRANCH" /tmp/data HEAD
+          fi
+          for f in $FILES; do [ -f "$f" ] && cp "$f" "/tmp/data/$f"; done
+          cd /tmp/data
+          git add ledger
+          if git diff --cached --quiet; then echo "No changes."; exit 0; fi
+          git commit -m "Daily grading $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            if git push origin "$DATA_BRANCH"; then exit 0; fi
+            # the app committed meanwhile: rebase on it (grades/page are regenerated files, the app never edits them concurrently)
+            git pull --rebase -X theirs origin "$DATA_BRANCH" || git rebase --abort
+          done
+          exit 1
