@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-10-29T18:21:20+00:00",
+ "graded_at": "2026-10-30T06:14:25+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -6355,23 +6355,29 @@
   {
    "slip_id": "cc5314245be9",
    "run_ts": "2026-10-26T16:40:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -185,
+      "line": null,
+      "clv_pp": -0.84
+     },
+     "result": "win",
+     "actual": "Carolina Panthers 19 - 27 Green Bay Packers"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "8"
     }
    ]
   },
@@ -6401,23 +6407,23 @@
   {
    "slip_id": "d703a32e447e",
    "run_ts": "2026-10-26T16:40:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.86,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "7"
     }
    ]
   },
@@ -6447,23 +6453,23 @@
   {
    "slip_id": "dfe4f743fa81",
    "run_ts": "2026-10-26T16:40:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.88,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "8"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "6"
     }
    ]
   },
@@ -6528,23 +6534,23 @@
   {
    "slip_id": "f197aa004d7a",
    "run_ts": "2026-10-26T16:40:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.73,
-   "profit": null,
+   "profit": 3.73,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "6"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "2"
     }
    ]
   },
@@ -6595,8 +6601,8 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
@@ -6618,17 +6624,17 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "2"
     }
    ]
   },
   {
    "slip_id": "a800b73eb9d1",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.04,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873034",
@@ -6641,17 +6647,17 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "2"
     }
    ]
   },
   {
    "slip_id": "7a17059b2337",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.3,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873031",
@@ -6664,238 +6670,268 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "b6c0290d4bb7",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.24,
-   "profit": null,
+   "profit": 1.24,
    "legs": [
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -205,
+      "line": 1.5,
+      "clv_pp": -2.94
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     },
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "6298351bedf3",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.83,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "0d5ba0eed5e3",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.97,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "3"
     }
    ]
   },
   {
    "slip_id": "c2048c176930",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.98,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": null,
+      "clv_pp": 1.48
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "bdfb956ad78e",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.78,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 102,
+      "line": -1.5,
+      "clv_pp": 0.0
+     },
+     "result": "loss",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "3"
     }
    ]
   },
   {
    "slip_id": "0431723fe9d3",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.81,
-   "profit": null,
+   "profit": 2.81,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "d521942c7249",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.87,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "3"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "763d2a0ba325",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 5.04,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "81ea2ea4890e",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.87,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 170,
+      "line": -1.5,
+      "clv_pp": 1.32
+     },
+     "result": "loss",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     },
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "2"
     }
    ]
   },
   {
    "slip_id": "87e1589468dd",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.87,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -130,
+      "line": null,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     },
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
@@ -6992,9 +7028,9 @@
   {
    "slip_id": "daaf1592b8f8",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.83,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401858509",
@@ -7014,8 +7050,14 @@
      "espn_event": "401892600",
      "sport": "nhl",
      "commence": "2026-10-29T23:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -192,
+      "line": 1.5,
+      "clv_pp": 4.21
+     },
+     "result": "loss",
+     "actual": "Chicago Blackhawks 1 - 4 Detroit Red Wings"
     }
    ]
   },
@@ -7030,8 +7072,14 @@
      "espn_event": "401892606",
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -175,
+      "line": 1.5,
+      "clv_pp": 0.67
+     },
+     "result": "win",
+     "actual": "Montreal Canadiens 5 - 2 Dallas Stars"
     },
     {
      "espn_event": "401862816",
@@ -7067,15 +7115,21 @@
      "espn_event": "401892606",
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -175,
+      "line": 1.5,
+      "clv_pp": 0.67
+     },
+     "result": "win",
+     "actual": "Montreal Canadiens 5 - 2 Dallas Stars"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
@@ -7142,9 +7196,9 @@
   {
    "slip_id": "10959a03f9ab",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.76,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401862815",
@@ -7164,8 +7218,8 @@
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "3"
     }
    ]
   },
@@ -7367,115 +7421,133 @@
   {
    "slip_id": "8115b98f8029",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.0,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": null,
+      "clv_pp": 0.64
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     }
    ]
   },
   {
    "slip_id": "b1d0567e6f56",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.06,
-   "profit": null,
+   "profit": 1.06,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "3474c12d49ba",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.14,
-   "profit": null,
+   "profit": 1.14,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -185,
+      "line": null,
+      "clv_pp": -1.75
+     },
+     "result": "win",
+     "actual": "Carolina Panthers 19 - 27 Green Bay Packers"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "8b22e57e04fa",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.86,
-   "profit": null,
+   "profit": 1.86,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "3"
     }
    ]
   },
   {
    "slip_id": "bbd0bcf77ea9",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.86,
-   "profit": null,
+   "profit": 1.86,
    "legs": [
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "5"
     },
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -130,
+      "line": null,
+      "clv_pp": 0.97
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     }
    ]
   },
@@ -7528,69 +7600,69 @@
   {
    "slip_id": "381ab8048b16",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.8,
-   "profit": null,
+   "profit": 2.8,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "3"
     }
    ]
   },
   {
    "slip_id": "010dac3d75ef",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.79,
-   "profit": null,
+   "profit": 2.79,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "2"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "3"
     }
    ]
   },
   {
    "slip_id": "b24f22ab1e1c",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.78,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
@@ -7620,32 +7692,44 @@
   {
    "slip_id": "317961a4f9db",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.72,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892607",
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 124,
+      "line": -1.5,
+      "clv_pp": 2.27
+     },
+     "result": "loss",
+     "actual": "New York Islanders 4 - 3 Minnesota Wild"
     },
     {
      "espn_event": "401892607",
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 105,
+      "line": 5.5,
+      "clv_pp": -1.22
+     },
+     "result": "loss",
+     "actual": "total 7"
     }
    ]
   },
   {
    "slip_id": "a34a545bf58d",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 1.92,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873028",
@@ -7658,40 +7742,46 @@
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "419c1f5d2472",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.84,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -205,
+      "line": 1.5,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "d36dc2831bb8",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.28,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401858506",
@@ -7704,261 +7794,273 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "8335fff017a0",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.2,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": null,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "2fc6cc635912",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.34,
-   "profit": null,
+   "profit": 1.34,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "d49b4c5fab9f",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.84,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "3"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "cb48b0711ff3",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.94,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "8602e15e6237",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.87,
-   "profit": null,
+   "profit": 1.87,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": null,
+      "clv_pp": 0.64
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "aef165062aa0",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.93,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "2"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "5d876ac59efa",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.92,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "1e3de888fb87",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.78,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "5b2c6c0796e4",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.94,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "2"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "5c3e5bc3829a",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.86,
-   "profit": null,
+   "profit": 3.86,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "09dbb4926b9f",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 5.02,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
@@ -8017,8 +8119,14 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -205,
+      "line": 1.5,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     }
    ]
   },
@@ -8085,9 +8193,9 @@
   {
    "slip_id": "38e4c634a344",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.86,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401858279",
@@ -8107,17 +8215,17 @@
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "2"
     }
    ]
   },
   {
    "slip_id": "0d1a95ff9aee",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.76,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401856848",
@@ -8137,8 +8245,14 @@
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 1.5,
+      "clv_pp": 2.99
+     },
+     "result": "loss",
+     "actual": "Cleveland Cavaliers 111 - 114 Atlanta Hawks"
     }
    ]
   },
@@ -8153,8 +8267,14 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -205,
+      "line": 1.5,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     },
     {
      "espn_event": "401873032",
@@ -8167,8 +8287,8 @@
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "22"
     }
    ]
   },
@@ -8232,30 +8352,36 @@
   {
    "slip_id": "72270aebfcc4",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.8,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892608",
      "sport": "nhl",
      "commence": "2026-10-30T02:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -185,
+      "line": 1.5,
+      "clv_pp": -0.6
+     },
+     "result": "win",
+     "actual": "Buffalo Sabres 7 - 6 Anaheim Ducks"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "6"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
@@ -8354,9 +8480,9 @@
   {
    "slip_id": "275d0d55270d",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401856848",
@@ -8369,77 +8495,101 @@
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 1.5,
+      "clv_pp": 2.99
+     },
+     "result": "loss",
+     "actual": "Cleveland Cavaliers 111 - 114 Atlanta Hawks"
     }
    ]
   },
   {
    "slip_id": "512e26e5cd26",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.83,
-   "profit": null,
+   "profit": 1.83,
    "legs": [
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -205,
+      "line": 1.5,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "22"
     }
    ]
   },
   {
    "slip_id": "8115b98f8029",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.0,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": null,
+      "clv_pp": 0.64
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     }
    ]
   },
   {
    "slip_id": "fe923fd5d3ec",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.11,
-   "profit": null,
+   "profit": 1.11,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -185,
+      "line": null,
+      "clv_pp": -1.53
+     },
+     "result": "win",
+     "actual": "Carolina Panthers 19 - 27 Green Bay Packers"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
@@ -8469,207 +8619,219 @@
   {
    "slip_id": "6271da1564c5",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.82,
-   "profit": null,
+   "profit": 1.82,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "f5c9eda18363",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "6"
     }
    ]
   },
   {
    "slip_id": "8e61975b5d2d",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.94,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": null,
+      "clv_pp": 0.64
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "2"
     }
    ]
   },
   {
    "slip_id": "4fe58a5fa2a9",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.78,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "2"
     }
    ]
   },
   {
    "slip_id": "8248dc29bff2",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.83,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "3"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "1"
     }
    ]
   },
   {
    "slip_id": "5a7150983f47",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.8,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "6"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "8"
     }
    ]
   },
   {
    "slip_id": "7b7ec12c84ea",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.84,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "3"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "8"
     }
    ]
   },
   {
    "slip_id": "779299beb08d",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.75,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 102,
+      "line": -1.5,
+      "clv_pp": 0.0
+     },
+     "result": "loss",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     }
    ]
   },
   {
    "slip_id": "402348e5892c",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.71,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "3"
     }
    ]
   },
@@ -8728,17 +8890,23 @@
      "espn_event": "401892602",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -205,
+      "line": 1.5,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 4 - 3 Pittsburgh Penguins"
     }
    ]
   },
   {
    "slip_id": "de03f3c3f227",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.86,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401860924",
@@ -8758,8 +8926,14 @@
      "espn_event": "401909895",
      "sport": "nba",
      "commence": "2026-10-30T02:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -285,
+      "line": null,
+      "clv_pp": 0.69
+     },
+     "result": "loss",
+     "actual": "Memphis Grizzlies 124 - 103 Portland Trail Blazers"
     }
    ]
   },
@@ -8796,9 +8970,9 @@
   {
    "slip_id": "c568843ca16f",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401862816",
@@ -8811,8 +8985,14 @@
      "espn_event": "401909895",
      "sport": "nba",
      "commence": "2026-10-30T02:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -285,
+      "line": null,
+      "clv_pp": 0.69
+     },
+     "result": "loss",
+     "actual": "Memphis Grizzlies 124 - 103 Portland Trail Blazers"
     },
     {
      "espn_event": "401856844",
@@ -8946,9 +9126,9 @@
   {
    "slip_id": "c24ca9d51fea",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.75,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873034",
@@ -8961,8 +9141,14 @@
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 1.5,
+      "clv_pp": 2.99
+     },
+     "result": "loss",
+     "actual": "Cleveland Cavaliers 111 - 114 Atlanta Hawks"
     },
     {
      "espn_event": "401856846",
@@ -9068,9 +9254,9 @@
   {
    "slip_id": "275d0d55270d",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401856848",
@@ -9083,8 +9269,14 @@
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 1.5,
+      "clv_pp": 2.99
+     },
+     "result": "loss",
+     "actual": "Cleveland Cavaliers 111 - 114 Atlanta Hawks"
     }
    ]
   },
@@ -9114,23 +9306,29 @@
   {
    "slip_id": "4b7c9a6f52d1",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.02,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": null,
+      "clv_pp": 0.64
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
@@ -9160,30 +9358,30 @@
   {
    "slip_id": "81afa084ff8e",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.21,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "4"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "e02372cc1696",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "ungraded",
    "settled_decimal": 2.86,
    "profit": null,
    "legs": [
@@ -9191,38 +9389,56 @@
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -185,
+      "line": null,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Carolina Panthers 19 - 27 Green Bay Packers"
     },
     {
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "ungraded",
+     "reason": "player not in ESPN box score (inactive => would be void; not assumed)"
     }
    ]
   },
   {
    "slip_id": "f973b9a9aa2e",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892600",
      "sport": "nhl",
      "commence": "2026-10-29T23:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -192,
+      "line": 1.5,
+      "clv_pp": 0.84
+     },
+     "result": "loss",
+     "actual": "Chicago Blackhawks 1 - 4 Detroit Red Wings"
     },
     {
      "espn_event": "401892600",
      "sport": "nhl",
      "commence": "2026-10-29T23:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -120,
+      "line": 5.5,
+      "clv_pp": 0.0
+     },
+     "result": "loss",
+     "actual": "total 5"
     }
    ]
   },
@@ -9252,69 +9468,81 @@
   {
    "slip_id": "cdeb56910b68",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.78,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 1.5,
+      "clv_pp": 2.99
+     },
+     "result": "loss",
+     "actual": "Cleveland Cavaliers 111 - 114 Atlanta Hawks"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "11"
     }
    ]
   },
   {
    "slip_id": "eee1746c962a",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "4"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "28"
     }
    ]
   },
   {
    "slip_id": "ae4d92db2f72",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.79,
-   "profit": null,
+   "profit": 2.79,
    "legs": [
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -122,
+      "line": 1.5,
+      "clv_pp": 0.83
+     },
+     "result": "win",
+     "actual": "Columbus Blue Jackets 2 - 3 Carolina Hurricanes"
     },
     {
      "espn_event": "401892603",
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
@@ -9367,23 +9595,29 @@
   {
    "slip_id": "05c9e0972bb3",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.76,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -105,
+      "line": -1.5,
+      "clv_pp": 1.22
+     },
+     "result": "win",
+     "actual": "Cleveland Cavaliers 111 - 114 Atlanta Hawks"
     },
     {
      "espn_event": "401909893",
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "result": "loss",
+     "actual": "8"
     }
    ]
   }
