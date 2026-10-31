@@ -10,6 +10,17 @@
    "result": "void",
    "reason": "DNP/inactive; confirmed by user 2026-10-26",
    "note": "Not in the ESPN box score; user confirmed he was inactive. Applies to every slip containing this leg."
+  },
+  {
+   "player": "Jonnu Smith",
+   "event": "Carolina Panthers @ Green Bay Packers",
+   "date": "2026-10-29",
+   "stat": "receiving_rec",
+   "side": "over",
+   "line": 0.5,
+   "result": "void",
+   "reason": "DNP/inactive; void applied 2026-10-30 (restored 2026-10-31 after a sync dropped it)",
+   "note": "Not in the ESPN box score. Applies to every slip containing this leg."
   }
  ]
 }
