@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-10-31T13:05:49+00:00",
+ "graded_at": "2026-10-31T13:06:56+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -9472,9 +9472,9 @@
   {
    "slip_id": "e02372cc1696",
    "run_ts": "2026-10-29T18:10:00+00:00",
-   "result": "ungraded",
-   "settled_decimal": 2.86,
-   "profit": null,
+   "result": "hit",
+   "settled_decimal": 1.542,
+   "profit": 0.542,
    "legs": [
     {
      "espn_event": "401873023",
@@ -9493,8 +9493,10 @@
      "espn_event": "401873023",
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
-     "result": "ungraded",
-     "reason": "player not in ESPN box score (inactive => would be void; not assumed)"
+     "result": "void",
+     "reason": "DNP/inactive; void applied 2026-10-30 (restored 2026-10-31 after a sync dropped it)",
+     "override": true,
+     "note": "Not in the ESPN box score. Applies to every slip containing this leg."
     }
    ]
   },
