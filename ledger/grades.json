@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-11-01T21:54:59+00:00",
+ "graded_at": "2026-11-01T21:57:15+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -14309,8 +14309,10 @@
      "espn_event": "401873024",
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
-     "result": "ungraded",
-     "reason": "stat receiving_rec not found for Jeremiyah Love"
+     "result": "loss",
+     "reason": "Played, 0 receptions; confirmed by user 2026-11-01",
+     "override": true,
+     "note": "In ESPN data with no receiving line. Applies to every slip containing this leg."
     }
    ]
   },
@@ -14929,7 +14931,7 @@
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     }
    ]
   },
@@ -14965,7 +14967,7 @@
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401892624",
@@ -15047,7 +15049,7 @@
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     }
    ]
   },
@@ -15195,14 +15197,14 @@
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     }
    ]
   },
@@ -15247,14 +15249,14 @@
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     }
    ]
   },
@@ -15345,14 +15347,14 @@
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "result": "pending",
-     "reason": "Halftime"
+     "reason": "In Progress"
     }
    ]
   },
