@@ -6,11 +6,13 @@ type UserRow = { date: string; wins: number; losses: number; pushes: number | nu
 type F = { s: string; l: string; b: string; t: number; sp: string; r: string; p: number | null; d: number };
 type UB = { k: string; w: number; l: number; p: number; net: number | null; units: number | null; dsum: number; dn: number };
 type Agg = { k: string; n: number; w: number; l: number; v: number; o: number; pend: number; units: number; staked: number; dsum: number };
+type UPRow = { k: string; n: number; w: number; l: number; p: number; net: number; netN: number; sn: number; staked: number; snet: number };
+type UP = { overall: UPRow; dims: Record<string, UPRow[]>; gaps: string[]; nBets: number };
 type Data = {
   updated: string; overall: T; breakdown: Record<string, (T & { k: string })[]>; byRun: (T & { run: string; flagged?: boolean })[];
   user: UserRow[]; lost: string[]; clv: { k: string; n: number; avg: number; beat: number; mkt?: Record<string, [number, number]> }[];
   flagKeys?: string[]; shop?: { n: number; better: number; avg_gain_pct: number } | null;
-  facts: F[]; userBreak: Record<string, UB[]>;
+  facts: F[]; userBreak: Record<string, UB[]>; userPays?: UP;
   flagged: T; fBreakdown: Record<string, (T & { k: string })[]>; fFacts: F[];
 };
 
@@ -47,6 +49,7 @@ export default function App() {
   const [rs, setRs] = useState<string>("all");
   const [rl, setRl] = useState<string>("all");
   const [rsort, setRsort] = useState<string>("natural");
+  const [pd, setPd] = useState<string>("sport");
 
   const recs = useMemo(() => {
     const onlyFlagged = isFlag(rs);
@@ -174,6 +177,18 @@ export default function App() {
             return t.flagged ? cells.map(R) : cells;
           })} />
       </Section>
+      {DATA.userPays && DATA.userPays.nBets ? (
+        <Section heading="Your reported bets: what pays">
+          <Segmented<string> value={pd} onChange={setPd} options={[{ value: "sport", label: "Sport" }, { value: "legs", label: "Legs" },
+            { value: "type", label: "Bet type" }, { value: "odds", label: "Odds range" }, { value: "book", label: "Sportsbook" }]} />
+          <Table columns={["Group", "Bets", "W-L-P", "Staked", "Net $", "ROI"]}
+            rows={[...(DATA.userPays.dims[pd] ?? []), { ...DATA.userPays.overall, k: "Overall" }].map((r: UPRow): ReactNode[] => [r.k, `${r.n}`, `${r.w}-${r.l}-${r.p}`,
+              r.sn ? `$${r.staked.toFixed(2)}${r.sn < r.n ? ` (${r.sn} of ${r.n})` : ""}` : "-", r.netN ? money(r.net) : "-",
+              r.sn && r.staked ? `${r.snet >= 0 ? "+" : ""}${((100 * r.snet) / r.staked).toFixed(1)}%${r.sn < r.n ? ` (${r.sn} bets)` : ""}` : "-"].map(B))} />
+          <Text>{B(`Your bets only (never the graded slips). ROI is net over staked, counting only bets with a known stake. Missing: ${DATA.userPays.gaps.join("; ")}.`)}</Text>
+          <Text>{B(`Small sample: ${DATA.userPays.nBets} bets in all. A group under 10 bets is not meaningful yet; one long-odds win swings its ROI.`)}</Text>
+        </Section>
+      ) : null}
       <Section heading="Your reported results">
         <Text>{B("Your own bets by day, as you reported them. Your totals are in the overall section and your records sit under each row of the tables above.")}</Text>
         <Table columns={["Date", "W-L-P", "Net $", "Units", "Note", "Entered (UTC)"]}

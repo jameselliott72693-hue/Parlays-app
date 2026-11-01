@@ -464,8 +464,73 @@ def build_page_data(slips, graded):
     user_break = {dim: [{"k": k, **v, "dsum": round(v["dsum"], 4)} for k, v in sorted(d.items(), key=lambda kv: (kv[0] == "Untagged", kv[0]))] for dim, d in ub.items()}
     return {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "overall": tally(pairs),
             "breakdown": breakdown, "fBreakdown": fbreakdown, "flagged": tally(fpairs), "fFacts": ffacts,
-            "flagKeys": sorted({strat(s) for s, _ in fpairs}), "shop": shop_summary(pairs), "byRun": by_run, "user": user, "clv": clv_rows, "facts": facts, "userBreak": user_break,
+            "flagKeys": sorted({strat(s) for s, _ in fpairs}), "shop": shop_summary(pairs), "byRun": by_run, "user": user, "clv": clv_rows, "facts": facts, "userBreak": user_break, "userPays": user_what_pays(user),
             "lost": ["2026-10-19 22:26 single-book report (never saved; its best-price report was recovered)"]}
+
+# "Your reported bets: what pays" (added 2026-10-31): the user's OWN results only (user_results.jsonl), never the graded slips.
+# Per-bet rows when bets were logged; a day logged only as totals is one "unitemized" lump that lands in every dimension's
+# "Unknown / not reported" bucket. Stake is never stored: it is derived only from a bet's own net and odds (loss: stake = -net;
+# win: stake = net / profit-per-$1 at those odds); pushes and unitemized days have no derivable stake. Nothing is guessed.
+UNK = "Unknown / not reported"
+def _odds_range(o):
+    if o is None: return UNK
+    return "Under +100" if o < 100 else "+100 to +199" if o < 200 else "+200 to +399" if o < 400 else "+400 and up"
+def _bet_type(bt):
+    t = bt.get("type") or bt.get("kind")
+    if t: return t
+    sp = bt.get("sport") or ""
+    return "Multi-game (cross-sport)" if sp.startswith("Mixed") else UNK
+def _stake(bt):
+    if bt.get("stake") is not None: return float(bt["stake"])
+    net, o, r = bt.get("net"), bt.get("odds"), bt.get("result")
+    if net is None: return None
+    if r == "L": return round(-net, 2) if net < 0 else None
+    if r == "W" and o:
+        per = o / 100 if o > 0 else 100 / -o
+        return round(net / per, 2) if per > 0 else None
+    return None
+def user_what_pays(user):
+    DIMS = {"sport": lambda b: b.get("sport") or UNK, "legs": lambda b: (f"{b['legs']} legs" if b.get("legs") else UNK),
+            "type": _bet_type, "odds": lambda b: _odds_range(b.get("odds")), "book": lambda b: b.get("book") or UNK}
+    ORDER = {"odds": ["Under +100", "+100 to +199", "+200 to +399", "+400 and up"]}
+    items = []  # (bet dict, n, w, l, p, net, stake)
+    for r in user:
+        if r.get("bets"):
+            for bt in r["bets"]:
+                items.append((bt, 1, int(bt["result"] == "W"), int(bt["result"] == "L"), int(bt["result"] == "P"), bt.get("net"), _stake(bt)))
+        else:
+            tags = {"book": r.get("book"), "sport": r.get("sport"), "odds": r.get("odds")}
+            n = r["wins"] + r["losses"] + (r.get("pushes") or 0)
+            if n == 1:
+                one = dict(tags, result="W" if r["wins"] else "L" if r["losses"] else "P", net=r.get("net"))
+                items.append((one, 1, r["wins"], r["losses"], r.get("pushes") or 0, r.get("net"), _stake(one)))
+            else:  # several bets as one daily total: per-bet tags would not be per bet, so all fields count as unknown
+                items.append(({}, n, r["wins"], r["losses"], r.get("pushes") or 0, r.get("net"), None))
+    def agg(rows):
+        a = {"n": 0, "w": 0, "l": 0, "p": 0, "net": 0.0, "netN": 0, "sn": 0, "staked": 0.0, "snet": 0.0}
+        for bt, n, w, l, p, net, st in rows:
+            a["n"] += n; a["w"] += w; a["l"] += l; a["p"] += p
+            if net is not None: a["net"] += net; a["netN"] += n
+            if st is not None and net is not None: a["sn"] += n; a["staked"] += st; a["snet"] += net
+        for k in ("net", "staked", "snet"): a[k] = round(a[k], 2)
+        return a
+    dims = {}
+    for dim, fn in DIMS.items():
+        groups = defaultdict(list)
+        for it in items: groups[fn(it[0]) if it[0] else UNK].append(it)
+        order = ORDER.get(dim, [])
+        keys = sorted(groups, key=lambda k: (k == UNK, order.index(k) if k in order else len(order), k))
+        dims[dim] = [{"k": k, **agg(groups[k])} for k in keys]
+    nb = sum(it[1] for it in items)
+    unitem = [it for it in items if not it[0]]
+    gaps = []
+    if unitem: gaps.append(f"{sum(it[1] for it in unitem)} of {nb} bets were logged only as daily totals ({len(unitem)} days), so they have no sport, book, odds or stake")
+    for dim, label in (("legs", "leg count"), ("type", "bet type (SGP / multi-game / straight)")):
+        u = next((x["n"] for x in dims[dim] if x["k"] == UNK), 0)
+        if u: gaps.append(f"{label} not reported for {u} of {nb} bets" + (" (only a cross-sport tag implies a multi-game parlay)" if dim == "type" and u < nb else ""))
+    nst = agg(items)["sn"]
+    gaps.append(f"stake is never logged; it is derived from net $ and odds for {nst} of {nb} bets (exact for losses, back-calculated for wins)")
+    return {"overall": agg(items), "dims": dims, "gaps": gaps, "nBets": nb}
 
 if __name__ == "__main__":
     main()

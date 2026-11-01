@@ -179,6 +179,12 @@ Test without credits or logging: `python3 parlay_builder.py --from-file reports/
 - On the Page your bets are shown in blue: a line under the overall slip metrics, a blue "You" row under the matching row of each
   record table (unmatched keys, incl. `Untagged`, at the bottom), and the blue per-day log. Never added into the slip totals.
 - `python3 add_user_result.py --list` / `python3 add_user_result.py --undo` (removes the last entry)
+- **"Your reported bets: what pays"** Page section (added 2026-10-31; `user_what_pays()` in `grade_slips.py` -> `userPays` in the Page data):
+  your bets only, by sport / legs / bet type / odds range (under +100, +100..+199, +200..+399, +400+) / sportsbook + overall, with W-L-P,
+  staked, net $ and ROI (net of stake-known bets / their stake). Stake is not logged: derived per bet from net and odds (loss = -net;
+  win = net / profit per $1); days logged only as totals and missing fields go to "Unknown / not reported"; optional per-bet keys
+  `legs`, `type` (or `kind`) and `stake` are used when present. Nothing is guessed. The cloud workflow uses the repo's code, so the
+  section only survives a cloud-generated `page_contents.tsx.txt` once `grade_slips.py` + `ledger/page_template.tsx.txt` are pushed to the repo.
 - Stored in `ledger/user_results.jsonl`; shown in the Page's "Your reported results" section after the next
   `python3 grade_slips.py` + Page update. Never merged into the graded tally.
 
