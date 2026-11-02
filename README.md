@@ -227,7 +227,8 @@ Test without credits or logging: `python3 parlay_builder.py --from-file reports/
   on either side is never dropped; to change an existing override's result add `"updated_at": "<ISO time>"`. Deleting a bet or an
   override must be done on the `ledger-data` branch itself. A pull whose branch head has not moved costs 1 GitHub call (not 6).
 - Tests (no network, no Odds API credits): `python3 -m unittest discover -s tests -v`
-  (`PARLAYS_TEST_SNAPSHOT=reports/snapshot_latest.json` adds a free snapshot-replay build to the headless app smoke test). The daily
+  (`PARLAYS_TEST_SNAPSHOT=reports/snapshot_latest.json` adds a free snapshot-replay build to the headless app smoke test).
+- The daily
   workflow grades at 13:00 UTC (9 AM EDT / 8 AM EST) and commits to the same branch. Using a separate branch means saving data never
   redeploys the app.
 - To update the Grok tracker Page from cloud data: download `ledger/page_contents.tsx.txt` from the `ledger-data` branch (or run
