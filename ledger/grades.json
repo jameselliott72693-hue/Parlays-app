@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-11-01T21:57:15+00:00",
+ "graded_at": "2026-11-02T02:38:34+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -1643,14 +1643,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -4.48
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     }
    ]
   },
@@ -1666,7 +1672,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401909840",
@@ -1686,16 +1692,22 @@
   {
    "slip_id": "0f7681591099",
    "run_ts": "2026-10-21T17:14:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 1.89,
-   "profit": null,
+   "profit": 0.89,
    "legs": [
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -4.48
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401873021",
@@ -1715,16 +1727,22 @@
   {
    "slip_id": "d92bf622d23a",
    "run_ts": "2026-10-21T17:14:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.01,
-   "profit": null,
+   "profit": 2.01,
    "legs": [
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -4.48
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401873010",
@@ -1767,16 +1785,22 @@
   {
    "slip_id": "8b25a480d9f4",
    "run_ts": "2026-10-21T17:14:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.9,
-   "profit": null,
+   "profit": 1.9,
    "legs": [
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": -3.42
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401873010",
@@ -1828,7 +1852,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401909834",
@@ -2255,8 +2279,14 @@
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -4.48
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     }
    ]
   },
@@ -2307,8 +2337,14 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": -3.42
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     }
    ]
   },
@@ -2549,14 +2585,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -4.48
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     }
    ]
   },
@@ -2572,7 +2614,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401909851",
@@ -2585,7 +2627,7 @@
       "clv_pp": -0.91
      },
      "result": "win",
-     "actual": "Los Angeles Clippers 117 - 125 Los Angeles Lakers"
+     "actual": "LA Clippers 117 - 125 Los Angeles Lakers"
     }
    ]
   },
@@ -2665,7 +2707,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873011",
@@ -3176,16 +3218,22 @@
   {
    "slip_id": "108732c27ac8",
    "run_ts": "2026-10-22T06:39:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 1.99,
-   "profit": null,
+   "profit": 0.99,
    "legs": [
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": -3.6
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401909846",
@@ -3214,7 +3262,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873014",
@@ -4136,8 +4184,14 @@
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -4.48
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     }
    ]
   },
@@ -4531,7 +4585,7 @@
       "clv_pp": 0.48
      },
      "result": "win",
-     "actual": "Los Angeles Clippers 117 - 125 Los Angeles Lakers"
+     "actual": "LA Clippers 117 - 125 Los Angeles Lakers"
     },
     {
      "espn_event": "401909843",
@@ -6062,7 +6116,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873029",
@@ -6258,7 +6312,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401909873",
@@ -6278,9 +6332,9 @@
   {
    "slip_id": "5e687717ca5f",
    "run_ts": "2026-10-26T16:40:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 1.98,
-   "profit": null,
+   "profit": 0.98,
    "legs": [
     {
      "espn_event": "401873027",
@@ -6299,24 +6353,36 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": -1.64
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     }
    ]
   },
   {
    "slip_id": "dbe58e7dd71a",
    "run_ts": "2026-10-26T16:40:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.93,
-   "profit": null,
+   "profit": 1.93,
    "legs": [
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -1.46
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401909868",
@@ -6771,8 +6837,14 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.92
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401892602",
@@ -7075,9 +7147,9 @@
   {
    "slip_id": "99c4ef5482a4",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 1.91,
-   "profit": null,
+   "profit": 0.91,
    "legs": [
     {
      "espn_event": "401873031",
@@ -7096,8 +7168,14 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.92
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401873028",
@@ -7360,14 +7438,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": -0.48
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401856844",
@@ -7581,14 +7665,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.92
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     }
    ]
   },
@@ -7668,7 +7758,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401856844",
@@ -7705,8 +7795,11 @@
      "actual": "Oregon State Beavers 22 - 38 Fresno State Bulldogs"
     },
     {
+     "espn_event": "401909738",
+     "sport": "ncaab",
+     "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
@@ -8438,23 +8531,35 @@
   {
    "slip_id": "3b1a2fc49e30",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.17,
-   "profit": null,
+   "profit": 1.17,
    "legs": [
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.92
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401873028",
@@ -8483,14 +8588,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.92
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401892602",
@@ -8696,9 +8807,9 @@
   {
    "slip_id": "7b1cc9a388a9",
    "run_ts": "2026-10-29T17:30:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.85,
-   "profit": null,
+   "profit": 2.85,
    "legs": [
     {
      "espn_event": "401892602",
@@ -8717,8 +8828,14 @@
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401909893",
@@ -8798,8 +8915,11 @@
      "actual": "Oregon State Beavers 22 - 38 Fresno State Bulldogs"
     },
     {
+     "espn_event": "401909738",
+     "sport": "ncaab",
+     "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401856844",
@@ -8864,14 +8984,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.92
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     }
    ]
   },
@@ -9379,8 +9505,14 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.06
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401873024",
@@ -9409,14 +9541,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.57
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401892602",
@@ -9589,14 +9727,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.57
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401873029",
@@ -9767,8 +9911,14 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.06
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401909893",
@@ -9810,14 +9960,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.57
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     }
    ]
   },
@@ -9973,7 +10129,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401856844",
@@ -11848,9 +12004,9 @@
   {
    "slip_id": "ab67303fa55b",
    "run_ts": "2026-10-31T21:00:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.23,
-   "profit": null,
+   "profit": 3.23,
    "legs": [
     {
      "espn_event": "401892623",
@@ -11869,8 +12025,13 @@
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 210,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
@@ -11899,7 +12060,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -12059,37 +12220,48 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401892628",
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
   {
    "slip_id": "008172bcc0a2",
    "run_ts": "2026-10-31T21:00:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 5.93,
-   "profit": null,
+   "profit": 4.93,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -125,
+      "line": 6.5,
+      "clv_pp": -0.97
+     },
+     "result": "win",
+     "actual": "total 6"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 210,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
@@ -12226,8 +12398,14 @@
      "espn_event": "401892626",
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
-     "result": "pending",
-     "reason": "End of Period"
+     "close": {
+      "provider": "DraftKings",
+      "american": -166,
+      "line": null,
+      "clv_pp": 2.41
+     },
+     "result": "loss",
+     "actual": "Utah Mammoth 3 - 6 Philadelphia Flyers"
     }
    ]
   },
@@ -12252,8 +12430,11 @@
      "actual": "Pittsburgh Penguins 4 - 5 Montreal Canadiens"
     },
     {
+     "espn_event": "401920409",
+     "sport": "ncaab",
+     "commence": "2026-11-02T04:59Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401862814",
@@ -12339,15 +12520,18 @@
      "actual": "Winnipeg Jets 0 - 7 Carolina Hurricanes"
     },
     {
+     "espn_event": "401920409",
+     "sport": "ncaab",
+     "commence": "2026-11-02T04:59Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401892628",
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -12372,8 +12556,11 @@
      "actual": "Calgary Flames 2 - 5 Colorado Avalanche"
     },
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401892624",
@@ -12401,8 +12588,14 @@
      "espn_event": "401892626",
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
-     "result": "pending",
-     "reason": "End of Period"
+     "close": {
+      "provider": "DraftKings",
+      "american": -185,
+      "line": 1.5,
+      "clv_pp": 1.28
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 3 - 6 Philadelphia Flyers"
     },
     {
      "espn_event": "401909899",
@@ -12435,9 +12628,9 @@
   {
    "slip_id": "0276a1523da6",
    "run_ts": "2026-10-31T21:00:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.8,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401862814",
@@ -12456,8 +12649,14 @@
      "espn_event": "401892626",
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
-     "result": "pending",
-     "reason": "End of Period"
+     "close": {
+      "provider": "DraftKings",
+      "american": -166,
+      "line": null,
+      "clv_pp": 2.41
+     },
+     "result": "loss",
+     "actual": "Utah Mammoth 3 - 6 Philadelphia Flyers"
     },
     {
      "espn_event": "401909897",
@@ -12649,8 +12848,11 @@
      "actual": "Calgary Flames 2 - 5 Colorado Avalanche"
     },
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
@@ -12694,8 +12896,14 @@
      "espn_event": "401892627",
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -230,
+      "line": 1.5,
+      "clv_pp": 0.95
+     },
+     "result": "win",
+     "actual": "Edmonton Oilers 4 - 1 New York Rangers"
     },
     {
      "espn_event": "401892624",
@@ -12772,16 +12980,16 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
   {
    "slip_id": "4c399d50bde8",
    "run_ts": "2026-10-31T21:00:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.96,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909900",
@@ -12800,8 +13008,13 @@
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
@@ -12864,8 +13077,13 @@
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
@@ -12888,7 +13106,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -13187,14 +13405,14 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401892628",
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -13259,9 +13477,9 @@
   {
    "slip_id": "6b3293e6602e",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.98,
-   "profit": null,
+   "profit": 2.98,
    "legs": [
     {
      "espn_event": "401873028",
@@ -13280,31 +13498,47 @@
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 210,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
   {
    "slip_id": "7cbe0f475d64",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.07,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.34
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
@@ -13316,38 +13550,57 @@
    "profit": null,
    "legs": [
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 210,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
   {
    "slip_id": "2007b4a369d7",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 5.31,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -125,
+      "line": 6.5,
+      "clv_pp": -0.97
+     },
+     "result": "win",
+     "actual": "total 6"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
@@ -13363,14 +13616,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.94
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401873028",
@@ -13399,34 +13658,49 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.94
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
   {
    "slip_id": "e1d8581497cb",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.93,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909904",
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -155,
+      "line": null,
+      "clv_pp": -2.18
+     },
+     "result": "loss",
+     "actual": "Brooklyn Nets 98 - 90 Indiana Pacers"
     },
     {
      "espn_event": "401892624",
@@ -13442,8 +13716,11 @@
      "actual": "Winnipeg Jets 0 - 7 Carolina Hurricanes"
     },
     {
+     "espn_event": "401920409",
+     "sport": "ncaab",
+     "commence": "2026-11-02T04:59Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
@@ -13458,12 +13735,21 @@
      "espn_event": "401892626",
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
-     "result": "pending",
-     "reason": "End of Period"
+     "close": {
+      "provider": "DraftKings",
+      "american": -185,
+      "line": 1.5,
+      "clv_pp": 1.28
+     },
+     "result": "win",
+     "actual": "Utah Mammoth 3 - 6 Philadelphia Flyers"
     },
     {
+     "espn_event": "401921704",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401873024",
@@ -13491,19 +13777,33 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.34
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
+     "espn_event": "401909738",
+     "sport": "ncaab",
+     "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401873033",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 100,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Kansas City Chiefs 24 - 28 Denver Broncos"
     }
    ]
   },
@@ -13515,15 +13815,18 @@
    "profit": -1.0,
    "legs": [
     {
+     "espn_event": "401920409",
+     "sport": "ncaab",
+     "commence": "2026-11-02T04:59Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401892628",
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401892624",
@@ -13578,7 +13881,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -13593,12 +13896,21 @@
      "espn_event": "401909904",
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -155,
+      "line": null,
+      "clv_pp": -2.18
+     },
+     "result": "loss",
+     "actual": "Brooklyn Nets 98 - 90 Indiana Pacers"
     },
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401873025",
@@ -13618,16 +13930,22 @@
   {
    "slip_id": "db742185f980",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.74,
-   "profit": null,
+   "profit": 3.74,
    "legs": [
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.34
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401873025",
@@ -13646,8 +13964,13 @@
      "espn_event": "401873033",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 100,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Kansas City Chiefs 24 - 28 Denver Broncos"
     }
    ]
   },
@@ -13711,14 +14034,20 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.94
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     }
    ]
   },
@@ -13734,7 +14063,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873024",
@@ -13798,7 +14127,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401892624",
@@ -13827,7 +14156,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873024",
@@ -13846,8 +14175,11 @@
    "profit": -1.0,
    "legs": [
     {
+     "espn_event": "401920409",
+     "sport": "ncaab",
+     "commence": "2026-11-02T04:59Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401873025",
@@ -13875,8 +14207,14 @@
      "espn_event": "401892626",
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
-     "result": "pending",
-     "reason": "End of Period"
+     "close": {
+      "provider": "DraftKings",
+      "american": -135,
+      "line": 6.5,
+      "clv_pp": 0.93
+     },
+     "result": "loss",
+     "actual": "total 9"
     },
     {
      "espn_event": "401873025",
@@ -13931,23 +14269,28 @@
   {
    "slip_id": "c30da06e5b88",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.82,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873035",
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873033",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -120,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Kansas City Chiefs 24 - 28 Denver Broncos"
     }
    ]
   },
@@ -13962,12 +14305,21 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 1.34
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
+     "espn_event": "401920409",
+     "sport": "ncaab",
+     "commence": "2026-11-02T04:59Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
@@ -13983,34 +14335,49 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
+     "espn_event": "401909738",
+     "sport": "ncaab",
+     "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
   {
    "slip_id": "b744f0449119",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.77,
-   "profit": null,
+   "profit": 3.77,
    "legs": [
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -110,
+      "line": 7.0,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401909904",
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 130,
+      "line": null,
+      "clv_pp": 3.48
+     },
+     "result": "win",
+     "actual": "Brooklyn Nets 98 - 90 Indiana Pacers"
     }
    ]
   },
@@ -14115,23 +14482,35 @@
   {
    "slip_id": "b5406d507e11",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.91,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892626",
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
-     "result": "pending",
-     "reason": "End of Period"
+     "close": {
+      "provider": "DraftKings",
+      "american": -135,
+      "line": 6.5,
+      "clv_pp": 0.93
+     },
+     "result": "loss",
+     "actual": "total 9"
     },
     {
      "espn_event": "401892626",
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
-     "result": "pending",
-     "reason": "End of Period"
+     "close": {
+      "provider": "DraftKings",
+      "american": -166,
+      "line": null,
+      "clv_pp": 1.62
+     },
+     "result": "loss",
+     "actual": "Utah Mammoth 3 - 6 Philadelphia Flyers"
     }
    ]
   },
@@ -14173,23 +14552,35 @@
   {
    "slip_id": "e8556e7f5eb4",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.84,
-   "profit": null,
+   "profit": 1.84,
    "legs": [
     {
      "espn_event": "401892627",
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -230,
+      "line": 1.5,
+      "clv_pp": 0.95
+     },
+     "result": "win",
+     "actual": "Edmonton Oilers 4 - 1 New York Rangers"
     },
     {
      "espn_event": "401892627",
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -108,
+      "line": 6.5,
+      "clv_pp": 0.7
+     },
+     "result": "win",
+     "actual": "total 5"
     }
    ]
   },
@@ -14225,23 +14616,33 @@
   {
    "slip_id": "c253c474ca1e",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.85,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873033",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -108,
+      "line": 41.5
+     },
+     "result": "loss",
+     "actual": "total 52"
     },
     {
      "espn_event": "401873033",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -120,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Kansas City Chiefs 24 - 28 Denver Broncos"
     }
    ]
   },
@@ -14257,37 +14658,49 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873035",
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
   {
    "slip_id": "f7ae52d32cd4",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.77,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909904",
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -108,
+      "line": 230.5,
+      "clv_pp": -0.46
+     },
+     "result": "loss",
+     "actual": "total 188"
     },
     {
      "espn_event": "401909904",
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 130,
+      "line": null,
+      "clv_pp": 3.48
+     },
+     "result": "win",
+     "actual": "Brooklyn Nets 98 - 90 Indiana Pacers"
     }
    ]
   },
@@ -14354,9 +14767,9 @@
   {
    "slip_id": "6b3293e6602e",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.98,
-   "profit": null,
+   "profit": 2.98,
    "legs": [
     {
      "espn_event": "401873028",
@@ -14375,8 +14788,13 @@
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 210,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
@@ -14435,46 +14853,63 @@
   {
    "slip_id": "3b723a4da773",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.87,
-   "profit": null,
+   "profit": 3.87,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 210,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
   {
    "slip_id": "c8e7d3bb2ca7",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.21,
-   "profit": null,
+   "profit": 1.21,
    "legs": [
     {
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 2.22
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401873032",
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 0.94
+     },
+     "result": "win",
+     "actual": "Los Angeles Chargers 9 - 24 Los Angeles Rams"
     },
     {
      "espn_event": "401873028",
@@ -14502,8 +14937,14 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 2.22
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
      "espn_event": "401873028",
@@ -14536,20 +14977,29 @@
   {
    "slip_id": "a205320d3f07",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.92,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873035",
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
-     "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "espn_event": "401920982",
+     "sport": "ncaab",
+     "commence": "2026-11-01T14:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -298,
+      "line": null,
+      "clv_pp": -1.03
+     },
+     "result": "loss",
+     "actual": "Notre Dame Fighting Irish 74 - 72 Villanova Wildcats"
     },
     {
      "espn_event": "401925818",
@@ -14568,22 +15018,31 @@
    "profit": null,
    "legs": [
     {
+     "espn_event": "401921704",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401892627",
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -230,
+      "line": 1.5,
+      "clv_pp": 0.95
+     },
+     "result": "win",
+     "actual": "Edmonton Oilers 4 - 1 New York Rangers"
     },
     {
      "espn_event": "401892628",
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -14595,15 +15054,30 @@
    "profit": -1.0,
    "legs": [
     {
-     "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "espn_event": "401920982",
+     "sport": "ncaab",
+     "commence": "2026-11-01T14:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -298,
+      "line": null,
+      "clv_pp": -0.13
+     },
+     "result": "loss",
+     "actual": "Notre Dame Fighting Irish 74 - 72 Villanova Wildcats"
     },
     {
      "espn_event": "401892627",
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -230,
+      "line": 1.5,
+      "clv_pp": 0.95
+     },
+     "result": "win",
+     "actual": "Edmonton Oilers 4 - 1 New York Rangers"
     },
     {
      "espn_event": "401892624",
@@ -14641,8 +15115,11 @@
      "actual": "Cleveland Browns 6 - 27 Pittsburgh Steelers"
     },
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401916313",
@@ -14661,15 +15138,18 @@
    "profit": -1.0,
    "legs": [
     {
+     "espn_event": "401921704",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401892628",
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873030",
@@ -14694,8 +15174,11 @@
    "profit": null,
    "legs": [
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401873030",
@@ -14714,8 +15197,8 @@
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "3"
     }
    ]
   },
@@ -14751,54 +15234,66 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
   {
    "slip_id": "91cfb8441531",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.86,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "202ecb1138c0",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 1.9,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
-     "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "espn_event": "401920982",
+     "sport": "ncaab",
+     "commence": "2026-11-01T14:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -298,
+      "line": null,
+      "clv_pp": -0.13
+     },
+     "result": "loss",
+     "actual": "Notre Dame Fighting Irish 74 - 72 Villanova Wildcats"
     },
     {
+     "espn_event": "401921704",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
@@ -14848,12 +15343,21 @@
      "espn_event": "401873034",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -345,
+      "line": null,
+      "clv_pp": 2.22
+     },
+     "result": "win",
+     "actual": "New England Patriots 24 - 19 Miami Dolphins"
     },
     {
+     "espn_event": "401906769",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     }
    ]
   },
@@ -14882,36 +15386,45 @@
      "sport": "nba",
      "commence": "2026-11-02T02:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "End of Period"
     }
    ]
   },
   {
    "slip_id": "25d762fcc6ff",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.89,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
+     "espn_event": "401909738",
+     "sport": "ncaab",
+     "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401873033",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -108,
+      "line": 41.5,
+      "clv_pp": -0.46
+     },
+     "result": "loss",
+     "actual": "total 52"
     }
    ]
   },
   {
    "slip_id": "15b1c4bc2c43",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.87,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873027",
@@ -14930,44 +15443,58 @@
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "loss",
+     "actual": "8"
     }
    ]
   },
   {
    "slip_id": "893b1ff02489",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.0,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
-     "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "espn_event": "401920982",
+     "sport": "ncaab",
+     "commence": "2026-11-01T14:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -298,
+      "line": null,
+      "clv_pp": -0.13
+     },
+     "result": "loss",
+     "actual": "Notre Dame Fighting Irish 74 - 72 Villanova Wildcats"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
   {
    "slip_id": "e98d34128d0c",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.76,
-   "profit": null,
+   "profit": 2.76,
    "legs": [
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "19"
     },
     {
      "espn_event": "401892624",
@@ -14987,20 +15514,29 @@
   {
    "slip_id": "47b82b17ce70",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.78,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
+     "espn_event": "401911532",
+     "sport": "ncaab",
+     "commence": "2026-11-02T19:00Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401873033",
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -108,
+      "line": 41.5,
+      "clv_pp": -0.46
+     },
+     "result": "loss",
+     "actual": "total 52"
     }
    ]
   },
@@ -15012,8 +15548,11 @@
    "profit": -1.0,
    "legs": [
     {
+     "espn_event": "401921704",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
      "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "reason": "Scheduled"
     },
     {
      "espn_event": "401892624",
@@ -15034,7 +15573,7 @@
    "slip_id": "2566983416ba",
    "run_ts": "2026-11-01T13:54:00+00:00",
    "result": "pending",
-   "settled_decimal": 4.82,
+   "settled_decimal": 2.3512,
    "profit": null,
    "legs": [
     {
@@ -15048,8 +15587,10 @@
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "void",
+     "reason": "DNP/inactive; confirmed by user 2026-11-01",
+     "override": true,
+     "note": "Not in the ESPN box score. Applies to every slip containing this leg."
     }
    ]
   },
@@ -15061,8 +15602,17 @@
    "profit": -1.0,
    "legs": [
     {
-     "result": "pending",
-     "reason": "game not yet on ESPN scoreboard"
+     "espn_event": "401920982",
+     "sport": "ncaab",
+     "commence": "2026-11-01T14:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 7.5,
+      "clv_pp": 1.11
+     },
+     "result": "win",
+     "actual": "Notre Dame Fighting Irish 74 - 72 Villanova Wildcats"
     },
     {
      "espn_event": "401892624",
@@ -15136,23 +15686,23 @@
   {
    "slip_id": "7e4f291cf9f0",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.1,
-   "profit": null,
+   "profit": 1.1,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "1"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
@@ -15188,23 +15738,31 @@
   {
    "slip_id": "fcaa01e153ac",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
-   "settled_decimal": 2.87,
-   "profit": null,
+   "result": "hit",
+   "settled_decimal": 1.4,
+   "profit": 0.4,
    "legs": [
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -285,
+      "line": null,
+      "clv_pp": 2.6
+     },
+     "result": "win",
+     "actual": "Boston Celtics 108 - 97 Orlando Magic"
     },
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "void",
+     "reason": "DNP/inactive; confirmed by user 2026-11-01",
+     "override": true,
+     "note": "Not in the ESPN box score. Applies to every slip containing this leg."
     }
    ]
   },
@@ -15240,23 +15798,23 @@
   {
    "slip_id": "68f1d1fc435a",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.86,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "6"
     },
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "loss",
+     "actual": "0"
     }
    ]
   },
@@ -15292,92 +15850,97 @@
   {
    "slip_id": "dc07477415df",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.77,
-   "profit": null,
+   "profit": 2.77,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "2"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "0"
     }
    ]
   },
   {
    "slip_id": "0ef709d3fb1e",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.92,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -258,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Minnesota Wild 5 - 1 Washington Capitals"
     }
    ]
   },
   {
    "slip_id": "85d5d3bacd9c",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.73,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "loss",
+     "actual": "0"
     },
     {
      "espn_event": "401909903",
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "loss",
+     "actual": "10"
     }
    ]
   },
   {
    "slip_id": "44706e864ec1",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 4.73,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "win",
+     "actual": "0"
     },
     {
      "espn_event": "401892625",
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "result": "loss",
+     "actual": "3"
     }
    ]
   }

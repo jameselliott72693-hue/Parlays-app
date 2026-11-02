@@ -43,6 +43,17 @@
    "result": "loss",
    "reason": "Played, 0 receptions; confirmed by user 2026-11-01",
    "note": "In ESPN data with no receiving line. Applies to every slip containing this leg."
+  },
+  {
+   "player": "Mitchell Robinson",
+   "event": "Boston Celtics @ Orlando Magic",
+   "date": "2026-11-01",
+   "stat": "points",
+   "side": "under",
+   "line": 5.5,
+   "result": "void",
+   "reason": "DNP/inactive; confirmed by user 2026-11-01",
+   "note": "Not in the ESPN box score. Applies to every slip containing this leg."
   }
  ]
 }
