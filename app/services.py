@@ -10,9 +10,12 @@ import parlay_builder as pb          # noqa: E402
 import grade_slips as gs             # noqa: E402
 import add_user_result as aur        # noqa: E402
 import ledger_lib as ll              # noqa: E402
+try:
+    from storage import LOCK         # same re-entrant lock as the GitHub sync (app/ is on sys.path in the app)
+except Exception:                    # pragma: no cover - imported without app/ on the path
+    LOCK = threading.RLock()
 
 ET = ZoneInfo("America/New_York")
-LOCK = threading.Lock()
 SNAPSHOT = os.path.join(ROOT, "reports", "snapshot_latest.json")
 LATEST_MD = os.path.join(ROOT, "reports", "latest.md")
 ALL_SPORTS = ["nfl", "nba", "nhl", "ncaaf", "ncaab"]
@@ -80,6 +83,10 @@ def log_bet(result, book, sport, odds, net, date, note=None):
     result = result.upper().strip()
     if result not in ("W", "L", "P"): raise ValueError("result must be W, L or P")
     datetime.strptime(date, "%Y-%m-%d")
+    if net is not None:
+        net = float(net)
+        if result == "W" and net < 0: raise ValueError("a won bet can't have a negative net $ (enter what you won, e.g. 25)")
+        if result == "L" and net > 0: raise ValueError("a lost bet can't have a positive net $ (enter the stake lost as a minus, e.g. -10)")
     ov, bucket = aur.parse_odds(odds.strip() if isinstance(odds, str) and odds.strip() else None)
     bet = {"result": result, "book": aur.norm_book(book) if book and book != "Other" else None,
            "sport": aur.norm_sport(sport) if sport and sport != "Other" else None, "odds": ov, "bucket": bucket,
@@ -97,12 +104,28 @@ def today_et():
 
 
 # ---------- tracker ----------
+TRACKER_FILES = (ll.LEDGER, gs.GRADES, gs.USER)
+
+
+def ledger_signature():
+    """(mtime_ns, size) of the files tracker_data() reads: a cheap cache key that changes whenever a build, grading, logged
+    bet or GitHub pull rewrites one of them."""
+    sig = []
+    for p in TRACKER_FILES:
+        try:
+            st_ = os.stat(p); sig.append((os.path.basename(p), st_.st_mtime_ns, st_.st_size))
+        except OSError:
+            sig.append((os.path.basename(p), None, None))
+    return tuple(sig)
+
+
 def tracker_data():
     """Same data the Parlay Tracker Page uses (grade_slips.build_page_data), from the ledger + the last grades.json.
     Slips logged after the last grading count as pending."""
-    slips = ll.load_ledger()
-    try: g = json.load(open(gs.GRADES))
-    except Exception: g = {"slips": [], "graded_at": None}
+    with LOCK:  # don't read while a grade / pull in another session is rewriting the files
+        slips = ll.load_ledger()
+        try: g = json.load(open(gs.GRADES))
+        except Exception: g = {"slips": [], "graded_at": None}
     by = {(x["run_ts"], x["slip_id"]): x for x in g.get("slips", [])}
     graded = [by.get((s["run_ts"], s["slip_id"])) or {"slip_id": s["slip_id"], "run_ts": s["run_ts"], "result": "pending", "profit": None,
               "settled_decimal": s["decimal"], "legs": [{"result": "pending"} for _ in s["legs"]]} for s in slips]

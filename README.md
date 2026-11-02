@@ -158,6 +158,9 @@ Test without credits or logging: `python3 parlay_builder.py --from-file reports/
   blue = your bets, default = regular slips.
 
 ## Grading by sport (ESPN box scores, keyless)
+- Since 2026-11-01: the scoreboard search starts at the run's US Eastern date (ESPN dates are ET; a run after 8 PM ET is the next UTC day), and
+  neutral-site games (ESPN `neutralSite`, common in college) also match when the books list home/away the other way round; ML/spread/closing
+  prices then read each team's score by name. `v3-flagged` slips are kept out of the regular record tables like `v2-flagged`.
 - Games are found on ESPN's scoreboard by sport (`football/nfl`, `basketball/nba`, `hockey/nhl`, `football/college-football`, `basketball/mens-college-basketball`) by team + date.
   College teams must match ESPN's displayName (the builder standardizes names); a college mascot alone never matches.
 - Game lines: moneyline, spread/puck line, total (NHL shootout: ESPN adds a goal to the winner; totals are graded without it). Closing line = ESPN's DraftKings pickcenter.
@@ -198,7 +201,7 @@ Test without credits or logging: `python3 parlay_builder.py --from-file reports/
   - `result` is `void`, `push`, `win` or `loss`; void/push legs are removed and the slip's odds recomputed (a slip with only void legs is void).
   - The grade records `override: true`, the reason and any note; if it replaces an already-decided result the grader prints a WARNING and keeps the
     original as `auto_result`. Duplicate an entry only by mistake: check the file first.
-- Current overrides: Olamide Zaccheaus Under 1.5 receptions (49ers @ Falcons, 2026-10-25) = void (5 slips contain it).
+- Overrides live on the `ledger-data` branch (the copy in `main` is only a seed); check that copy before adding one.
 
 ## Web app (phone) - `app/` (added 2026-10-29)
 - `app/streamlit_app.py` (Streamlit UI), `app/services.py` (in-process wrappers: build, grade, log bet, tracker data), `app/storage.py`
@@ -217,7 +220,14 @@ Test without credits or logging: `python3 parlay_builder.py --from-file reports/
 - Storage: `STORAGE=local` or no GitHub secrets -> files on disk. With `GITHUB_TOKEN` + `GH_REPO`, ledger files
   (`slips.jsonl`, `user_results.jsonl`, `grades.json`, `page_contents.tsx.txt`, `leg_overrides.json`) live on the `ledger-data` branch
   (`GH_DATA_BRANCH`) of the private repo: pulled/merged on start and before every action, committed after every change (one commit via the
-  Git Data API; *.jsonl are union-merged, so concurrent writers never lose rows; an `--undo` done elsewhere is not propagated). The daily
+  Git Data API; *.jsonl are union-merged, so concurrent writers never lose rows; an `--undo` done elsewhere is not propagated).
+  Merge keys (2026-11-01): slips by (run_ts, slip_id); your bets by `entered_at` (to EDIT a logged bet, keep its `entered_at` and add
+  `"edited_at": "<ISO time>"`: the later edited_at wins, otherwise the repo copy wins, so an edit is never counted twice);
+  `leg_overrides.json` is unioned by the leg it matches (player/label, event, date, market, stat, side, line), so an override added
+  on either side is never dropped; to change an existing override's result add `"updated_at": "<ISO time>"`. Deleting a bet or an
+  override must be done on the `ledger-data` branch itself. A pull whose branch head has not moved costs 1 GitHub call (not 6).
+- Tests (no network, no Odds API credits): `python3 -m unittest discover -s tests -v`
+  (`PARLAYS_TEST_SNAPSHOT=reports/snapshot_latest.json` adds a free snapshot-replay build to the headless app smoke test). The daily
   workflow grades at 13:00 UTC (9 AM EDT / 8 AM EST) and commits to the same branch. Using a separate branch means saving data never
   redeploys the app.
 - To update the Grok tracker Page from cloud data: download `ledger/page_contents.tsx.txt` from the `ledger-data` branch (or run

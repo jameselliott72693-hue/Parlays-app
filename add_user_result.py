@@ -15,6 +15,7 @@ Log the user's OWN betting results (kept separate from the auto-graded displayed
 import re
 import argparse, json, os, shlex, sys
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 LEDGER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ledger", "user_results.jsonl")
 
@@ -96,7 +97,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--wins", type=int); ap.add_argument("--losses", type=int); ap.add_argument("--pushes", type=int, default=0)
     ap.add_argument("--net", type=float, help="net $ won (+) or lost (-)"); ap.add_argument("--units", type=float, help="net units")
-    ap.add_argument("--date", help="results date YYYY-MM-DD (default: today UTC)"); ap.add_argument("--note")
+    ap.add_argument("--date", help="results date YYYY-MM-DD (default: today, US Eastern)"); ap.add_argument("--note")
     ap.add_argument("--book", help="sportsbook for the whole entry, e.g. FanDuel")
     ap.add_argument("--sport", help="sport for the whole entry, e.g. NBA")
     ap.add_argument("--odds", help="American odds (+250) or target bucket (+200) for the whole entry")
@@ -121,7 +122,7 @@ def main():
         if a.net is None and all(b["net"] is not None for b in bets): a.net = round(sum(b["net"] for b in bets), 2)
     if a.wins is None or a.losses is None: ap.error("--wins and --losses are required (or log bets with --bet)")
     if min(a.wins, a.losses, a.pushes) < 0: ap.error("counts must be >= 0")
-    date = a.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    date = a.date or datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")  # the user's day (ET), not UTC
     datetime.strptime(date, "%Y-%m-%d")
     r = {"date": date, "wins": a.wins, "losses": a.losses, "pushes": a.pushes, "net": a.net, "units": a.units,
          "note": a.note, "entered_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}

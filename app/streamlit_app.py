@@ -4,7 +4,7 @@ Run locally:   cd /workspace/parlays && APP_PASSWORD=... streamlit run app/strea
 Secrets (env vars or .streamlit/secrets.toml / Streamlit Cloud "Secrets"): APP_PASSWORD (required), ODDS_API_KEY (optional:
 adds DraftKings/BetMGM/theScore Bet), GITHUB_TOKEN + GH_REPO (+ optional GH_DATA_BRANCH) for durable storage on GitHub.
 """
-import hmac, html, os, sys, time
+import hmac, html, os, re, sys, time
 from datetime import datetime, timezone
 
 import streamlit as st
@@ -102,13 +102,16 @@ STORE = storage()
 
 
 def sync_down(force=False):
+    """Pull the ledger from GitHub at most every 5 minutes per session (always before an action). A pull whose branch head
+    has not moved costs one API call. A GitHub outage only shows a warning; the app keeps working on the local copy."""
     last = st.session_state.get("pulled_at", 0)
     if force or time.time() - last > 300:
         try:
             STORE.pull()
             st.session_state["pulled_at"] = time.time()
         except Exception as ex:
-            st.warning(f"Could not load the saved ledger: {ex}")
+            st.session_state["pulled_at"] = time.time() - 240  # retry in about a minute, not on every rerun
+            st.warning(f"Could not load the saved ledger (showing the copy on this server): {ex}")
 
 
 def sync_up(paths, msg):
@@ -120,6 +123,13 @@ def sync_up(paths, msg):
 
 
 sync_down()
+
+
+@st.cache_data(ttl=600, show_spinner=False, max_entries=4)
+def tracker_cached(sig):
+    """Tracker data, recomputed only when a ledger file changed (sig = mtimes/sizes) or after 10 minutes. Every widget
+    click reruns the script; this keeps the tracker tab from re-reading ~1 MB of ledger and regrouping it each time."""
+    return S.tracker_data()
 
 
 @st.cache_data(ttl=600, show_spinner=False)
@@ -199,7 +209,6 @@ with tab_build:
     rem, used, at = balance() if key_present else (None, None, None)
     c1, c2 = st.columns(2)
     c1.metric("Odds API credits left", "-" if rem is None else rem, help="Free call; refreshed every 10 minutes. Free plan = 500 per month.")
-    sports = st.session_state.get("sports", S.ALL_SPORTS)
     try:
         sports = st.pills("Sports", S.ALL_SPORTS, selection_mode="multi", default=S.ALL_SPORTS, format_func=str.upper, key="sports_pills")
     except Exception:
@@ -220,12 +229,18 @@ with tab_build:
             st.error("No saved snapshot yet: run once with live odds.")
         else:
             with st.spinner("Fetching odds and building slips (about 30-60 s)..."):
-                sync_down(force=True)
-                res = S.build(sports, flagged=flagged, show_long_multi=long_multi, live=live)
-                if live and res.get("ledger") and "new slips" in res["ledger"]:
-                    res["saved"] = sync_up(["ledger/slips.jsonl"], f"Log parlay run {res['generated']}")
-                st.session_state["res"] = res
-                balance.clear()
+                if live: sync_down(force=True)  # a snapshot replay never logs, so it needs no fresh ledger
+                try:
+                    res = S.build(sports, flagged=flagged, show_long_multi=long_multi, live=live)
+                except Exception as ex:
+                    res = None
+                    st.error(f"Build failed: {type(ex).__name__}: {ex}")
+                if res is not None:
+                    m = re.search(r": (\d+) new slips, (\d+) duplicate tags", res.get("ledger") or "")
+                    if live and m and int(m.group(1)) + int(m.group(2)) > 0:  # skip the GitHub round trip when nothing was logged
+                        res["saved"] = sync_up(["ledger/slips.jsonl"], f"Log parlay run {res['generated']}")
+                    st.session_state["res"] = res
+                if live: balance.clear()
     res = st.session_state.get("res")
     if res:
         cr = res["credits"]
@@ -262,11 +277,16 @@ with tab_track:
     if top[1].button("Grade now", use_container_width=True, help="Settles finished games from ESPN box scores (free, ~10-60 s)."):
         with st.spinner("Grading from ESPN box scores..."):
             sync_down(force=True)
-            out = S.grade()
-            saved = sync_up(["ledger/grades.json", "ledger/page_contents.tsx.txt"], "Grade slips (app)")
-        st.success("Graded. " + (saved or ""))
-        with st.expander("Grader output"): st.code(out[-3000:])
-    d = S.tracker_data()
+            try:
+                out, err = S.grade(), None
+            except Exception as ex:
+                out, err = "", f"{type(ex).__name__}: {ex}"
+            saved = None if err else sync_up(["ledger/grades.json", "ledger/page_contents.tsx.txt"], "Grade slips (app)")
+        if err: st.error(f"Grading failed (nothing saved): {err}")
+        else:
+            st.success("Graded. " + (saved or ""))
+            with st.expander("Grader output"): st.code(out[-3000:])
+    d = tracker_cached(S.ledger_signature())
     top[0].caption(f"Last graded: {et(d['graded_at']) if d.get('graded_at') else 'never'} · storage: {STORE.label}")
     o, fl = d["overall"], d["flagged"]
     hr = f"{100*o['hit']/(o['hit']+o['miss']):.1f}%" if o["hit"] + o["miss"] else "-"
@@ -277,9 +297,9 @@ with tab_track:
     uw, ul = sum(r["wins"] for r in u), sum(r["losses"] for r in u)
     unet = sum(r["net"] for r in u if r.get("net") is not None)
     st.markdown(f"<div class='red'>\U0001F534 Flagged ({', '.join(d['flagKeys']) or 'none'}): {fl['hit']}-{fl['miss']} · {units(fl['profit'])} · {fl['pending']} pending</div>"
-                f"<div class='blue'>Your bets: {uw}-{ul} · net {'+' if unet >= 0 else '-'}${abs(unet):.2f} · {len(u)} days</div>", unsafe_allow_html=True)
+                f"<div class='blue'>Your bets: {uw}-{ul} · net {'+' if unet >= 0 else '-'}${abs(unet):.2f} · {len({r['date'] for r in u})} days</div>", unsafe_allow_html=True)
     st.caption("Default = regular slips, red = flagged-price slips, blue = your own bets. Never added together. 1 unit per slip.")
-    strategies = sorted({x["s"] for x in d["facts"]})
+    strategies = sorted({x["s"] for x in d["facts"]} - set(d["flagKeys"]))
     f1, f2 = st.columns(2)
     strat = f1.selectbox("Strategy", ["all"] + strategies + d["flagKeys"], format_func=lambda x: "All strategies" if x == "all" else ("\U0001F534 " + x if x.endswith("-flagged") else x))
     lst = f2.selectbox("List", ["all", "sgp", "multi", "3leg"], format_func=lambda x: {"all": "All lists", "sgp": "SGP", "multi": "Multi-game", "3leg": "3-leg"}[x])
@@ -325,7 +345,8 @@ with tab_log:
         sport = b.selectbox("Sport", S.SPORT_CHOICES)
         a, b = st.columns(2)
         odds = a.text_input("Odds (American)", placeholder="+250")
-        net = b.number_input("Net $ (+ won / - lost)", value=0.0, step=1.0, format="%.2f")
+        net = b.number_input("Net $ (+ won / - lost)", value=None, step=1.0, format="%.2f", placeholder="e.g. 25 or -10",
+                             help="Leave empty if you don't know it (it is then not counted in net $ / ROI).")
         date = st.date_input("Date", value=datetime.now(S.ET).date())
         note = st.text_input("Note (optional)")
         go = st.form_submit_button("Log my bet", type="primary", use_container_width=True)
@@ -334,6 +355,7 @@ with tab_log:
             sync_down(force=True)
             r = S.log_bet(res_, book, sport, odds or None, net, date.strftime("%Y-%m-%d"), note or None)
             saved = sync_up(["ledger/user_results.jsonl"], f"Log my bet {r['date']} {res_}")
-            st.success(f"Logged: {res_} {book} {sport} {odds or ''} {net:+.2f} on {r['date']}. " + (saved or ""))
+            st.success(f"Logged: {res_} {book} {sport} {odds or ''} " + (f"{net:+.2f}" if net is not None else "(net not given)")
+                       + f" on {r['date']}. " + (saved or ""))
         except ValueError as ex:
             st.error(f"Not logged: {ex}")

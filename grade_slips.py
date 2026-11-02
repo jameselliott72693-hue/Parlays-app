@@ -20,6 +20,7 @@ spreads/totals. Player props have no free closing source, so they get no close.
 import json, os, re, sys, time, unicodedata, urllib.request
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ledger_lib import load_ledger, ROOT
 
@@ -84,20 +85,51 @@ def team_match(espn_comp, our_team, sport=None):
         return o.endswith(nname(t.get("name", "~~"))) and any(l and o.startswith(l) for l in locs)
     return o.endswith(nname(t.get("name", "~~")))
 
+ET = ZoneInfo("America/New_York")
+
+def _aware(ts):
+    """ISO timestamp -> aware datetime (a naive one is taken as UTC)."""
+    d = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+    return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+
 def find_event(leg, run_ts):
-    """Earliest ESPN game after the run with both teams; tries nba then nfl if sport unknown."""
-    start = datetime.fromisoformat(run_ts)
+    """Earliest ESPN game after the run with both teams; tries nba then nfl if sport unknown.
+    ESPN scoreboards are keyed by the US Eastern game date, so the search starts at the run's ET date (a run at 01:00 UTC is
+    still the previous evening in ET and that evening's late games are on the previous ET day's scoreboard).
+    Neutral-site games (common in college) may be listed by the books with home/away the other way round; they match either
+    way (exact orientation first), and grading reads each team's score by name (see _sides)."""
+    start = _aware(run_ts)
+    first_day = start.astimezone(ET).date()
     sports = [leg["sport"]] if leg.get("sport") in ESPN else ["nba", "nfl"]
     for sp in sports:
         for d in range(0, LOOKAHEAD_DAYS + 1):
-            day = (start + timedelta(days=d)).strftime("%Y%m%d")
+            day = (first_day + timedelta(days=d)).strftime("%Y%m%d")
+            swapped = None
             for e in scoreboard(sp, day):
                 comps = e["competitions"][0]["competitors"]
-                if datetime.fromisoformat(e["date"].replace("Z", "+00:00")) < start - timedelta(hours=1): continue
+                if _aware(e["date"]) < start - timedelta(hours=1): continue
                 home = next(c for c in comps if c["homeAway"] == "home"); away = next(c for c in comps if c["homeAway"] == "away")
                 if team_match(home, leg["home"], sp) and team_match(away, leg["away"], sp):
                     return sp, e
+                if (swapped is None and e["competitions"][0].get("neutralSite")
+                        and team_match(home, leg["away"], sp) and team_match(away, leg["home"], sp)):
+                    swapped = e
+            if swapped is not None:
+                return sp, swapped
     return None, None
+
+def _sides(leg, ev, sp):
+    """('home'|'away' ESPN side of the leg's team, the other side). Matches by team name, so a neutral-site game the books
+    list the other way round still reads the right score; falls back to the ledger's home/away."""
+    mine_ours = "home" if leg.get("team") == leg.get("home") else "away"
+    comps = ev["competitions"][0]["competitors"]
+    by = {c["homeAway"]: c for c in comps}
+    if "home" in by and "away" in by and leg.get("team"):
+        h, a = team_match(by["home"], leg["team"], sp), team_match(by["away"], leg["team"], sp)
+        if h != a:
+            mine = "home" if h else "away"
+            return mine, ("away" if mine == "home" else "home")
+    return mine_ours, ("away" if mine_ours == "home" else "home")
 
 _sum = {}
 def summary(sport, eid, final):
@@ -185,7 +217,7 @@ def closing_price(leg, sp, ev):
         if m == "total":
             line, am = pc.get("overUnder"), pc.get("overOdds" if leg["side"] == "over" else "underOdds")
         else:
-            mine = "home" if leg["team"] == leg["home"] else "away"
+            mine, _ = _sides(leg, ev, sp)
             to = pc.get(f"{mine}TeamOdds") or {}
             if m == "ml": line, am = None, to.get("moneyLine")
             else:
@@ -213,7 +245,7 @@ def cmp_result(val, line, side):
 def grade_leg(leg, run_ts):
     sp, ev = find_event(leg, run_ts)
     if not ev:
-        if datetime.now(timezone.utc) - datetime.fromisoformat(run_ts) < timedelta(days=LOOKAHEAD_DAYS):
+        if datetime.now(timezone.utc) - _aware(run_ts) < timedelta(days=LOOKAHEAD_DAYS):
             return {"result": "pending", "reason": "game not yet on ESPN scoreboard"}
         return {"result": "ungraded", "reason": f"game not found on ESPN scoreboard within {LOOKAHEAD_DAYS} days of the run"}
     status = ev["status"]["type"]
@@ -236,11 +268,11 @@ def grade_leg(leg, run_ts):
             tot -= 1  # NHL shootout: ESPN adds 1 goal to the winner's score, sportsbook totals exclude it
         return dict(base, result=cmp_result(tot, leg["line"], leg["side"]), actual=f"total {tot:g}")
     if m in ("ml", "spread"):
-        mine = "home" if leg["team"] == leg["home"] else "away"
-        other = "away" if mine == "home" else "home"
-        margin = score[mine] - score[other] + (leg["line"] or 0 if m == "spread" else 0)
+        mine, other = _sides(leg, ev, sp)
+        margin = score[mine] - score[other] + ((leg.get("line") or 0) if m == "spread" else 0)
         res = "push" if margin == 0 else "win" if margin > 0 else "loss"
-        return dict(base, result=res, actual=f"{leg['away']} {score['away']:g} - {score['home']:g} {leg['home']}")
+        names = {c["homeAway"]: c["team"].get("displayName", c["homeAway"]) for c in comps}
+        return dict(base, result=res, actual=f"{names.get('away', 'away')} {score['away']:g} - {score['home']:g} {names.get('home', 'home')}")
     if m == "prop":
         if (leg.get("stat") or "").startswith("unknown"):
             return dict(base, result="ungraded", reason=f"unsupported stat {leg['stat']}")
@@ -314,6 +346,12 @@ def grade_slip(slip, leg_grades):
 
 BOOKN = {"fanduel": "FanDuel", "draftkings": "DraftKings", "betmgm": "BetMGM", "espnbet": "theScore Bet", "underdog": "Underdog", "williamhill_us": "Caesars"}
 
+def _atomic_write(path, text):
+    """Write via a temp file + rename so a reader (the web app) never sees a half-written file."""
+    tmp = path + ".tmp"
+    with open(tmp, "w") as f: f.write(text)
+    os.replace(tmp, path)
+
 def main():
     slips = load_ledger()
     ovs = load_overrides()
@@ -333,10 +371,10 @@ def main():
         res, dec, profit = grade_slip(s, lg)
         graded.append({"slip_id": s["slip_id"], "run_ts": s["run_ts"], "result": res, "settled_decimal": round(dec, 4),
                        "profit": None if profit is None else round(profit, 4), "legs": lg})
-    json.dump({"graded_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "slips": graded}, open(GRADES, "w"), indent=1)
+    _atomic_write(GRADES, json.dumps({"graded_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "slips": graded}, indent=1))
     data = build_page_data(slips, graded)
     tpl = open(TEMPLATE).read()
-    open(PAGE_OUT, "w").write(tpl.replace("/*__DATA__*/null", json.dumps(data, separators=(",", ":"))))
+    _atomic_write(PAGE_OUT, tpl.replace("/*__DATA__*/null", json.dumps(data, separators=(",", ":"))))
     t = data["overall"]
     print(f"graded {len(graded)} slips (regular totals below exclude *-flagged): {t['hit']} hit / {t['miss']} miss / {t['pending']} pending / {t['other']} void+ungraded; "
           f"profit {t['profit']:+.2f}u")
@@ -431,7 +469,7 @@ def build_page_data(slips, graded):
                  "mkt": {m: [len(clv_mkt[k][m]), _avg(list(clv_mkt[k][m].values()))] for m in ("ml", "spread", "total") if clv_mkt[k].get(m)}}
                 for k, v in sorted(clv.items()) if v]
     # (the per-slip / per-leg "Recent slips" listing was removed from the Page on 2026-10-23; full history stays in the ledger)
-    user = [json.loads(x) for x in open(USER)] if os.path.exists(USER) else []
+    user = [json.loads(x) for x in open(USER) if x.strip()] if os.path.exists(USER) else []
     # compact per-slip facts for the Page's record tables (filtered client-side by strategy and list)
     facts, ffacts = [], []
     for s, g in allpairs:
@@ -439,7 +477,7 @@ def build_page_data(slips, graded):
         for l, lg in zip(s["legs"], g["legs"]):
             sps.add((lg.get("sport") or l.get("sport") or "?").upper())
         sport = "Unknown" if "?" in sps else next(iter(sps)) if len(sps) == 1 else "Mixed (" + " + ".join(sorted(sps)) + ")"
-        (ffacts if strat(s) == FLAG else facts).append({"s": strat(s), "l": s["list"], "b": bookgrp(s), "t": s["first_seen"]["target"], "sp": sport,
+        (ffacts if is_flag(s) else facts).append({"s": strat(s), "l": s["list"], "b": bookgrp(s), "t": s["first_seen"]["target"], "sp": sport,
                       "r": g["result"], "p": g["profit"], "d": s["decimal"]})
     # user's own results, expanded per bet when bets were logged; "Untagged" when no tag was given.
     # Shown next to (never merged into) the slip records on the Page.
