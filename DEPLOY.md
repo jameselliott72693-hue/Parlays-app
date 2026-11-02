@@ -77,7 +77,11 @@ You'll be asked for the password again each time the app restarts or you open a 
   risky slips (off by default). "Last snapshot" re-shows the last data for free.
 - **Tracker:** records by strategy, book, odds target, sport and list; red = flagged slips, blue = your own bets; closing-line value.
   **Grade now** settles finished games immediately (the daily job does it anyway).
-- **Log my bet:** won/lost/push, book, sport, odds (like +250), net $ (+ won, - lost), date.
+- **Log my bet:** paste a bet slip's text or upload a screenshot and tap **Read slip**: the form fills itself in (book, sport, odds,
+  legs, bet type, stake, result, net $). Check it, fix anything, then tap **Save bet** (nothing is saved before that). Or fill the
+  form by hand. Screenshot reading uses free OCR that Streamlit installs from `packages.txt` (no setup, no key).
+- **Bankroll:** Tracker -> "Bankroll and what pays": set your starting bankroll once, add deposits / withdrawals. The app then shows
+  your bankroll, a chart, your real ROI, and warns when a stake is above your 0.5-1% rule.
 
 ## Good to know
 - **Credits:** the free Odds API plan has 500 credits a month, about 20 fresh builds. Building again within 15 minutes is free.

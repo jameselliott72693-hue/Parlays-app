@@ -10,7 +10,8 @@ GitHub repo and commits every change back through the GitHub REST API:
 
 Merging is append-friendly: slips.jsonl is unioned by (run_ts, slip_id); your bets (user_results.jsonl) are keyed by
 entered_at, so an edited record replaces the old one instead of being counted twice (the copy with the later "edited_at" wins;
-without one the repo copy wins); grades.json / page_contents.tsx.txt keep the newer grading; leg_overrides.json is unioned
+without one the repo copy wins); bankroll.jsonl (starting bankroll, deposits, withdrawals) is merged the same way;
+grades.json / page_contents.tsx.txt keep the newer grading; leg_overrides.json is unioned
 by the leg it matches (player/label + event + date + market + stat + side + line), so an override added on either side is
 never dropped (same leg on both sides: the later "updated_at" wins, else the repo copy). Deleting a bet or an override
 therefore has to be done on the ledger-data branch itself (a stale local copy would otherwise add it back).
@@ -21,7 +22,7 @@ import base64, json, os, threading, time, urllib.error, urllib.parse, urllib.req
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SYNC_FILES = ["ledger/slips.jsonl", "ledger/user_results.jsonl", "ledger/grades.json",
-              "ledger/page_contents.tsx.txt", "ledger/leg_overrides.json"]
+              "ledger/page_contents.tsx.txt", "ledger/leg_overrides.json", "ledger/bankroll.jsonl"]
 # One process-wide lock for every read-merge-write of the ledger files: Streamlit runs each browser session in its own thread,
 # so a pull in one session must not interleave with a build / grade / logged bet writing the same files in another.
 # The app's services module uses this same lock (re-entrant, so services may call storage while holding it).
@@ -63,6 +64,10 @@ def merge(path, local, remote):
                                                    r["first_seen"]["target"], r["first_seen"]["slip_no"]))
         return "".join(json.dumps(r) + "\n" for r in out).encode()
     if path.endswith("user_results.jsonl"):
+        out = _keyed_union(_jsonl(remote), _jsonl(local), _user_key, "edited_at")
+        out.sort(key=lambda r: r.get("entered_at", ""))
+        return "".join(json.dumps(r) + "\n" for r in out).encode()
+    if path.endswith("bankroll.jsonl"):  # starting bankroll / deposits / withdrawals: same keyed union as your bets
         out = _keyed_union(_jsonl(remote), _jsonl(local), _user_key, "edited_at")
         out.sort(key=lambda r: r.get("entered_at", ""))
         return "".join(json.dumps(r) + "\n" for r in out).encode()

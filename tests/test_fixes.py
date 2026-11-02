@@ -229,7 +229,7 @@ class AppSmokeTest(unittest.TestCase):
                     self.assertGreaterEqual(len(at.tabs), 3)
                     md = " ".join(m.value for m in at.markdown)
                     self.assertIn("By sportsbook", md); self.assertIn("By odds target", md)
-                    at.selectbox[1].select("sgp").run()  # a filter change reruns the script (tracker data now cached)
+                    next(x for x in at.selectbox if x.label == "List").select("sgp").run()  # a filter change reruns the script (tracker data now cached)
                     self.assertFalse(at.exception, at.exception)
                     if snap:
                         at.radio[0].set_value("Last snapshot (free, no logging)").run()

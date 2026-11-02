@@ -191,6 +191,34 @@ Test without credits or logging: `python3 parlay_builder.py --from-file reports/
 - Stored in `ledger/user_results.jsonl`; shown in the Page's "Your reported results" section after the next
   `python3 grade_slips.py` + Page update. Never merged into the graded tally.
 
+## Bet slip reader + stake / bankroll tracking (added 2026-11-01)
+- **Log my bet -> Read a bet slip:** paste the bet's text from the sportsbook's bet history, or upload a screenshot. The app fills in
+  book, sport, date (ET), odds, legs, bet type (SGP / Multi-game / Straight), the leg list, stake, payout and the result + net $ when
+  the slip shows them. Everything stays editable and **nothing is saved until you press Save bet** (no auto-save; the result must be
+  picked by hand when the slip is still open). Reader notes say what was guessed (e.g. sport from stat names, odds from payout/stake,
+  a payout that disagrees with the odds = boost / cash-out).
+  Parser: `app/slip_reader.py` (`parse_slip(text)`, pure Python, no AI/LLM API). Books: DraftKings, FanDuel, Caesars, theScore Bet,
+  BetMGM, Underdog (Power/Flex Play multipliers); best-effort for Fanatics, bet365, BetRivers, Hard Rock, PrizePicks.
+  Fixtures: `tests/fixtures/slips/*.txt` with `expected.json`.
+- **Screenshots** use free Tesseract OCR (`pytesseract` in requirements.txt + `tesseract-ocr` in `packages.txt`, which Streamlit
+  Community Cloud installs automatically). Screenshots are upscaled, dark mode is inverted. Without Tesseract the uploader is disabled
+  with a clear message and pasting text still works. On this box Tesseract is at `/home/box/.local/tess/bin/tesseract`
+  (conda-forge via micromamba; run with `TESSERACT_CMD=/home/box/.local/tess/bin/tesseract TESSDATA_PREFIX=/home/box/.local/tess/share/tessdata`).
+- **New optional fields on your bets** (`user_results.jsonl`, per bet): `stake` (risked $), `legs`, `type` (SGP / Multi-game /
+  Straight), `leg_list`, `payout` (total return), `net_computed` (net $ worked out from stake + odds). Older records simply lack them.
+  CLI: `add_user_result.py --bet "W FanDuel NBA +250 25 stake=10 legs=3 type=SGP"`, or `--stake 10 --legs 3 --type SGP` for the
+  single `--bet` / a whole entry.
+- **Bankroll** (`ledger/bankroll.jsonl`, synced on `ledger-data` like the other ledger files and loaded by the daily workflow):
+  entries `start` / `deposit` / `withdrawal` (`{"kind", "amount", "date", "note", "entered_at"}`). Set it in the app (Tracker ->
+  "Bankroll and what pays") or `add_user_result.py --bankroll-start 1000 [--date D]`, `--deposit 100`, `--withdraw 50`, `--bankroll`.
+  Current bankroll = latest start + deposits - withdrawals + net $ of your bets dated after the start date (plus that day's bets
+  logged after the start was set). Bets without net $ are not counted (shown). A new start resets it.
+- **Shown (blue):** tracker line with current bankroll, the flat 0.5-1% stake range, ROI on logged stakes, and ROI including stakes
+  derived (old method) for older bets, labeled; the panel has the bankroll-over-time chart, the bankroll form and the "what pays"
+  table. Log my bet warns when a stake is above 1% of the bankroll and shows the recommended range. The Page shows the bankroll line
+  and both ROI lines; "what pays" now uses logged stake / legs / bet type (`1 leg`, `2 legs` ..., types SGP / Multi-game / Straight),
+  so the Unknown buckets shrink as new bets are logged.
+
 ## Manual leg overrides (`ledger/leg_overrides.json`)
 - When a leg can't be graded automatically (typically `UNGRADED ... player not in ESPN box score`), **ask the user**; never assume a void.
   Once he confirms, add an entry to `ledger/leg_overrides.json` and re-run `python3 grade_slips.py`. `slips.jsonl` is never edited.
@@ -218,7 +246,7 @@ Test without credits or logging: `python3 parlay_builder.py --from-file reports/
 - Live builds from the app pass `--log-gap-min 15`: a run within 15 minutes of an already-logged run is shown but not logged (cached odds
   would otherwise double-count the same slips). Optional secret `ODDS_MAX_CREDITS_PER_RUN` lowers the 40-credit cap.
 - Storage: `STORAGE=local` or no GitHub secrets -> files on disk. With `GITHUB_TOKEN` + `GH_REPO`, ledger files
-  (`slips.jsonl`, `user_results.jsonl`, `grades.json`, `page_contents.tsx.txt`, `leg_overrides.json`) live on the `ledger-data` branch
+  (`slips.jsonl`, `user_results.jsonl`, `grades.json`, `page_contents.tsx.txt`, `leg_overrides.json`, `bankroll.jsonl`) live on the `ledger-data` branch
   (`GH_DATA_BRANCH`) of the private repo: pulled/merged on start and before every action, committed after every change (one commit via the
   Git Data API; *.jsonl are union-merged, so concurrent writers never lose rows; an `--undo` done elsewhere is not propagated).
   Merge keys (2026-11-01): slips by (run_ts, slip_id); your bets by `entered_at` (to EDIT a logged bet, keep its `entered_at` and add

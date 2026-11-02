@@ -10,6 +10,7 @@ import parlay_builder as pb          # noqa: E402
 import grade_slips as gs             # noqa: E402
 import add_user_result as aur        # noqa: E402
 import ledger_lib as ll              # noqa: E402
+import bankroll_lib as bl            # noqa: E402
 try:
     from storage import LOCK         # same re-entrant lock as the GitHub sync (app/ is on sys.path in the app)
 except Exception:                    # pragma: no cover - imported without app/ on the path
@@ -19,7 +20,9 @@ ET = ZoneInfo("America/New_York")
 SNAPSHOT = os.path.join(ROOT, "reports", "snapshot_latest.json")
 LATEST_MD = os.path.join(ROOT, "reports", "latest.md")
 ALL_SPORTS = ["nfl", "nba", "nhl", "ncaaf", "ncaab"]
-BOOK_CHOICES = ["FanDuel", "DraftKings", "BetMGM", "theScore Bet", "Underdog", "Caesars", "bet365", "Fanatics", "Other"]
+BOOK_CHOICES = ["FanDuel", "DraftKings", "BetMGM", "theScore Bet", "Underdog", "Caesars", "bet365", "Fanatics", "BetRivers", "Hard Rock",
+                "PrizePicks", "Other"]
+TYPE_CHOICES = ["SGP", "Multi-game", "Straight"]
 SPORT_CHOICES = ["NBA", "NFL", "NHL", "NCAAF", "NCAAB", "MLB", "Mixed (NBA + NFL)", "Mixed (NBA + NHL)", "Mixed (NFL + NHL)", "Other"]
 
 
@@ -78,19 +81,36 @@ def grade():
 
 
 # ---------- user bets ----------
-def log_bet(result, book, sport, odds, net, date, note=None):
-    """Append one bet to ledger/user_results.jsonl exactly like `add_user_result.py --bet "R BOOK SPORT ODDS NET" --date D`."""
-    result = result.upper().strip()
-    if result not in ("W", "L", "P"): raise ValueError("result must be W, L or P")
+def log_bet(result, book, sport, odds, net, date, note=None, stake=None, legs=None, bet_type=None, leg_list=None, payout=None):
+    """Append one bet to ledger/user_results.jsonl like `add_user_result.py --bet "R BOOK SPORT ODDS NET stake=.. legs=.. type=.."`.
+    stake (risked $), legs, bet_type (SGP / Multi-game / Straight), leg_list (leg descriptions) and payout (total return) are
+    optional; records without them (all older ones) read exactly as before. With a stake but no net $, the net is computed
+    (loss = -stake, push = 0, win = stake x (decimal odds - 1)) and the entry says so."""
+    result = (result or "").upper().strip()
+    if result not in ("W", "L", "P"): raise ValueError("pick the result: Won, Lost or Push")
     datetime.strptime(date, "%Y-%m-%d")
     if net is not None:
         net = float(net)
         if result == "W" and net < 0: raise ValueError("a won bet can't have a negative net $ (enter what you won, e.g. 25)")
         if result == "L" and net > 0: raise ValueError("a lost bet can't have a positive net $ (enter the stake lost as a minus, e.g. -10)")
-    ov, bucket = aur.parse_odds(odds.strip() if isinstance(odds, str) and odds.strip() else None)
+    ov, bucket = aur.parse_odds(odds.strip() if isinstance(odds, str) and odds.strip() else (odds if isinstance(odds, int) else None))
+    ex = aur.extras(stake, legs, bet_type)
+    computed = False
+    if net is None and ex.get("stake") is not None:
+        st_ = ex["stake"]
+        if result == "L": net = -st_
+        elif result == "P": net = 0.0
+        elif ov is not None: net = st_ * (aur_dec(ov) - 1)
+        computed = net is not None
+    if ex.get("stake") is not None and net is not None and result == "L" and net < -ex["stake"] - 0.005:
+        raise ValueError(f"a lost bet can't lose more than its ${ex['stake']:.2f} stake")
     bet = {"result": result, "book": aur.norm_book(book) if book and book != "Other" else None,
            "sport": aur.norm_sport(sport) if sport and sport != "Other" else None, "odds": ov, "bucket": bucket,
-           "net": None if net is None else round(float(net), 2)}
+           "net": None if net is None else round(float(net), 2), **ex}
+    ll_ = [str(x).strip() for x in (leg_list or []) if str(x).strip()]
+    if ll_: bet["leg_list"] = ll_[:25]
+    if payout is not None: bet["payout"] = round(float(payout), 2)
+    if computed: bet["net_computed"] = True
     r = {"date": date, "wins": int(result == "W"), "losses": int(result == "L"), "pushes": int(result == "P"),
          "net": bet["net"], "units": None, "note": note or "logged in the app",
          "entered_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "bets": [bet]}
@@ -99,12 +119,32 @@ def log_bet(result, book, sport, odds, net, date, note=None):
     return r
 
 
+def aur_dec(a):
+    return 1 + (a / 100 if a > 0 else 100 / -a)
+
+
+# ---------- bankroll ----------
+def bankroll_add(kind, amount, date, note=None):
+    with LOCK:
+        return bl.add(kind, amount, date, note)
+
+
+def bankroll_summary():
+    with LOCK:
+        return bl.summary(bl.load(), aur.load())
+
+
+def stake_warning(stake, bankroll_sum=None):
+    sm = bankroll_sum if bankroll_sum is not None else bankroll_summary()
+    return bl.stake_check(stake, sm["current"]) if sm else None
+
+
 def today_et():
     return datetime.now(ET).strftime("%Y-%m-%d")
 
 
 # ---------- tracker ----------
-TRACKER_FILES = (ll.LEDGER, gs.GRADES, gs.USER)
+TRACKER_FILES = (ll.LEDGER, gs.GRADES, gs.USER, bl.BANKROLL)
 
 
 def ledger_signature():

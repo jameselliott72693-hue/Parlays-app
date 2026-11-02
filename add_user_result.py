@@ -9,8 +9,11 @@ Log the user's OWN betting results (kept separate from the auto-graded displayed
     python3 add_user_result.py --date 2026-10-23 --bet "W FanDuel NBA +250 25" --bet "L DraftKings NFL +300 -10"
     each --bet is "RESULT BOOK SPORT ODDS NET": RESULT is W, L or P; use - for any unknown field; multi-word books need
     quotes inside, e.g. --bet "W 'theScore Bet' NBA +200 20"
+  Optional stake (risked $), legs and bet type: --stake 10 --legs 3 --type SGP (whole entry, or the single --bet), or per bet as
+    extra key=value words: --bet "W FanDuel NBA +250 25 stake=10 legs=3 type=SGP"   (type: SGP, Multi-game, Straight)
   python3 add_user_result.py --list
   python3 add_user_result.py --undo          # removes the most recent entry
+  Bankroll (ledger/bankroll.jsonl): --bankroll-start 500 [--date D] | --deposit 100 | --withdraw 50 | --bankroll (show)
 """
 import re
 import argparse, json, os, shlex, sys
@@ -74,14 +77,49 @@ def odds_bucket(v):
     if v < 350: return "+300"
     return "+400"
 
+TYPES = {"sgp": "SGP", "same game": "SGP", "same game parlay": "SGP", "multi": "Multi-game", "multi-game": "Multi-game",
+         "multigame": "Multi-game", "multi game": "Multi-game", "parlay": "Multi-game", "straight": "Straight", "single": "Straight"}
+
+def norm_type(t):
+    """Bet type -> SGP / Multi-game / Straight (None for empty / '-')."""
+    if t is None or str(t).strip() in ("", "-"): return None
+    k = str(t).strip().lower()
+    if k not in TYPES: raise ValueError(f"bet type must be SGP, Multi-game or Straight, not {t!r}")
+    return TYPES[k]
+
+def parse_stake(v):
+    if v is None or str(v).strip() in ("", "-"): return None
+    x = round(float(str(v).replace("$", "").replace(",", "")), 2)
+    if x <= 0: raise ValueError("stake must be a positive dollar amount")
+    return x
+
+def parse_legs(v):
+    if v is None or str(v).strip() in ("", "-"): return None
+    n = int(v)
+    if not 1 <= n <= 25: raise ValueError("legs must be between 1 and 25")
+    return n
+
+def extras(stake=None, legs=None, typ=None):
+    """Optional per-bet fields (only the ones given), so old records and new ones read the same."""
+    out = {}
+    for k, v in (("stake", parse_stake(stake)), ("legs", parse_legs(legs)), ("type", norm_type(typ))):
+        if v is not None: out[k] = v
+    return out
+
 def parse_bet(txt):
     parts = shlex.split(txt)
     if not parts or parts[0].upper() not in ("W", "L", "P"): raise ValueError(f"--bet must start with W, L or P: {txt!r}")
+    kv = {}
+    for x in [x for x in parts if "=" in x]:
+        k, v = x.split("=", 1)
+        if k.lower() not in ("stake", "legs", "type"): raise ValueError(f"unknown --bet field {k!r} (use stake=, legs=, type=)")
+        kv[k.lower()] = v
+    parts = [x for x in parts if "=" not in x]
     parts += ["-"] * (5 - len(parts))
     res, book, sport, odds, net = parts[:5]
     ov, bucket = parse_odds(odds)
     return {"result": res.upper(), "book": norm_book(book), "sport": norm_sport(sport), "odds": ov, "bucket": bucket,
-            "net": None if net == "-" else float(net)}
+            "net": None if net == "-" else float(net), **extras(kv.get("stake"), kv.get("legs"), kv.get("type"))}
 
 def show(rows):
     w = sum(r["wins"] for r in rows); l = sum(r["losses"] for r in rows); p = sum(r.get("pushes") or 0 for r in rows)
@@ -102,10 +140,31 @@ def main():
     ap.add_argument("--sport", help="sport for the whole entry, e.g. NBA")
     ap.add_argument("--odds", help="American odds (+250) or target bucket (+200) for the whole entry")
     ap.add_argument("--bet", action="append", default=[], help='one bet: "RESULT BOOK SPORT ODDS NET", e.g. "W FanDuel NBA +250 25" (repeatable)')
+    ap.add_argument("--stake", help="risked $ (whole entry, or the single --bet)")
+    ap.add_argument("--legs", help="number of legs (whole entry, or the single --bet)")
+    ap.add_argument("--type", help="bet type: SGP, Multi-game or Straight (whole entry, or the single --bet)")
+    ap.add_argument("--bankroll-start", type=float, help="set the starting bankroll ($) on --date (default today ET)")
+    ap.add_argument("--deposit", type=float, help="record a deposit ($) into the bankroll"); ap.add_argument("--withdraw", type=float, help="record a withdrawal ($)")
+    ap.add_argument("--bankroll", action="store_true", help="show the current bankroll")
     ap.add_argument("--list", action="store_true"); ap.add_argument("--undo", action="store_true")
     a = ap.parse_args()
     rows = load()
     if a.list: show(rows); return
+    if a.bankroll_start is not None or a.deposit is not None or a.withdraw is not None or a.bankroll:
+        import bankroll_lib as bl
+        d = a.date or datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
+        try:
+            for kind, amt in (("start", a.bankroll_start), ("deposit", a.deposit), ("withdrawal", a.withdraw)):
+                if amt is not None: print("added:", json.dumps(bl.add(kind, amt, d, a.note)))
+        except ValueError as ex:
+            ap.error(str(ex))
+        sm = bl.summary(bl.load(), rows)
+        print("no starting bankroll set (use --bankroll-start)" if not sm else
+              f"bankroll ${sm['current']:,.2f} (start ${sm['start']:,.2f} on {sm['start_date']}, deposits ${sm['deposits']:,.2f}, "
+              f"withdrawals ${sm['withdrawals']:,.2f}, bets net ${sm['bets_net']:+,.2f} over {sm['n_bets']} bets"
+              + (f", {sm['n_no_net']} bets without net $ not counted" if sm["n_no_net"] else "")
+              + f"); flat 0.5-1% stake = ${sm['stake_min']:.2f}-${sm['stake_max']:.2f}")
+        return
     if a.undo:
         if not rows: print("nothing to undo"); return
         r = rows.pop(); save(rows); print("removed:", json.dumps(r)); return
@@ -113,8 +172,12 @@ def main():
     try:
         bets = [parse_bet(b) for b in a.bet]
         odds, bucket = parse_odds(a.odds)
+        ex_ = extras(a.stake, a.legs, a.type)
     except ValueError as ex:
         ap.error(str(ex))
+    if bets and ex_:
+        if len(bets) > 1: ap.error("--stake/--legs/--type apply to one bet; with several --bet use stake=/legs=/type= inside each --bet")
+        bets[0] = {**bets[0], **ex_}; ex_ = {}
     if bets:
         if a.book or a.sport or a.odds: ap.error("use either --bet (per-bet tags) or --book/--sport/--odds (whole entry), not both")
         a.wins = sum(b["result"] == "W" for b in bets); a.losses = sum(b["result"] == "L" for b in bets)
@@ -129,6 +192,7 @@ def main():
     if a.book: r["book"] = norm_book(a.book)
     if a.sport: r["sport"] = norm_sport(a.sport)
     if odds is not None: r["odds"], r["bucket"] = odds, bucket
+    r.update(ex_)
     if bets: r["bets"] = bets
     rows.append(r); save(rows); print("added:", json.dumps(r)); show(rows)
 

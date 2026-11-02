@@ -503,7 +503,17 @@ def build_page_data(slips, graded):
     return {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "overall": tally(pairs),
             "breakdown": breakdown, "fBreakdown": fbreakdown, "flagged": tally(fpairs), "fFacts": ffacts,
             "flagKeys": sorted({strat(s) for s, _ in fpairs}), "shop": shop_summary(pairs), "byRun": by_run, "user": user, "clv": clv_rows, "facts": facts, "userBreak": user_break, "userPays": user_what_pays(user),
+            "bankroll": _bankroll(user),
             "lost": ["2026-10-19 22:26 single-book report (never saved; its best-price report was recovered)"]}
+
+def _bankroll(user):
+    """Bankroll summary for the Page / app (ledger/bankroll.jsonl + your bets); None until a starting bankroll is set."""
+    try:
+        import bankroll_lib as bl
+        return bl.summary(bl.load(), user)
+    except Exception as ex:
+        print(f"[warn] bankroll: {ex}", file=sys.stderr)
+        return None
 
 # "Your reported bets: what pays" (added 2026-10-31): the user's OWN results only (user_results.jsonl), never the graded slips.
 # Per-bet rows when bets were logged; a day logged only as totals is one "unitemized" lump that lands in every dimension's
@@ -513,9 +523,10 @@ UNK = "Unknown / not reported"
 def _odds_range(o):
     if o is None: return UNK
     return "Under +100" if o < 100 else "+100 to +199" if o < 200 else "+200 to +399" if o < 400 else "+400 and up"
+TYPE_LABEL = {"sgp": "SGP", "multi-game": "Multi-game", "multi": "Multi-game", "straight": "Straight", "single": "Straight"}
 def _bet_type(bt):
     t = bt.get("type") or bt.get("kind")
-    if t: return t
+    if t: return TYPE_LABEL.get(str(t).strip().lower(), t)
     sp = bt.get("sport") or ""
     return "Multi-game (cross-sport)" if sp.startswith("Mixed") else UNK
 def _stake(bt):
@@ -528,36 +539,43 @@ def _stake(bt):
         return round(net / per, 2) if per > 0 else None
     return None
 def user_what_pays(user):
-    DIMS = {"sport": lambda b: b.get("sport") or UNK, "legs": lambda b: (f"{b['legs']} legs" if b.get("legs") else UNK),
+    DIMS = {"sport": lambda b: b.get("sport") or UNK, "legs": lambda b: (f"{b['legs']} leg{'' if b['legs'] == 1 else 's'}" if b.get("legs") else UNK),
             "type": _bet_type, "odds": lambda b: _odds_range(b.get("odds")), "book": lambda b: b.get("book") or UNK}
     ORDER = {"odds": ["Under +100", "+100 to +199", "+200 to +399", "+400 and up"]}
-    items = []  # (bet dict, n, w, l, p, net, stake)
+    items = []  # (bet dict, n, w, l, p, net, stake, stake was logged)
     for r in user:
         if r.get("bets"):
             for bt in r["bets"]:
-                items.append((bt, 1, int(bt["result"] == "W"), int(bt["result"] == "L"), int(bt["result"] == "P"), bt.get("net"), _stake(bt)))
+                items.append((bt, 1, int(bt["result"] == "W"), int(bt["result"] == "L"), int(bt["result"] == "P"), bt.get("net"), _stake(bt),
+                              bt.get("stake") is not None))
         else:
-            tags = {"book": r.get("book"), "sport": r.get("sport"), "odds": r.get("odds")}
+            tags = {"book": r.get("book"), "sport": r.get("sport"), "odds": r.get("odds"),
+                    **{k: r[k] for k in ("stake", "legs", "type") if r.get(k) is not None}}
             n = r["wins"] + r["losses"] + (r.get("pushes") or 0)
             if n == 1:
                 one = dict(tags, result="W" if r["wins"] else "L" if r["losses"] else "P", net=r.get("net"))
-                items.append((one, 1, r["wins"], r["losses"], r.get("pushes") or 0, r.get("net"), _stake(one)))
+                items.append((one, 1, r["wins"], r["losses"], r.get("pushes") or 0, r.get("net"), _stake(one), one.get("stake") is not None))
             else:  # several bets as one daily total: per-bet tags would not be per bet, so all fields count as unknown
-                items.append(({}, n, r["wins"], r["losses"], r.get("pushes") or 0, r.get("net"), None))
+                items.append(({}, n, r["wins"], r["losses"], r.get("pushes") or 0, r.get("net"), None, False))
     def agg(rows):
-        a = {"n": 0, "w": 0, "l": 0, "p": 0, "net": 0.0, "netN": 0, "sn": 0, "staked": 0.0, "snet": 0.0}
-        for bt, n, w, l, p, net, st in rows:
+        # sn/staked/snet: bets with a known stake (logged, or derived from net $ and odds for older bets);
+        # lsn/lstaked/lsnet: only bets whose stake was logged (the "real" ROI)
+        a = {"n": 0, "w": 0, "l": 0, "p": 0, "net": 0.0, "netN": 0, "sn": 0, "staked": 0.0, "snet": 0.0, "lsn": 0, "lstaked": 0.0, "lsnet": 0.0}
+        for bt, n, w, l, p, net, st, logged in rows:
             a["n"] += n; a["w"] += w; a["l"] += l; a["p"] += p
             if net is not None: a["net"] += net; a["netN"] += n
-            if st is not None and net is not None: a["sn"] += n; a["staked"] += st; a["snet"] += net
-        for k in ("net", "staked", "snet"): a[k] = round(a[k], 2)
+            if st is not None and net is not None:
+                a["sn"] += n; a["staked"] += st; a["snet"] += net
+                if logged: a["lsn"] += n; a["lstaked"] += st; a["lsnet"] += net
+        for k in ("net", "staked", "snet", "lstaked", "lsnet"): a[k] = round(a[k], 2)
         return a
     dims = {}
     for dim, fn in DIMS.items():
         groups = defaultdict(list)
         for it in items: groups[fn(it[0]) if it[0] else UNK].append(it)
         order = ORDER.get(dim, [])
-        keys = sorted(groups, key=lambda k: (k == UNK, order.index(k) if k in order else len(order), k))
+        num = lambda k: int(k.split()[0]) if dim == "legs" and k.split()[0].isdigit() else 0
+        keys = sorted(groups, key=lambda k: (k == UNK, order.index(k) if k in order else len(order), num(k), k))
         dims[dim] = [{"k": k, **agg(groups[k])} for k in keys]
     nb = sum(it[1] for it in items)
     unitem = [it for it in items if not it[0]]
@@ -566,9 +584,13 @@ def user_what_pays(user):
     for dim, label in (("legs", "leg count"), ("type", "bet type (SGP / multi-game / straight)")):
         u = next((x["n"] for x in dims[dim] if x["k"] == UNK), 0)
         if u: gaps.append(f"{label} not reported for {u} of {nb} bets" + (" (only a cross-sport tag implies a multi-game parlay)" if dim == "type" and u < nb else ""))
-    nst = agg(items)["sn"]
-    gaps.append(f"stake is never logged; it is derived from net $ and odds for {nst} of {nb} bets (exact for losses, back-calculated for wins)")
-    return {"overall": agg(items), "dims": dims, "gaps": gaps, "nBets": nb}
+    ov = agg(items)
+    nl, nd = ov["lsn"], ov["sn"] - ov["lsn"]
+    gaps.append(f"stake logged for {nl} of {nb} bets" + (f"; derived from net $ and odds for {nd} older bets (exact for losses, back-calculated for wins)" if nd else ""))
+    roi = {"logged": {"n": nl, "staked": ov["lstaked"], "net": ov["lsnet"], "roi": round(100 * ov["lsnet"] / ov["lstaked"], 1) if ov["lstaked"] else None},
+           "all": {"n": ov["sn"], "staked": ov["staked"], "net": ov["snet"], "roi": round(100 * ov["snet"] / ov["staked"], 1) if ov["staked"] else None,
+                   "derived": nd}}
+    return {"overall": ov, "dims": dims, "gaps": gaps, "nBets": nb, "roi": roi}
 
 if __name__ == "__main__":
     main()

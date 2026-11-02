@@ -7,12 +7,15 @@ type F = { s: string; l: string; b: string; t: number; sp: string; r: string; p:
 type UB = { k: string; w: number; l: number; p: number; net: number | null; units: number | null; dsum: number; dn: number };
 type Agg = { k: string; n: number; w: number; l: number; v: number; o: number; pend: number; units: number; staked: number; dsum: number };
 type UPRow = { k: string; n: number; w: number; l: number; p: number; net: number; netN: number; sn: number; staked: number; snet: number };
-type UP = { overall: UPRow; dims: Record<string, UPRow[]>; gaps: string[]; nBets: number };
+type ROI = { n: number; staked: number; net: number; roi: number | null; derived?: number };
+type UP = { overall: UPRow; dims: Record<string, UPRow[]>; gaps: string[]; nBets: number; roi?: { logged: ROI; all: ROI } };
+type BR = { start: number; start_date: string; current: number; deposits: number; withdrawals: number; bets_net: number; n_bets: number;
+  n_no_net: number; stake_min: number; stake_max: number };
 type Data = {
   updated: string; overall: T; breakdown: Record<string, (T & { k: string })[]>; byRun: (T & { run: string; flagged?: boolean })[];
   user: UserRow[]; lost: string[]; clv: { k: string; n: number; avg: number; beat: number; mkt?: Record<string, [number, number]> }[];
   flagKeys?: string[]; shop?: { n: number; better: number; avg_gain_pct: number } | null;
-  facts: F[]; userBreak: Record<string, UB[]>; userPays?: UP;
+  facts: F[]; userBreak: Record<string, UB[]>; userPays?: UP; bankroll?: BR | null;
   flagged: T; fBreakdown: Record<string, (T & { k: string })[]>; fFacts: F[];
 };
 
@@ -30,6 +33,8 @@ const aggRow = (a: Agg, withOdds: boolean): string[] => {
   return withOdds ? [...row, decToAm(a.dsum / a.n)] : row;
 };
 const money = (n: number): string => `${n >= 0 ? "+" : "-"}$${Math.abs(n).toFixed(2)}`;
+const usd = (n: number): string => `${n < 0 ? "-" : ""}$${Math.abs(n).toFixed(2)}`;
+const pct = (r: ROI | undefined): string => (r && r.roi !== null ? `${r.roi >= 0 ? "+" : ""}${r.roi.toFixed(1)}% (${r.n} bet${r.n === 1 ? "" : "s"}, ${usd(r.staked)} staked)` : "-");
 
 type Dim = "strategy" | "list" | "report" | "props";
 
@@ -131,6 +136,7 @@ export default function App() {
         ]} />
         {DATA.flagged.n ? <Text>{R(`\ud83d\udd34 Flagged-price slips (${flagKeys.join(", ")}, tracked apart; off by default since v3): ${DATA.flagged.hit}-${DATA.flagged.miss} \u00b7 hit rate ${rate(DATA.flagged)} \u00b7 ${units(DATA.flagged.profit)} \u00b7 ${DATA.flagged.pending} pending \u00b7 ${DATA.flagged.n} slips logged`)}</Text> : null}
         <Text>{B(`Your bets: ${uw}-${ul}${up ? ` (${up} push)` : ""} \u00b7 win rate ${uw + ul ? `${((100 * uw) / (uw + ul)).toFixed(1)}%` : "-"} \u00b7 net ${money(unet)}${uunits.length ? ` / ${units(uu)}` : ""} \u00b7 ${u.length} days logged`)}</Text>
+        {DATA.bankroll ? <Text>{B(`Bankroll: ${usd(DATA.bankroll.current)} (started ${usd(DATA.bankroll.start)} on ${DATA.bankroll.start_date}${DATA.bankroll.deposits ? `, deposits ${usd(DATA.bankroll.deposits)}` : ""}${DATA.bankroll.withdrawals ? `, withdrawals ${usd(DATA.bankroll.withdrawals)}` : ""}, your bets net ${money(DATA.bankroll.bets_net)} over ${DATA.bankroll.n_bets} bets${DATA.bankroll.n_no_net ? `; ${DATA.bankroll.n_no_net} without net $ not counted` : ""}) \u00b7 flat 0.5-1% stake now ${usd(DATA.bankroll.stake_min)}-${usd(DATA.bankroll.stake_max)}`)}</Text> : null}
       </Section>
       <Section heading="Breakdown">
         <Segmented<Dim> value={dim} onChange={setDim} options={[
@@ -186,6 +192,7 @@ export default function App() {
               r.sn ? `$${r.staked.toFixed(2)}${r.sn < r.n ? ` (${r.sn} of ${r.n})` : ""}` : "-", r.netN ? money(r.net) : "-",
               r.sn && r.staked ? `${r.snet >= 0 ? "+" : ""}${((100 * r.snet) / r.staked).toFixed(1)}%${r.sn < r.n ? ` (${r.sn} bets)` : ""}` : "-"].map(B))} />
           <Text>{B(`Your bets only (never the graded slips). ROI is net over staked, counting only bets with a known stake. Missing: ${DATA.userPays.gaps.join("; ")}.`)}</Text>
+          {DATA.userPays.roi ? <Text>{B(`ROI on logged stakes: ${pct(DATA.userPays.roi.logged)} \u00b7 including stakes derived from net $ and odds for ${DATA.userPays.roi.all.derived ?? 0} older bets: ${pct(DATA.userPays.roi.all)}.`)}</Text> : null}
           <Text>{B(`Small sample: ${DATA.userPays.nBets} bets in all. A group under 10 bets is not meaningful yet; one long-odds win swings its ROI.`)}</Text>
         </Section>
       ) : null}

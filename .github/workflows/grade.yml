@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 env:
   DATA_BRANCH: ledger-data   # must match GH_DATA_BRANCH in the app (default ledger-data)
-  FILES: "ledger/slips.jsonl ledger/user_results.jsonl ledger/grades.json ledger/page_contents.tsx.txt ledger/leg_overrides.json"
+  FILES: "ledger/slips.jsonl ledger/user_results.jsonl ledger/grades.json ledger/page_contents.tsx.txt ledger/leg_overrides.json ledger/bankroll.jsonl"
 jobs:
   grade:
     runs-on: ubuntu-latest

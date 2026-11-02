@@ -1,1 +1,2 @@
 streamlit>=1.40
+pytesseract>=0.3.10  # screenshot bet-slip reader (needs the tesseract-ocr system package: packages.txt)

@@ -28,6 +28,7 @@ for _k in ("ODDS_API_KEY", "ODDS_MAX_CREDITS_PER_RUN"):
         os.environ[_k] = str(cfg(_k))
 
 import services as S          # noqa: E402
+import slip_reader as SR      # noqa: E402
 from storage import get_storage  # noqa: E402
 
 CSS = """
@@ -298,7 +299,54 @@ with tab_track:
     unet = sum(r["net"] for r in u if r.get("net") is not None)
     st.markdown(f"<div class='red'>\U0001F534 Flagged ({', '.join(d['flagKeys']) or 'none'}): {fl['hit']}-{fl['miss']} · {units(fl['profit'])} · {fl['pending']} pending</div>"
                 f"<div class='blue'>Your bets: {uw}-{ul} · net {'+' if unet >= 0 else '-'}${abs(unet):.2f} · {len({r['date'] for r in u})} days</div>", unsafe_allow_html=True)
+    br, roi = d.get("bankroll"), (d.get("userPays") or {}).get("roi") or {}
+    pct = lambda r: (f"{r['roi']:+.1f}% ({r['n']} bet{'' if r['n'] == 1 else 's'})" if r and r.get("roi") is not None else "-")
+    st.markdown("<div class='blue'>" + (f"💰 Bankroll ${br['current']:,.2f} · flat 0.5-1% stake ${br['stake_min']:.2f}-${br['stake_max']:.2f}"
+                                       if br else "💰 Bankroll not set (open the bankroll panel below)")
+                + f" · ROI on logged stakes {pct(roi.get('logged'))}"
+                + (f" · incl. derived stakes for {roi['all'].get('derived', 0)} older bets {pct(roi.get('all'))}" if roi.get("all") and roi["all"].get("derived") else "")
+                + "</div>", unsafe_allow_html=True)
     st.caption("Default = regular slips, red = flagged-price slips, blue = your own bets. Never added together. 1 unit per slip.")
+    with st.expander("💰 Bankroll and what pays (your bets)"):
+        if br:
+            import pandas as pd
+            st.markdown(f"<div class='blue'>Started ${br['start']:,.2f} on {br['start_date']}"
+                        + (f" · deposits ${br['deposits']:,.2f}" if br["deposits"] else "") + (f" · withdrawals ${br['withdrawals']:,.2f}" if br["withdrawals"] else "")
+                        + f" · your bets net {'+' if br['bets_net'] >= 0 else '-'}${abs(br['bets_net']):,.2f} over {br['n_bets']} bets"
+                        + (f" · {br['n_no_net']} bets without net $ not counted" if br["n_no_net"] else "") + "</div>", unsafe_allow_html=True)
+            if len(br["series"]) > 1:
+                df = pd.DataFrame(br["series"], columns=["date", "Bankroll $"])
+                df["date"] = pd.to_datetime(df["date"])
+                st.line_chart(df.set_index("date"), height=170, color="#0b5fd8")
+        with st.form("bankroll", clear_on_submit=True):
+            k1, k2, k3 = st.columns([3, 2, 2])
+            kind = k1.selectbox("Bankroll entry", ["start", "deposit", "withdrawal"],
+                                format_func=lambda x: {"start": "Set starting bankroll", "deposit": "Deposit", "withdrawal": "Withdrawal"}[x])
+            amt = k2.number_input("Amount $", min_value=0.0, value=None, step=10.0, format="%.2f")
+            bdate = k3.date_input("Date", value=datetime.now(S.ET).date(), key="br_date")
+            bnote = st.text_input("Note (optional)", key="br_note")
+            if st.form_submit_button("Save bankroll entry", use_container_width=True):
+                try:
+                    if amt is None: raise ValueError("enter an amount")
+                    sync_down(force=True)
+                    S.bankroll_add(kind, amt, bdate.strftime("%Y-%m-%d"), bnote or None)
+                    saved = sync_up(["ledger/bankroll.jsonl"], f"Bankroll {kind} {bdate}")
+                    st.success(f"Saved: {kind} ${amt:,.2f} on {bdate}. " + (saved or ""))
+                except ValueError as ex:
+                    st.error(f"Not saved: {ex}")
+        st.caption("A new starting bankroll replaces the old one. Bets dated after its date (and that day's bets logged after you set it) move it; bets without a net $ can't.")
+        up_ = d.get("userPays") or {}
+        if up_.get("nBets"):
+            dim = st.radio("What pays, by", ["sport", "legs", "type", "odds", "book"], horizontal=True, key="pays_dim",
+                           format_func=lambda x: {"sport": "Sport", "legs": "Legs", "type": "Bet type", "odds": "Odds", "book": "Book"}[x])
+            rows = []
+            for r in up_["dims"].get(dim, []) + [dict(up_["overall"], k="Overall")]:
+                rows.append(("you", [r["k"], r["n"], f"{r['w']}-{r['l']}-{r['p']}",
+                                     f"${r['staked']:.2f}" + (f" ({r['sn']}/{r['n']})" if r["sn"] < r["n"] else "") if r["sn"] else "-",
+                                     f"{'+' if r['net'] >= 0 else '-'}${abs(r['net']):.2f}" if r["netN"] else "-",
+                                     f"{100 * r['snet'] / r['staked']:+.0f}%" if r["sn"] and r["staked"] else "-"]))
+            st.markdown(table(["", "Bets", "W-L-P", "Staked", "Net $", "ROI"], rows), unsafe_allow_html=True)
+            st.caption("Missing: " + "; ".join(up_.get("gaps", [])) + ".")
     strategies = sorted({x["s"] for x in d["facts"]} - set(d["flagKeys"]))
     f1, f2 = st.columns(2)
     strat = f1.selectbox("Strategy", ["all"] + strategies + d["flagKeys"], format_func=lambda x: "All strategies" if x == "all" else ("\U0001F534 " + x if x.endswith("-flagged") else x))
@@ -330,32 +378,116 @@ with tab_track:
         rows = []
         for r in reversed(u[-30:]):
             for b in (r.get("bets") or [None]):
+                src = b or r
+                typ = " · ".join(x for x in [src.get("type") or "", f"{src['legs']}L" if src.get("legs") else ""] if x) or "-"
+                stake = f"{src['stake']:.2f}" if src.get("stake") is not None else "-"
                 if b: rows.append(("you", [r["date"], b["result"], b.get("book") or "-", b.get("sport") or "-", fam(b["odds"]) if b.get("odds") else "-",
-                                          f"{b['net']:+.2f}" if b.get("net") is not None else "-"]))
+                                          typ, stake, f"{b['net']:+.2f}" if b.get("net") is not None else "-"]))
                 else: rows.append(("you", [r["date"], f"{r['wins']}-{r['losses']}-{r.get('pushes') or 0}", r.get("book") or "-", r.get("sport") or "-",
-                                          fam(r["odds"]) if r.get("odds") else "-", f"{r['net']:+.2f}" if r.get("net") is not None else "-"]))
-        st.markdown(table(["Date", "Result", "Book", "Sport", "Odds", "Net $"], rows), unsafe_allow_html=True)
+                                          fam(r["odds"]) if r.get("odds") else "-", typ, stake, f"{r['net']:+.2f}" if r.get("net") is not None else "-"]))
+        st.markdown(table(["Date", "Result", "Book", "Sport", "Odds", "Type", "Stake", "Net $"], rows), unsafe_allow_html=True)
+
+FORM_KEYS = ("f_result", "f_book", "f_sport", "f_date", "f_odds", "f_legs", "f_type", "f_stake", "f_net", "f_leglist", "f_note", "f_payout")
+
+
+def prefill(p):
+    """Copy a parsed slip into the bet form's widget state (the user still checks everything before saving)."""
+    ss = st.session_state
+    ss["f_result"] = p.get("result")
+    ss["f_book"] = p["book"] if p.get("book") in S.BOOK_CHOICES else "Other"
+    ss["f_sport"] = p.get("sport") or "Other"
+    try: ss["f_date"] = datetime.strptime(p["date"], "%Y-%m-%d").date()
+    except Exception: ss["f_date"] = datetime.now(S.ET).date()
+    ss["f_odds"] = fam(p["odds"]) if p.get("odds") is not None else ""
+    ss["f_legs"] = p.get("legs")
+    ss["f_type"] = p.get("bet_type") or "-"
+    ss["f_stake"] = p.get("stake")
+    ss["f_net"] = p.get("net")
+    ss["f_payout"] = p.get("payout")
+    ss["f_leglist"] = "\n".join(p.get("leg_list") or [])
+    ss["f_note"] = "read from a slip" + (f" (book: {p['book']})" if p.get("book") and p["book"] not in S.BOOK_CHOICES else "")
+
+
+def clear_form():
+    for k in FORM_KEYS + ("slip_parsed",): st.session_state.pop(k, None)
+
 
 with tab_log:
     st.caption("Adds one of YOUR bets (kept apart from the generated slips; shown in blue on the tracker).")
-    with st.form("logbet", clear_on_submit=True):
-        res_ = st.radio("Result", ["W", "L", "P"], horizontal=True, format_func=lambda x: {"W": "Won", "L": "Lost", "P": "Push"}[x])
-        a, b = st.columns(2)
-        book = a.selectbox("Book", S.BOOK_CHOICES)
-        sport = b.selectbox("Sport", S.SPORT_CHOICES)
-        a, b = st.columns(2)
-        odds = a.text_input("Odds (American)", placeholder="+250")
-        net = b.number_input("Net $ (+ won / - lost)", value=None, step=1.0, format="%.2f", placeholder="e.g. 25 or -10",
-                             help="Leave empty if you don't know it (it is then not counted in net $ / ROI).")
-        date = st.date_input("Date", value=datetime.now(S.ET).date())
-        note = st.text_input("Note (optional)")
-        go = st.form_submit_button("Log my bet", type="primary", use_container_width=True)
+    if st.session_state.get("log_msg"):
+        st.success(st.session_state.pop("log_msg"))
+    with st.expander("📋 Read a bet slip (paste the text or upload a screenshot)", expanded=not st.session_state.get("slip_parsed")):
+        st.caption("DraftKings, FanDuel, Caesars, theScore Bet, BetMGM, Underdog (others best-effort). Nothing is saved until you press Save below.")
+        slip_txt = st.text_area("Bet slip text", key="slip_text", height=140, placeholder="Copy the bet from your sportsbook's bet history and paste it here")
+        ocr_ok, ocr_msg = SR.ocr_status()
+        shot = st.file_uploader("...or a screenshot", type=["png", "jpg", "jpeg", "webp"], key="slip_img",
+                                disabled=not ocr_ok, help=None if ocr_ok else ocr_msg)
+        if not ocr_ok: st.caption(ocr_msg)
+        if st.button("Read slip", use_container_width=True, disabled=not (slip_txt.strip() or shot)):
+            text, err = slip_txt, None
+            if shot is not None:
+                with st.spinner("Reading the screenshot (free OCR, a few seconds)..."):
+                    ocr_text, err = SR.ocr_image(shot.getvalue())
+                if ocr_text: text = ocr_text + ("\n" + slip_txt if slip_txt.strip() else "")
+            if err and not text.strip():
+                st.error(err)
+            else:
+                if err: st.warning(err + " Using the pasted text.")
+                p = SR.parse_slip(text, today=datetime.now(S.ET).date())
+                p["ocr"] = shot is not None and not err
+                p["raw"] = text
+                st.session_state["slip_parsed"] = p
+                prefill(p)
+                st.rerun()
+    p = st.session_state.get("slip_parsed")
+    if p:
+        st.info("Filled in from the slip" + (" (screenshot OCR: double-check every number)" if p.get("ocr") else "")
+                + ". Check every field and fix anything wrong, then press **Save bet**.")
+        if p.get("notes"): st.caption("Reader notes: " + "; ".join(p["notes"]) + ".")
+        if p.get("ocr"):
+            with st.expander("Text read from the screenshot"): st.code(p.get("raw", "")[:3000])
+    ss = st.session_state
+    for k, v in (("f_result", None), ("f_book", S.BOOK_CHOICES[0]), ("f_sport", S.SPORT_CHOICES[0]), ("f_date", datetime.now(S.ET).date()),
+                 ("f_odds", ""), ("f_legs", None), ("f_type", "-"), ("f_stake", None), ("f_net", None), ("f_leglist", ""), ("f_note", "")):
+        ss.setdefault(k, v)  # defaults live in session state, so prefilled values never clash with widget defaults
+    res_ = st.radio("Result", ["W", "L", "P"], horizontal=True, key="f_result",
+                    format_func=lambda x: {"W": "Won", "L": "Lost", "P": "Push / void"}[x])
+    a, b = st.columns(2)
+    book = a.selectbox("Book", S.BOOK_CHOICES, key="f_book")
+    sports = S.SPORT_CHOICES + ([ss["f_sport"]] if ss.get("f_sport") and ss["f_sport"] not in S.SPORT_CHOICES else [])
+    sport = b.selectbox("Sport", sports, key="f_sport")
+    a, b, c = st.columns(3)
+    odds = a.text_input("Odds (American)", placeholder="+250", key="f_odds")
+    legs = b.number_input("Legs", min_value=1, max_value=25, step=1, key="f_legs", placeholder="e.g. 3")
+    btype = c.selectbox("Bet type", ["-"] + S.TYPE_CHOICES, key="f_type", format_func=lambda x: "Not sure" if x == "-" else x)
+    a, b = st.columns(2)
+    stake = a.number_input("Stake $ (risked)", min_value=0.0, step=1.0, format="%.2f", key="f_stake", placeholder="e.g. 10")
+    net = b.number_input("Net $ (+ won / - lost)", step=1.0, format="%.2f", placeholder="e.g. 25 or -10", key="f_net",
+                         help="Leave empty to work it out from stake + odds (or leave both empty if unknown).")
+    brs = S.bankroll_summary()
+    if brs and brs["current"] > 0:
+        warn = S.stake_warning(stake, brs) if stake else None
+        if warn: st.warning("\u26a0\ufe0f " + warn)
+        else: st.caption(f"Your flat 0.5-1% rule on a ${brs['current']:,.2f} bankroll: stake ${brs['stake_min']:.2f} - ${brs['stake_max']:.2f}.")
+    date = st.date_input("Date", key="f_date")
+    leglist = st.text_area("Legs (one per line, optional)", key="f_leglist", height=90)
+    note = st.text_input("Note (optional)", key="f_note")
+    a, b = st.columns([3, 1])
+    go = a.button("Save bet", type="primary", use_container_width=True)
+    if b.button("Clear", use_container_width=True):
+        clear_form(); st.rerun()
     if go:
         try:
+            if res_ is None: raise ValueError("pick the result (Won, Lost or Push)")
             sync_down(force=True)
-            r = S.log_bet(res_, book, sport, odds or None, net, date.strftime("%Y-%m-%d"), note or None)
+            r = S.log_bet(res_, book, sport, odds or None, net, date.strftime("%Y-%m-%d"), note or None, stake=stake, legs=legs,
+                          bet_type=None if btype == "-" else btype, leg_list=leglist.splitlines(), payout=ss.get("f_payout") if p else None)
             saved = sync_up(["ledger/user_results.jsonl"], f"Log my bet {r['date']} {res_}")
-            st.success(f"Logged: {res_} {book} {sport} {odds or ''} " + (f"{net:+.2f}" if net is not None else "(net not given)")
-                       + f" on {r['date']}. " + (saved or ""))
+            bt = r["bets"][0]
+            ss["log_msg"] = (f"Logged: {res_} {book} {sport} {odds or ''} " + (f"stake ${bt['stake']:.2f} " if bt.get("stake") is not None else "")
+                             + (f"net {bt['net']:+.2f}" + (" (worked out from stake and odds)" if bt.get("net_computed") else "") if bt["net"] is not None else "(net not given)")
+                             + f" on {r['date']}. " + (saved or ""))
+            clear_form(); ss.pop("slip_text", None)
+            st.rerun()
         except ValueError as ex:
             st.error(f"Not logged: {ex}")
