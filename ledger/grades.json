@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-11-02T13:58:03+00:00",
+ "graded_at": "2026-11-02T14:08:58+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -13,7 +13,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 0.0
@@ -26,7 +26,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -142,
       "line": null,
       "clv_pp": -10.07
@@ -48,7 +48,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 0.0
@@ -61,7 +61,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 2.27
@@ -83,7 +83,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -142,
       "line": null,
       "clv_pp": -10.07
@@ -96,7 +96,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 2.27
@@ -118,7 +118,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 2.27
@@ -147,7 +147,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 0.0
@@ -176,7 +176,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -142,
       "line": null,
       "clv_pp": -10.07
@@ -274,7 +274,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 2.27
@@ -310,7 +310,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 2.05
@@ -346,7 +346,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 2.05
@@ -382,7 +382,7 @@
      "sport": "nfl",
      "commence": "2026-10-20T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -410,
       "line": null,
       "clv_pp": -0.74
@@ -411,7 +411,7 @@
      "sport": "nfl",
      "commence": "2026-10-20T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -410,
       "line": null,
       "clv_pp": -0.74
@@ -440,7 +440,7 @@
      "sport": "nfl",
      "commence": "2026-10-20T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -410,
       "line": null,
       "clv_pp": -0.74
@@ -515,7 +515,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -175,
       "line": null,
       "clv_pp": -2.81
@@ -597,7 +597,7 @@
      "sport": "nba",
      "commence": "2026-10-20T19:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 105,
       "line": null,
       "clv_pp": -1.22
@@ -672,7 +672,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 145,
       "line": null,
       "clv_pp": 3.22
@@ -707,7 +707,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -170,
       "line": null,
       "clv_pp": 0.7
@@ -729,7 +729,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 4.43
@@ -742,7 +742,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -170,
       "line": null,
       "clv_pp": 0.7
@@ -764,7 +764,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -142,
       "line": null,
       "clv_pp": -7.99
@@ -799,7 +799,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -142,
       "line": null,
       "clv_pp": -7.99
@@ -864,7 +864,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -170,
       "line": null,
       "clv_pp": 0.7
@@ -984,7 +984,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 142,
       "line": null,
       "clv_pp": 4.29
@@ -1020,7 +1020,7 @@
      "sport": "nba",
      "commence": "2026-10-20T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 145,
       "line": null,
       "clv_pp": 2.65
@@ -1042,7 +1042,7 @@
      "sport": "nfl",
      "commence": "2026-10-20T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -410,
       "line": null,
       "clv_pp": 1.44
@@ -1071,7 +1071,7 @@
      "sport": "nfl",
      "commence": "2026-10-20T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -410,
       "line": null,
       "clv_pp": 0.59
@@ -1100,7 +1100,7 @@
      "sport": "nfl",
      "commence": "2026-10-20T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -410,
       "line": null,
       "clv_pp": -0.56
@@ -1267,7 +1267,7 @@
      "sport": "nba",
      "commence": "2026-10-20T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 145,
       "line": null,
       "clv_pp": 2.65
@@ -1296,7 +1296,7 @@
      "sport": "nba",
      "commence": "2026-10-20T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 145,
       "line": null,
       "clv_pp": 2.65
@@ -1396,7 +1396,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 4.43
@@ -1418,7 +1418,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 2.05
@@ -1431,7 +1431,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -170,
       "line": null,
       "clv_pp": 0.7
@@ -1505,7 +1505,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 4.43
@@ -1580,7 +1580,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 142,
       "line": null,
       "clv_pp": 4.29
@@ -1609,7 +1609,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 142,
       "line": null,
       "clv_pp": 4.29
@@ -1622,7 +1622,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -112,
       "line": -3.5
      },
@@ -1643,7 +1643,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 6.52
@@ -1656,7 +1656,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -4.48
@@ -1678,7 +1678,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 6.52
@@ -1713,7 +1713,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -4.48
@@ -1726,7 +1726,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": -1.99
@@ -1748,7 +1748,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -4.48
@@ -1806,7 +1806,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": -3.42
@@ -1835,7 +1835,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -218,
       "line": null,
       "clv_pp": -0.68
@@ -1864,7 +1864,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 6.52
@@ -1893,7 +1893,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": -1.99
@@ -1997,7 +1997,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 1.32
@@ -2026,7 +2026,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 1.32
@@ -2055,7 +2055,7 @@
      "sport": "nba",
      "commence": "2026-10-21T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 1.32
@@ -2298,7 +2298,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -4.48
@@ -2320,7 +2320,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 0.54
@@ -2356,7 +2356,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": -3.42
@@ -2401,7 +2401,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 0.54
@@ -2430,7 +2430,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 2.59
@@ -2603,7 +2603,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 6.52
@@ -2616,7 +2616,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -4.48
@@ -2638,7 +2638,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 6.52
@@ -2651,7 +2651,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -360,
       "line": null,
       "clv_pp": -0.91
@@ -2673,7 +2673,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -218,
       "line": null,
       "clv_pp": 0.3
@@ -2708,7 +2708,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -218,
       "line": null,
       "clv_pp": 0.3
@@ -2737,7 +2737,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 6.52
@@ -2766,7 +2766,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -218,
       "line": null,
       "clv_pp": 0.3
@@ -2779,7 +2779,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -2808,7 +2808,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -2837,7 +2837,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -112,
       "line": -1.5,
       "clv_pp": 1.61
@@ -2912,7 +2912,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -2941,7 +2941,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 160,
       "line": null,
       "clv_pp": -0.75
@@ -2970,7 +2970,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.0
@@ -2999,7 +2999,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.0
@@ -3021,7 +3021,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.0
@@ -3218,7 +3218,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T13:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 136,
       "line": null,
       "clv_pp": 3.16
@@ -3263,7 +3263,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": -3.6
@@ -3298,7 +3298,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 6.52
@@ -3311,7 +3311,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 3.73
@@ -3333,7 +3333,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 2.16
@@ -3362,7 +3362,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -112,
       "line": -1.5,
       "clv_pp": 1.61
@@ -3397,7 +3397,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -3433,7 +3433,7 @@
      "sport": "nfl",
      "commence": "2026-10-23T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -112,
       "line": 3.0,
       "clv_pp": 1.61
@@ -3455,7 +3455,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -3484,7 +3484,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -3519,7 +3519,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 9.48
@@ -3532,7 +3532,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -218,
       "line": null,
       "clv_pp": 0.81
@@ -3554,7 +3554,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 9.48
@@ -3567,7 +3567,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": -0.91
@@ -3589,7 +3589,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 9.48
@@ -3624,7 +3624,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": -0.91
@@ -3682,7 +3682,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 2.56
@@ -3718,7 +3718,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -3747,7 +3747,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -3799,7 +3799,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 160,
       "line": null,
       "clv_pp": -0.75
@@ -3828,7 +3828,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 160,
       "line": null,
       "clv_pp": -0.75
@@ -3850,7 +3850,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -3863,7 +3863,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 160,
       "line": null,
       "clv_pp": -0.75
@@ -3892,7 +3892,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.8
@@ -3921,7 +3921,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.0
@@ -3943,7 +3943,7 @@
      "sport": "nba",
      "commence": "2026-10-23T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.0
@@ -4140,7 +4140,7 @@
      "sport": "nfl",
      "commence": "2026-10-23T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 130,
       "line": null,
       "clv_pp": 1.81
@@ -4185,7 +4185,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 9.48
@@ -4198,7 +4198,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 2.67
@@ -4227,7 +4227,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -4.48
@@ -4256,7 +4256,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -4278,7 +4278,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": -0.91
@@ -4330,7 +4330,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -4359,7 +4359,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 160,
       "line": null,
       "clv_pp": -0.75
@@ -4388,7 +4388,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 160,
       "line": null,
       "clv_pp": -0.75
@@ -4401,7 +4401,7 @@
      "sport": "nfl",
      "commence": "2026-10-23T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -112,
       "line": 3.0,
       "clv_pp": 1.61
@@ -4430,7 +4430,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 136,
       "line": null,
       "clv_pp": 0.71
@@ -4452,7 +4452,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 0.54
@@ -4465,7 +4465,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 2.12
@@ -4487,7 +4487,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 1.18
@@ -4522,7 +4522,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -470,
       "line": null,
       "clv_pp": 2.86
@@ -4535,7 +4535,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T13:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -162,
       "line": null,
       "clv_pp": -0.85
@@ -4557,7 +4557,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 2.12
@@ -4586,7 +4586,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 1.49
@@ -4599,7 +4599,7 @@
      "sport": "nba",
      "commence": "2026-10-24T01:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -118,
       "line": 1.5,
       "clv_pp": 2.67
@@ -4621,7 +4621,7 @@
      "sport": "nba",
      "commence": "2026-10-24T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -360,
       "line": null,
       "clv_pp": 0.48
@@ -4698,7 +4698,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 0.54
@@ -4711,7 +4711,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 43.5
      },
@@ -4732,7 +4732,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 1.18
@@ -4745,7 +4745,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -105,
       "line": 44.5
      },
@@ -4938,7 +4938,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T13:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -118,
       "line": 42.5
      },
@@ -4950,7 +4950,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T13:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 136,
       "line": null,
       "clv_pp": 2.37
@@ -4972,7 +4972,7 @@
      "sport": "nba",
      "commence": "2026-10-24T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.0
@@ -5049,7 +5049,7 @@
      "sport": "nba",
      "commence": "2026-10-24T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.0
@@ -5124,7 +5124,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 1.99
@@ -5137,7 +5137,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 0.54
@@ -5159,7 +5159,7 @@
      "sport": "nba",
      "commence": "2026-10-25T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -485,
       "line": null,
       "clv_pp": 0.3
@@ -5188,7 +5188,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 3.25
@@ -5201,7 +5201,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 1.18
@@ -5223,7 +5223,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 2.92
@@ -5236,7 +5236,7 @@
      "sport": "nfl",
      "commence": "2026-10-26T00:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 136,
       "line": null,
       "clv_pp": -0.18
@@ -5258,7 +5258,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 1.49
@@ -5271,7 +5271,7 @@
      "sport": "nba",
      "commence": "2026-10-25T00:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": null,
       "clv_pp": 0.0
@@ -5293,7 +5293,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 2.91
@@ -5329,7 +5329,7 @@
      "sport": "nba",
      "commence": "2026-10-24T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.0
@@ -5422,7 +5422,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 1.18
@@ -5435,7 +5435,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -105,
       "line": 44.5
      },
@@ -5463,7 +5463,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T13:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -162,
       "line": null,
       "clv_pp": -0.57
@@ -5485,7 +5485,7 @@
      "sport": "nba",
      "commence": "2026-10-25T00:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": null,
       "clv_pp": 0.0
@@ -5498,7 +5498,7 @@
      "sport": "nba",
      "commence": "2026-10-25T00:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 227.5,
       "clv_pp": 0.7
@@ -5543,7 +5543,7 @@
      "sport": "nba",
      "commence": "2026-10-24T22:00Z",
      "result": "loss",
-     "actual": "8"
+     "actual": "7"
     },
     {
      "espn_event": "401909853",
@@ -5596,7 +5596,7 @@
      "sport": "nba",
      "commence": "2026-10-24T22:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 150,
       "line": null,
       "clv_pp": -5.45
@@ -5641,7 +5641,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 2.27
@@ -5654,7 +5654,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 1.18
@@ -5676,7 +5676,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 2.05
@@ -5689,7 +5689,7 @@
      "sport": "nba",
      "commence": "2026-10-26T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -180,
       "line": null,
       "clv_pp": 2.02
@@ -5711,7 +5711,7 @@
      "sport": "nba",
      "commence": "2026-10-25T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -270,
       "line": null,
       "clv_pp": -2.03
@@ -5724,7 +5724,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 0.0
@@ -5753,7 +5753,7 @@
      "sport": "nba",
      "commence": "2026-10-26T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -180,
       "line": null,
       "clv_pp": 2.02
@@ -5775,7 +5775,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T20:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -238,
       "line": null,
       "clv_pp": 1.18
@@ -5788,7 +5788,7 @@
      "sport": "nba",
      "commence": "2026-10-25T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -105,
       "line": 3.5
      },
@@ -5809,7 +5809,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -162,
       "line": null,
       "clv_pp": 2.15
@@ -5822,7 +5822,7 @@
      "sport": "nfl",
      "commence": "2026-10-26T00:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -162,
       "line": null,
       "clv_pp": 3.15
@@ -5869,7 +5869,7 @@
      "sport": "nba",
      "commence": "2026-10-25T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.01
@@ -5898,7 +5898,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -520,
       "line": null,
       "clv_pp": 0.54
@@ -5911,7 +5911,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T17:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 43.5
      },
@@ -5932,7 +5932,7 @@
      "sport": "nba",
      "commence": "2026-10-25T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.73
@@ -6124,7 +6124,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T13:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -118,
       "line": 42.5
      },
@@ -6136,7 +6136,7 @@
      "sport": "nfl",
      "commence": "2026-10-25T13:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 136,
       "line": null,
       "clv_pp": 0.71
@@ -6158,7 +6158,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 5.68
@@ -6171,7 +6171,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -6291,7 +6291,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 46.5
      },
@@ -6303,7 +6303,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 3.14
@@ -6360,7 +6360,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 5.91
@@ -6395,7 +6395,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 2.12
@@ -6408,7 +6408,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": -1.64
@@ -6430,7 +6430,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -1.46
@@ -6459,7 +6459,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -162,
       "line": null,
       "clv_pp": -1.8
@@ -6488,7 +6488,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 3.59
@@ -6517,7 +6517,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -225,
       "line": null,
       "clv_pp": 1.49
@@ -6603,7 +6603,7 @@
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -185,
       "line": null,
       "clv_pp": -0.84
@@ -6724,7 +6724,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 4.5,
       "clv_pp": 2.27
@@ -6805,7 +6805,7 @@
      "sport": "nfl",
      "commence": "2026-10-27T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -105,
       "line": -4.5,
       "clv_pp": -0.7
@@ -6892,7 +6892,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.92
@@ -6921,7 +6921,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -950,
       "line": null,
       "clv_pp": 7.14
@@ -6950,7 +6950,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -205,
       "line": 1.5,
       "clv_pp": -2.94
@@ -7025,7 +7025,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": null,
       "clv_pp": 1.48
@@ -7054,7 +7054,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 102,
       "line": -1.5,
       "clv_pp": 0.0
@@ -7152,7 +7152,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 170,
       "line": -1.5,
       "clv_pp": 1.32
@@ -7181,7 +7181,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -130,
       "line": null,
       "clv_pp": 0.0
@@ -7210,7 +7210,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -950,
       "line": null,
       "clv_pp": 7.14
@@ -7223,7 +7223,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.92
@@ -7236,7 +7236,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -7306,7 +7306,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -950,
       "line": null,
       "clv_pp": 7.14
@@ -7319,7 +7319,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -7380,7 +7380,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": 1.5,
       "clv_pp": 4.21
@@ -7402,7 +7402,7 @@
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -175,
       "line": 1.5,
       "clv_pp": 0.67
@@ -7463,7 +7463,7 @@
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -175,
       "line": 1.5,
       "clv_pp": 0.67
@@ -7492,7 +7492,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.73
@@ -7505,7 +7505,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -0.48
@@ -7552,7 +7552,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 0.84
@@ -7725,7 +7725,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.73
@@ -7738,7 +7738,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.92
@@ -7795,7 +7795,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -7824,7 +7824,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.73
@@ -7929,7 +7929,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": null,
       "clv_pp": 0.64
@@ -7974,7 +7974,7 @@
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -185,
       "line": null,
       "clv_pp": -1.75
@@ -8033,7 +8033,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -130,
       "line": null,
       "clv_pp": 0.97
@@ -8225,7 +8225,7 @@
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 124,
       "line": -1.5,
       "clv_pp": 2.27
@@ -8238,7 +8238,7 @@
      "sport": "nhl",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 105,
       "line": 5.5,
       "clv_pp": -1.22
@@ -8260,7 +8260,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -8289,7 +8289,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -205,
       "line": 1.5,
       "clv_pp": 0.0
@@ -8347,7 +8347,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": null,
       "clv_pp": 0.0
@@ -8445,7 +8445,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": null,
       "clv_pp": 0.64
@@ -8612,7 +8612,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.92
@@ -8625,7 +8625,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.0
@@ -8638,7 +8638,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -8660,7 +8660,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.73
@@ -8673,7 +8673,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.92
@@ -8686,7 +8686,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -205,
       "line": 1.5,
       "clv_pp": 0.0
@@ -8872,7 +8872,7 @@
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 1.5,
       "clv_pp": 2.99
@@ -8894,7 +8894,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -205,
       "line": 1.5,
       "clv_pp": 0.0
@@ -8907,7 +8907,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.0
@@ -9026,7 +9026,7 @@
      "sport": "nhl",
      "commence": "2026-10-30T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -185,
       "line": 1.5,
       "clv_pp": -0.6
@@ -9062,7 +9062,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.73
@@ -9075,7 +9075,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.92
@@ -9215,7 +9215,7 @@
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 1.5,
       "clv_pp": 2.99
@@ -9237,7 +9237,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -205,
       "line": 1.5,
       "clv_pp": 0.0
@@ -9273,7 +9273,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": null,
       "clv_pp": 0.64
@@ -9295,7 +9295,7 @@
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -185,
       "line": null,
       "clv_pp": -1.53
@@ -9404,7 +9404,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": null,
       "clv_pp": 0.64
@@ -9532,7 +9532,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 102,
       "line": -1.5,
       "clv_pp": 0.0
@@ -9590,7 +9590,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.06
@@ -9603,7 +9603,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.8
@@ -9625,7 +9625,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.01
@@ -9638,7 +9638,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.57
@@ -9651,7 +9651,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -205,
       "line": 1.5,
       "clv_pp": 0.0
@@ -9699,7 +9699,7 @@
      "sport": "nba",
      "commence": "2026-10-30T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -285,
       "line": null,
       "clv_pp": 0.69
@@ -9782,7 +9782,7 @@
      "sport": "nba",
      "commence": "2026-10-30T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -285,
       "line": null,
       "clv_pp": 0.69
@@ -9817,7 +9817,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.01
@@ -9830,7 +9830,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.57
@@ -9843,7 +9843,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -105,
       "line": 46.5
      },
@@ -10008,7 +10008,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.06
@@ -10021,7 +10021,7 @@
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 1.5,
       "clv_pp": 2.99
@@ -10056,7 +10056,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.01
@@ -10069,7 +10069,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.57
@@ -10209,7 +10209,7 @@
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 1.5,
       "clv_pp": 2.99
@@ -10231,7 +10231,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": 1.01
@@ -10265,7 +10265,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": null,
       "clv_pp": 0.64
@@ -10351,7 +10351,7 @@
      "sport": "nfl",
      "commence": "2026-10-30T00:15Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -185,
       "line": null,
       "clv_pp": 0.0
@@ -10382,7 +10382,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": 1.5,
       "clv_pp": 0.84
@@ -10395,7 +10395,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -120,
       "line": 5.5,
       "clv_pp": 0.0
@@ -10451,7 +10451,7 @@
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 1.5,
       "clv_pp": 2.99
@@ -10503,7 +10503,7 @@
      "sport": "nhl",
      "commence": "2026-10-29T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -122,
       "line": 1.5,
       "clv_pp": 0.83
@@ -10601,7 +10601,7 @@
      "sport": "nba",
      "commence": "2026-10-30T00:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -105,
       "line": -1.5,
       "clv_pp": 1.22
@@ -12134,7 +12134,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 210,
       "line": -1.5
      },
@@ -12168,7 +12168,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -245,
       "line": 1.5,
       "clv_pp": 39.76
@@ -12334,7 +12334,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -135,
       "line": 6.5,
       "clv_pp": 0.0
@@ -12347,7 +12347,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -245,
       "line": 1.5,
       "clv_pp": 39.76
@@ -12369,7 +12369,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -125,
       "line": 6.5,
       "clv_pp": -0.97
@@ -12382,7 +12382,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 210,
       "line": -1.5
      },
@@ -12525,7 +12525,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -166,
       "line": null,
       "clv_pp": 2.41
@@ -12560,7 +12560,7 @@
      "sport": "ncaab",
      "commence": "2026-11-02T04:59Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -425,
       "line": null,
       "clv_pp": 6.59
@@ -12643,7 +12643,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 2.12
@@ -12656,7 +12656,7 @@
      "sport": "ncaab",
      "commence": "2026-11-02T04:59Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -425,
       "line": null,
       "clv_pp": 6.59
@@ -12669,7 +12669,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 102,
       "line": null,
       "clv_pp": -0.5
@@ -12711,7 +12711,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": -1.5,
       "clv_pp": 1.89
@@ -12733,7 +12733,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -185,
       "line": 1.5,
       "clv_pp": 1.28
@@ -12794,7 +12794,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -166,
       "line": null,
       "clv_pp": 2.41
@@ -12878,7 +12878,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -12913,7 +12913,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 2.12
@@ -13041,7 +13041,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -230,
       "line": 1.5,
       "clv_pp": 0.95
@@ -13054,7 +13054,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -13124,7 +13124,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 200,
       "line": -1.5,
       "clv_pp": 0.0
@@ -13159,7 +13159,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": 1.5
      },
@@ -13180,7 +13180,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": -1.5,
       "clv_pp": 1.89
@@ -13228,7 +13228,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": 1.5
      },
@@ -13256,7 +13256,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 102,
       "line": null,
       "clv_pp": -0.5
@@ -13278,7 +13278,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": -1.5,
       "clv_pp": 1.89
@@ -13561,7 +13561,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -135,
       "line": 6.5,
       "clv_pp": 0.93
@@ -13574,7 +13574,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 200,
       "line": -1.5,
       "clv_pp": -1.75
@@ -13654,7 +13654,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -13667,7 +13667,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 210,
       "line": -1.5
      },
@@ -13688,7 +13688,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.34
@@ -13701,7 +13701,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": 1.5
      },
@@ -13729,7 +13729,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 210,
       "line": -1.5
      },
@@ -13750,7 +13750,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -125,
       "line": 6.5,
       "clv_pp": -0.97
@@ -13763,7 +13763,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": 1.5
      },
@@ -13784,7 +13784,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": -0.64
@@ -13797,7 +13797,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.94
@@ -13810,7 +13810,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -13832,7 +13832,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": -0.64
@@ -13845,7 +13845,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.94
@@ -13874,7 +13874,7 @@
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -155,
       "line": null,
       "clv_pp": -2.18
@@ -13887,7 +13887,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 1.32
@@ -13900,7 +13900,7 @@
      "sport": "ncaab",
      "commence": "2026-11-02T04:59Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -425,
       "line": null,
       "clv_pp": 5.95
@@ -13922,7 +13922,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -185,
       "line": 1.5,
       "clv_pp": 1.28
@@ -13942,7 +13942,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.8
@@ -13964,7 +13964,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.34
@@ -13984,7 +13984,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 100,
       "line": -1.5
      },
@@ -14005,7 +14005,7 @@
      "sport": "ncaab",
      "commence": "2026-11-02T04:59Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -425,
       "line": null,
       "clv_pp": 5.95
@@ -14018,7 +14018,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -245,
       "line": 1.5,
       "clv_pp": 1.78
@@ -14031,7 +14031,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -14053,7 +14053,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -14066,7 +14066,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -130,
       "line": null,
       "clv_pp": 0.97
@@ -14079,7 +14079,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -135,
       "line": 6.5,
       "clv_pp": 0.93
@@ -14101,7 +14101,7 @@
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -155,
       "line": null,
       "clv_pp": -2.18
@@ -14121,7 +14121,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -112,
       "line": 43.5,
       "clv_pp": 2.83
@@ -14143,7 +14143,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.34
@@ -14156,7 +14156,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 43.5,
       "clv_pp": -0.46
@@ -14169,7 +14169,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 100,
       "line": -1.5
      },
@@ -14190,7 +14190,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 1.32
@@ -14203,7 +14203,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -162,
       "line": null,
       "clv_pp": -1.13
@@ -14216,7 +14216,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 110,
       "line": null,
       "clv_pp": 1.11
@@ -14238,7 +14238,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": -0.64
@@ -14251,7 +14251,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.94
@@ -14273,7 +14273,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -245,
       "line": 1.5,
       "clv_pp": 1.78
@@ -14286,7 +14286,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.8
@@ -14308,7 +14308,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -175,
       "line": null,
       "clv_pp": 0.67
@@ -14321,7 +14321,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -14343,7 +14343,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -245,
       "line": 1.5,
       "clv_pp": 1.78
@@ -14356,7 +14356,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -14378,7 +14378,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": -0.64
@@ -14407,7 +14407,7 @@
      "sport": "ncaab",
      "commence": "2026-11-02T04:59Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -425,
       "line": null,
       "clv_pp": 5.95
@@ -14420,7 +14420,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 110,
       "line": null,
       "clv_pp": 1.11
@@ -14442,7 +14442,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -135,
       "line": 6.5,
       "clv_pp": 0.93
@@ -14455,7 +14455,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 110,
       "line": null,
       "clv_pp": 1.11
@@ -14477,7 +14477,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -14490,7 +14490,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 1.5,
       "clv_pp": 0.0
@@ -14512,7 +14512,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 100,
       "line": 40.5,
       "clv_pp": -2.38
@@ -14525,7 +14525,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -120,
       "line": 1.5
      },
@@ -14546,7 +14546,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 1.34
@@ -14559,7 +14559,7 @@
      "sport": "ncaab",
      "commence": "2026-11-02T04:59Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 330,
       "line": null,
       "clv_pp": -4.52
@@ -14581,7 +14581,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -135,
       "line": 6.5,
       "clv_pp": 0.93
@@ -14610,7 +14610,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 7.0,
       "clv_pp": 0.0
@@ -14623,7 +14623,7 @@
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 130,
       "line": null,
       "clv_pp": 3.48
@@ -14645,7 +14645,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.8
@@ -14674,7 +14674,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -14687,7 +14687,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 45.5
      },
@@ -14708,7 +14708,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.21
@@ -14721,7 +14721,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -130,
       "line": 6.5,
       "clv_pp": -1.46
@@ -14743,7 +14743,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -135,
       "line": 6.5,
       "clv_pp": 0.93
@@ -14756,7 +14756,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T21:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -166,
       "line": null,
       "clv_pp": 1.62
@@ -14778,7 +14778,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 0.72
@@ -14791,7 +14791,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 38.5,
       "clv_pp": 0.0
@@ -14813,7 +14813,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -230,
       "line": 1.5,
       "clv_pp": 0.95
@@ -14826,7 +14826,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 6.5,
       "clv_pp": 0.7
@@ -14855,7 +14855,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -112,
       "line": 54.5,
       "clv_pp": 0.91
@@ -14877,7 +14877,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 41.5
      },
@@ -14889,7 +14889,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -120,
       "line": 1.5
      },
@@ -14910,7 +14910,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 5.5
      },
@@ -14922,7 +14922,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -120,
       "line": 40.5,
       "clv_pp": 4.55
@@ -14944,7 +14944,7 @@
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 230.5,
       "clv_pp": -0.46
@@ -14957,7 +14957,7 @@
      "sport": "nba",
      "commence": "2026-11-01T22:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 130,
       "line": null,
       "clv_pp": 3.48
@@ -15004,7 +15004,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 54.5,
       "clv_pp": 2.27
@@ -15017,7 +15017,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 136,
       "line": null,
       "clv_pp": 1.56
@@ -15039,7 +15039,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -15052,7 +15052,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 210,
       "line": -1.5
      },
@@ -15073,7 +15073,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": -0.48
@@ -15132,7 +15132,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 210,
       "line": -1.5
      },
@@ -15153,7 +15153,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 2.22
@@ -15166,7 +15166,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:05Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 0.94
@@ -15179,7 +15179,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -15201,7 +15201,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 2.22
@@ -15214,7 +15214,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -15227,7 +15227,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -130,
       "line": 6.5,
       "clv_pp": 0.0
@@ -15249,7 +15249,7 @@
      "sport": "nfl",
      "commence": "2026-11-02T01:20Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -250,
       "line": null,
       "clv_pp": -1.54
@@ -15262,7 +15262,7 @@
      "sport": "ncaab",
      "commence": "2026-11-01T14:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -298,
       "line": null,
       "clv_pp": -1.03
@@ -15298,7 +15298,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -230,
       "line": 1.5,
       "clv_pp": 0.95
@@ -15311,7 +15311,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -245,
       "line": 1.5,
       "clv_pp": 0.87
@@ -15333,7 +15333,7 @@
      "sport": "ncaab",
      "commence": "2026-11-01T14:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -298,
       "line": null,
       "clv_pp": -0.13
@@ -15346,7 +15346,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T23:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -230,
       "line": 1.5,
       "clv_pp": 0.95
@@ -15359,7 +15359,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -15381,7 +15381,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 0.0
@@ -15424,7 +15424,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -245,
       "line": 1.5,
       "clv_pp": 0.87
@@ -15437,7 +15437,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -118,
       "line": 3.5,
       "clv_pp": 0.64
@@ -15466,7 +15466,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -175,
       "line": null,
       "clv_pp": 0.0
@@ -15495,7 +15495,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 1.08
@@ -15515,7 +15515,7 @@
      "sport": "nhl",
      "commence": "2026-11-02T01:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 114,
       "line": 6.5,
       "clv_pp": 0.22
@@ -15567,7 +15567,7 @@
      "sport": "ncaab",
      "commence": "2026-11-01T14:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -298,
       "line": null,
       "clv_pp": -0.13
@@ -15596,7 +15596,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -175,
       "line": null,
       "clv_pp": 0.67
@@ -15609,7 +15609,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -15631,7 +15631,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -345,
       "line": null,
       "clv_pp": 2.22
@@ -15660,7 +15660,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -500,
       "line": null,
       "clv_pp": 0.43
@@ -15673,7 +15673,7 @@
      "sport": "nba",
      "commence": "2026-11-02T02:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 142,
       "line": null,
       "clv_pp": -0.34
@@ -15702,7 +15702,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 41.5,
       "clv_pp": -0.46
@@ -15724,7 +15724,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -192,
       "line": null,
       "clv_pp": 0.0
@@ -15753,7 +15753,7 @@
      "sport": "ncaab",
      "commence": "2026-11-01T14:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -298,
       "line": null,
       "clv_pp": -0.13
@@ -15766,7 +15766,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": 1.5
      },
@@ -15794,7 +15794,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": -1.5,
       "clv_pp": 1.16
@@ -15823,7 +15823,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T21:25Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -108,
       "line": 41.5,
       "clv_pp": -0.46
@@ -15852,7 +15852,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": 225,
       "line": null,
       "clv_pp": 0.47
@@ -15899,7 +15899,7 @@
      "sport": "ncaab",
      "commence": "2026-11-01T14:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -115,
       "line": 7.5,
       "clv_pp": 1.11
@@ -15928,7 +15928,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -278,
       "line": null,
       "clv_pp": 1.32
@@ -15957,7 +15957,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 0.53
@@ -16018,7 +16018,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -16040,7 +16040,7 @@
      "sport": "nba",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -285,
       "line": null,
       "clv_pp": 2.6
@@ -16071,7 +16071,7 @@
      "sport": "nfl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -340,
       "line": null,
       "clv_pp": 1.08
@@ -16123,7 +16123,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T18:00Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -110,
       "line": 1.5,
       "clv_pp": 1.16
@@ -16182,7 +16182,7 @@
      "sport": "nhl",
      "commence": "2026-11-01T20:30Z",
      "close": {
-      "provider": "Draft Kings",
+      "provider": "DraftKings",
       "american": -258,
       "line": 1.5
      },
