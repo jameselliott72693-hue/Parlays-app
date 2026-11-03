@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-11-03T04:34:28+00:00",
+ "graded_at": "2026-11-03T05:58:16+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -7876,8 +7876,13 @@
      "espn_event": "401909738",
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -105,
+      "line": -5.5
+     },
+     "result": "loss",
+     "actual": "Arizona Wildcats 75 - 84 UCLA Bruins"
     }
    ]
   },
@@ -9002,8 +9007,14 @@
      "espn_event": "401909738",
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -218,
+      "line": null,
+      "clv_pp": 2.34
+     },
+     "result": "loss",
+     "actual": "Arizona Wildcats 75 - 84 UCLA Bruins"
     },
     {
      "espn_event": "401856844",
@@ -13991,9 +14002,9 @@
   {
    "slip_id": "03da60435514",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 3.76,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873034",
@@ -14012,8 +14023,14 @@
      "espn_event": "401909738",
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -218,
+      "line": null,
+      "clv_pp": 2.57
+     },
+     "result": "loss",
+     "actual": "Arizona Wildcats 75 - 84 UCLA Bruins"
     },
     {
      "espn_event": "401873033",
@@ -14614,9 +14631,9 @@
   {
    "slip_id": "f54289edc961",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.78,
-   "profit": null,
+   "profit": 3.78,
    "legs": [
     {
      "espn_event": "401892628",
@@ -14635,8 +14652,14 @@
      "espn_event": "401909738",
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": 180,
+      "line": null,
+      "clv_pp": -1.32
+     },
+     "result": "win",
+     "actual": "Arizona Wildcats 75 - 84 UCLA Bruins"
     }
    ]
   },
@@ -15790,8 +15813,14 @@
      "espn_event": "401909738",
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
-     "result": "pending",
-     "reason": "In Progress"
+     "close": {
+      "provider": "DraftKings",
+      "american": -218,
+      "line": null,
+      "clv_pp": 2.57
+     },
+     "result": "loss",
+     "actual": "Arizona Wildcats 75 - 84 UCLA Bruins"
     },
     {
      "espn_event": "401873033",
