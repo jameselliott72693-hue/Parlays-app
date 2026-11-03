@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-11-02T14:08:58+00:00",
+ "graded_at": "2026-11-03T04:34:28+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -7786,9 +7786,9 @@
   {
    "slip_id": "520bcc6b3fb8",
    "run_ts": "2026-10-29T14:07:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 1.93,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873028",
@@ -7807,8 +7807,14 @@
      "espn_event": "401873036",
      "sport": "nfl",
      "commence": "2026-11-03T01:15Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -166,
+      "line": null,
+      "clv_pp": 0.0
+     },
+     "result": "loss",
+     "actual": "Chicago Bears 34 - 17 Seattle Seahawks"
     }
    ]
   },
@@ -7871,7 +7877,7 @@
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -8997,7 +9003,7 @@
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401856844",
@@ -12682,9 +12688,9 @@
   {
    "slip_id": "f93c5be967fa",
    "run_ts": "2026-10-31T21:00:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.76,
-   "profit": null,
+   "profit": 2.76,
    "legs": [
     {
      "espn_event": "401892623",
@@ -12703,8 +12709,14 @@
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 7.1
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     },
     {
      "espn_event": "401892624",
@@ -12974,9 +12986,9 @@
   {
    "slip_id": "a25e4cf1e8a4",
    "run_ts": "2026-10-31T21:00:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 1.9,
-   "profit": null,
+   "profit": 0.9,
    "legs": [
     {
      "espn_event": "401892623",
@@ -12995,8 +13007,14 @@
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 7.1
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     }
    ]
   },
@@ -13713,16 +13731,22 @@
   {
    "slip_id": "c0e8d6fd0ceb",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.97,
-   "profit": null,
+   "profit": 3.97,
    "legs": [
     {
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 7.1
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     },
     {
      "espn_event": "401892625",
@@ -13823,9 +13847,9 @@
   {
    "slip_id": "9b884218b9c2",
    "run_ts": "2026-11-01T05:35:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.88,
-   "profit": null,
+   "profit": 1.88,
    "legs": [
     {
      "espn_event": "401873035",
@@ -13857,8 +13881,14 @@
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 7.1
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     }
    ]
   },
@@ -13934,8 +13964,14 @@
      "espn_event": "401921704",
      "sport": "ncaab",
      "commence": "2026-11-03T00:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -250,
+      "line": null,
+      "clv_pp": 1.28
+     },
+     "result": "win",
+     "actual": "Purdue Boilermakers 72 - 78 Gonzaga Bulldogs"
     },
     {
      "espn_event": "401873024",
@@ -13977,7 +14013,7 @@
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873033",
@@ -14113,8 +14149,14 @@
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 6.88
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     },
     {
      "espn_event": "401873025",
@@ -14594,7 +14636,7 @@
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     }
    ]
   },
@@ -15274,24 +15316,36 @@
      "espn_event": "401925818",
      "sport": "ncaab",
      "commence": "2026-11-03T00:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -225,
+      "line": null,
+      "clv_pp": 7.4
+     },
+     "result": "win",
+     "actual": "Charlotte 49ers 78 - 70 Indiana State Sycamores"
     }
    ]
   },
   {
    "slip_id": "49be2548c362",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.96,
-   "profit": null,
+   "profit": 1.96,
    "legs": [
     {
      "espn_event": "401921704",
      "sport": "ncaab",
      "commence": "2026-11-03T00:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -250,
+      "line": null,
+      "clv_pp": 1.28
+     },
+     "result": "win",
+     "actual": "Purdue Boilermakers 72 - 78 Gonzaga Bulldogs"
     },
     {
      "espn_event": "401892627",
@@ -15372,9 +15426,9 @@
   {
    "slip_id": "08588b6189be",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 3.84,
-   "profit": null,
+   "profit": 2.84,
    "legs": [
     {
      "espn_event": "401873027",
@@ -15393,15 +15447,27 @@
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 7.1
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     },
     {
      "espn_event": "401916313",
      "sport": "ncaab",
      "commence": "2026-11-03T02:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -166,
+      "line": null,
+      "clv_pp": 2.73
+     },
+     "result": "win",
+     "actual": "Ohio State Buckeyes 83 - 94 BYU Cougars"
     }
    ]
   },
@@ -15416,8 +15482,14 @@
      "espn_event": "401921704",
      "sport": "ncaab",
      "commence": "2026-11-03T00:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -250,
+      "line": null,
+      "clv_pp": 1.28
+     },
+     "result": "win",
+     "actual": "Purdue Boilermakers 72 - 78 Gonzaga Bulldogs"
     },
     {
      "espn_event": "401892628",
@@ -15450,16 +15522,22 @@
   {
    "slip_id": "17a414cf82c9",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 4.71,
-   "profit": null,
+   "profit": 3.71,
    "legs": [
     {
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 6.88
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     },
     {
      "espn_event": "401873030",
@@ -15507,8 +15585,14 @@
      "espn_event": "401916313",
      "sport": "ncaab",
      "commence": "2026-11-03T02:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -166,
+      "line": null,
+      "clv_pp": 3.22
+     },
+     "result": "win",
+     "actual": "Ohio State Buckeyes 83 - 94 BYU Cougars"
     },
     {
      "espn_event": "401892628",
@@ -15579,8 +15663,14 @@
      "espn_event": "401921704",
      "sport": "ncaab",
      "commence": "2026-11-03T00:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -250,
+      "line": null,
+      "clv_pp": 1.28
+     },
+     "result": "win",
+     "actual": "Purdue Boilermakers 72 - 78 Gonzaga Bulldogs"
     }
    ]
   },
@@ -15622,9 +15712,9 @@
   {
    "slip_id": "f5bc0f4f5026",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "hit",
    "settled_decimal": 2.0,
-   "profit": null,
+   "profit": 1.0,
    "legs": [
     {
      "espn_event": "401873034",
@@ -15643,8 +15733,14 @@
      "espn_event": "401906769",
      "sport": "ncaab",
      "commence": "2026-11-02T23:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -278,
+      "line": null,
+      "clv_pp": 7.1
+     },
+     "result": "win",
+     "actual": "Miami Hurricanes 67 - 77 Florida Gators"
     }
    ]
   },
@@ -15695,7 +15791,7 @@
      "sport": "ncaab",
      "commence": "2026-11-03T03:00Z",
      "result": "pending",
-     "reason": "Scheduled"
+     "reason": "In Progress"
     },
     {
      "espn_event": "401873033",
@@ -15814,9 +15910,14 @@
     {
      "espn_event": "401911532",
      "sport": "ncaab",
-     "commence": "2026-11-02T19:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "commence": "2026-11-02T19:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -110,
+      "line": 4.5
+     },
+     "result": "win",
+     "actual": "UTEP Miners 76 - 84 Northern Kentucky Norse"
     },
     {
      "espn_event": "401873033",
@@ -15844,8 +15945,14 @@
      "espn_event": "401921704",
      "sport": "ncaab",
      "commence": "2026-11-03T00:30Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": -250,
+      "line": null,
+      "clv_pp": 1.28
+     },
+     "result": "win",
+     "actual": "Purdue Boilermakers 72 - 78 Gonzaga Bulldogs"
     },
     {
      "espn_event": "401892624",
@@ -15865,16 +15972,22 @@
   {
    "slip_id": "2566983416ba",
    "run_ts": "2026-11-01T13:54:00+00:00",
-   "result": "pending",
+   "result": "miss",
    "settled_decimal": 2.3512,
-   "profit": null,
+   "profit": -1.0,
    "legs": [
     {
      "espn_event": "401916313",
      "sport": "ncaab",
      "commence": "2026-11-03T02:00Z",
-     "result": "pending",
-     "reason": "Scheduled"
+     "close": {
+      "provider": "DraftKings",
+      "american": 140,
+      "line": null,
+      "clv_pp": -0.89
+     },
+     "result": "loss",
+     "actual": "Ohio State Buckeyes 83 - 94 BYU Cougars"
     },
     {
      "espn_event": "401909903",
@@ -16234,6 +16347,1347 @@
      "commence": "2026-11-01T20:30Z",
      "result": "loss",
      "actual": "3"
+    }
+   ]
+  },
+  {
+   "slip_id": "754594025c25",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 2.93,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401856739",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T00:45Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401920690",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -125,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Vermont Catamounts 55 - 56 Iona Gaels"
+    }
+   ]
+  },
+  {
+   "slip_id": "c5bcf201b465",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 3.53,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401924743",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -340,
+      "line": null,
+      "clv_pp": 2.27
+     },
+     "result": "win",
+     "actual": "Howard Bison 62 - 72 Yale Bulldogs"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "1"
+    }
+   ]
+  },
+  {
+   "slip_id": "34f5f7c7a6f4",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.6,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873045",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892639",
+     "sport": "nhl",
+     "commence": "2026-11-04T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "f0e73099e8e2",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.9,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401858515",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "2"
+    }
+   ]
+  },
+  {
+   "slip_id": "d00c1f72c843",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.92,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873042",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892639",
+     "sport": "nhl",
+     "commence": "2026-11-04T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "36caf7337e67",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.26,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873050",
+     "sport": "nfl",
+     "commence": "2026-11-09T01:20Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892639",
+     "sport": "nhl",
+     "commence": "2026-11-04T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "c201d48662a9",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.71,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "0"
+    },
+    {
+     "espn_event": "401892639",
+     "sport": "nhl",
+     "commence": "2026-11-04T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "067c17f29541",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "hit",
+   "settled_decimal": 3.22,
+   "profit": 2.22,
+   "legs": [
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "1"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "2"
+    }
+   ]
+  },
+  {
+   "slip_id": "53cbee22c530",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 3.92,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -265,
+      "line": 1.5,
+      "clv_pp": 1.17
+     },
+     "result": "win",
+     "actual": "Vegas Golden Knights 2 - 3 Boston Bruins"
+    },
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "2"
+    }
+   ]
+  },
+  {
+   "slip_id": "c60b2190094c",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 3.9,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401920690",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 145.5,
+      "clv_pp": 2.27
+     },
+     "result": "win",
+     "actual": "total 111"
+    },
+    {
+     "espn_event": "401920690",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -125,
+      "line": 1.5
+     },
+     "result": "loss",
+     "actual": "Vermont Catamounts 55 - 56 Iona Gaels"
+    }
+   ]
+  },
+  {
+   "slip_id": "492eae88a9bd",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "hit",
+   "settled_decimal": 3.8,
+   "profit": 2.8,
+   "legs": [
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -120,
+      "line": 5.5,
+      "clv_pp": -1.98
+     },
+     "result": "win",
+     "actual": "total 8"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "2"
+    }
+   ]
+  },
+  {
+   "slip_id": "e1296082d64c",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.87,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "1"
+    },
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "2"
+    }
+   ]
+  },
+  {
+   "slip_id": "daebb690f66d",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "hit",
+   "settled_decimal": 4.78,
+   "profit": 3.78,
+   "legs": [
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -120,
+      "line": 5.5,
+      "clv_pp": -1.98
+     },
+     "result": "win",
+     "actual": "total 8"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "2"
+    }
+   ]
+  },
+  {
+   "slip_id": "d38aa038b472",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 5.06,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "1"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "1"
+    }
+   ]
+  },
+  {
+   "slip_id": "401b187a764e",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.2,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401858289",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401873042",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401873045",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "f031fa777919",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.83,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401856739",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T00:45Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401858289",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401856744",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "a30fe9dbd004",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 2.84,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401873046",
+     "sport": "nfl",
+     "commence": "2026-11-08T21:05Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401873036",
+     "sport": "nfl",
+     "commence": "2026-11-03T01:15Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -166,
+      "line": null,
+      "clv_pp": -0.56
+     },
+     "result": "loss",
+     "actual": "Chicago Bears 34 - 17 Seattle Seahawks"
+    },
+    {
+     "espn_event": "401873045",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "08587b835d02",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401864535",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401858515",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401924743",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -340,
+      "line": null,
+      "clv_pp": 2.27
+     },
+     "result": "win",
+     "actual": "Howard Bison 62 - 72 Yale Bulldogs"
+    }
+   ]
+  },
+  {
+   "slip_id": "7bccc6bdeac7",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 3.84,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401911000",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -225,
+      "line": null,
+      "clv_pp": 2.56
+     },
+     "result": "loss",
+     "actual": "Kent State Golden Flashes 75 - 85 Louisiana Tech Bulldogs"
+    },
+    {
+     "espn_event": "401858286",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401910999",
+     "sport": "ncaab",
+     "commence": "2026-11-03T01:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -175,
+      "line": null,
+      "clv_pp": 2.7
+     },
+     "result": "win",
+     "actual": "Toledo Rockets 70 - 71 Arkansas State Red Wolves"
+    }
+   ]
+  },
+  {
+   "slip_id": "9294fb937b51",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.81,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873050",
+     "sport": "nfl",
+     "commence": "2026-11-09T01:20Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "result": "pending",
+     "reason": "game not yet on ESPN scoreboard"
+    },
+    {
+     "espn_event": "401856743",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "60f900609434",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.77,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401856739",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T00:45Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401856744",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401862822",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "14378b547d32",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.75,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401873050",
+     "sport": "nfl",
+     "commence": "2026-11-09T01:20Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401873042",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "1"
+    }
+   ]
+  },
+  {
+   "slip_id": "b743d9fbbde3",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.83,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401911000",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -225,
+      "line": null,
+      "clv_pp": 2.56
+     },
+     "result": "loss",
+     "actual": "Kent State Golden Flashes 75 - 85 Louisiana Tech Bulldogs"
+    },
+    {
+     "espn_event": "401910999",
+     "sport": "ncaab",
+     "commence": "2026-11-03T01:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -175,
+      "line": null,
+      "clv_pp": 2.7
+     },
+     "result": "win",
+     "actual": "Toledo Rockets 70 - 71 Arkansas State Red Wolves"
+    },
+    {
+     "espn_event": "401856849",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "c4b2bd791290",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.79,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873043",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401873038",
+     "sport": "nfl",
+     "commence": "2026-11-08T14:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401920690",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": 105,
+      "line": -1.5
+     },
+     "result": "win",
+     "actual": "Vermont Catamounts 55 - 56 Iona Gaels"
+    }
+   ]
+  },
+  {
+   "slip_id": "7112b8da5d82",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 1.89,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "0"
+    },
+    {
+     "espn_event": "401873045",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "5e4822518d32",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 1.93,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401858289",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401856744",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "6631bb09356b",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 1.91,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401866454",
+     "sport": "ncaaf",
+     "commence": "2026-11-04T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401924743",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -340,
+      "line": null,
+      "clv_pp": 2.27
+     },
+     "result": "win",
+     "actual": "Howard Bison 62 - 72 Yale Bulldogs"
+    }
+   ]
+  },
+  {
+   "slip_id": "2c8a0490319f",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.9,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401856739",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T00:45Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401871076",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "255816af96a2",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.85,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873050",
+     "sport": "nfl",
+     "commence": "2026-11-09T01:20Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401911002",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": 102,
+      "line": null,
+      "clv_pp": -0.5
+     },
+     "result": "win",
+     "actual": "Miami (OH) RedHawks 86 - 77 James Madison Dukes"
+    }
+   ]
+  },
+  {
+   "slip_id": "aaa7a5e34387",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.85,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873043",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401862818",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T00:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "55ca51d12539",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 3.77,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401873038",
+     "sport": "nfl",
+     "commence": "2026-11-08T14:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909907",
+     "sport": "nba",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "2"
+    }
+   ]
+  },
+  {
+   "slip_id": "c478583d1701",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 3.87,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401871076",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909694",
+     "sport": "ncaab",
+     "commence": "2026-11-03T02:15Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 158.5,
+      "clv_pp": 2.27
+     },
+     "result": "loss",
+     "actual": "total 181"
+    }
+   ]
+  },
+  {
+   "slip_id": "abc2cf4f1695",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401856743",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401911002",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": 102,
+      "line": null,
+      "clv_pp": -0.5
+     },
+     "result": "win",
+     "actual": "Miami (OH) RedHawks 86 - 77 James Madison Dukes"
+    }
+   ]
+  },
+  {
+   "slip_id": "e6822dc8c458",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.72,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401911000",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -225,
+      "line": null,
+      "clv_pp": 2.56
+     },
+     "result": "loss",
+     "actual": "Kent State Golden Flashes 75 - 85 Louisiana Tech Bulldogs"
+    },
+    {
+     "espn_event": "401866454",
+     "sport": "ncaaf",
+     "commence": "2026-11-04T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "63f73da73ec6",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.71,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401909907",
+     "sport": "nba",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "5"
+    },
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "1"
+    }
+   ]
+  },
+  {
+   "slip_id": "7516e2e46b23",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.83,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401910994",
+     "sport": "ncaab",
+     "commence": "2026-11-02T23:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -162,
+      "line": null,
+      "clv_pp": 1.83
+     },
+     "result": "loss",
+     "actual": "Bowling Green Falcons 76 - 73 Georgia State Panthers"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "1"
+    }
+   ]
+  },
+  {
+   "slip_id": "eadd7226a12b",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "hit",
+   "settled_decimal": 2.07,
+   "profit": 1.07,
+   "legs": [
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -265,
+      "line": 1.5,
+      "clv_pp": 0.0
+     },
+     "result": "win",
+     "actual": "Vegas Golden Knights 2 - 3 Boston Bruins"
+    },
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "0"
+    }
+   ]
+  },
+  {
+   "slip_id": "8c0d625dab68",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "hit",
+   "settled_decimal": 2.0,
+   "profit": 1.0,
+   "legs": [
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "1"
+    },
+    {
+     "espn_event": "401892630",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "1"
+    }
+   ]
+  },
+  {
+   "slip_id": "e434d73385e5",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.24,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401873045",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401873045",
+     "sport": "nfl",
+     "commence": "2026-11-08T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "7443d9c042da",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 2.86,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401911000",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -225,
+      "line": null,
+      "clv_pp": 2.56
+     },
+     "result": "loss",
+     "actual": "Kent State Golden Flashes 75 - 85 Louisiana Tech Bulldogs"
+    },
+    {
+     "espn_event": "401911000",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:30Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -105,
+      "line": 144.5
+     },
+     "result": "loss",
+     "actual": "total 160"
+    }
+   ]
+  },
+  {
+   "slip_id": "b024453ab847",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.84,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401871098",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T21:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401871098",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T21:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "1d85d7a4a5cf",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 2.84,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "1"
+    },
+    {
+     "espn_event": "401892629",
+     "sport": "nhl",
+     "commence": "2026-11-03T00:00Z",
+     "result": "loss",
+     "actual": "1"
+    }
+   ]
+  },
+  {
+   "slip_id": "b5bb9f43ea8f",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 3.78,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401902275",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 19.5,
+      "clv_pp": 2.99
+     },
+     "result": "loss",
+     "actual": "Lafayette Leopards 60 - 96 Butler Bulldogs"
+    },
+    {
+     "espn_event": "401902275",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -115,
+      "line": 149.5,
+      "clv_pp": 1.11
+     },
+     "result": "win",
+     "actual": "total 156"
+    }
+   ]
+  },
+  {
+   "slip_id": "be76ffb1419a",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "hit",
+   "settled_decimal": 3.79,
+   "profit": 2.79,
+   "legs": [
+    {
+     "espn_event": "401909907",
+     "sport": "nba",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "5"
+    },
+    {
+     "espn_event": "401909907",
+     "sport": "nba",
+     "commence": "2026-11-03T00:00Z",
+     "result": "win",
+     "actual": "8"
+    }
+   ]
+  },
+  {
+   "slip_id": "8b014d5c04b0",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401858291",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T00:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401858291",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T00:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "040a5fa52a6a",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.72,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401916313",
+     "sport": "ncaab",
+     "commence": "2026-11-03T02:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -112,
+      "line": 160.5,
+      "clv_pp": 1.61
+     },
+     "result": "win",
+     "actual": "total 177"
+    },
+    {
+     "espn_event": "401916313",
+     "sport": "ncaab",
+     "commence": "2026-11-03T02:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": 140,
+      "line": null,
+      "clv_pp": 0.34
+     },
+     "result": "loss",
+     "actual": "Ohio State Buckeyes 83 - 94 BYU Cougars"
+    }
+   ]
+  },
+  {
+   "slip_id": "8708b3aba596",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "miss",
+   "settled_decimal": 4.72,
+   "profit": -1.0,
+   "legs": [
+    {
+     "espn_event": "401921139",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": -108,
+      "line": 153.5,
+      "clv_pp": 0.0
+     },
+     "result": "loss",
+     "actual": "total 155"
+    },
+    {
+     "espn_event": "401921139",
+     "sport": "ncaab",
+     "commence": "2026-11-03T00:00Z",
+     "close": {
+      "provider": "DraftKings",
+      "american": 150,
+      "line": null,
+      "clv_pp": -0.82
+     },
+     "result": "win",
+     "actual": "Elon Phoenix 84 - 71 Columbia Lions"
+    }
+   ]
+  },
+  {
+   "slip_id": "360fa357be4f",
+   "run_ts": "2026-11-02T18:36:00+00:00",
+   "result": "hit",
+   "settled_decimal": 4.8,
+   "profit": 3.8,
+   "legs": [
+    {
+     "espn_event": "401873036",
+     "sport": "nfl",
+     "commence": "2026-11-03T01:15Z",
+     "result": "win",
+     "actual": "1"
+    },
+    {
+     "espn_event": "401873036",
+     "sport": "nfl",
+     "commence": "2026-11-03T01:15Z",
+     "result": "win",
+     "actual": "7"
     }
    ]
   }
