@@ -67,7 +67,7 @@ def build(sports, flagged=False, show_long_multi=False, live=True, log=True, sna
 def odds_balance():
     key = os.environ.get("ODDS_API_KEY")
     if not key: return None, None
-    return pb.oa_balance(key)
+    return pb.oa_balance(key, timeout=6)  # shown on the Build tab: never hold the page for long
 
 
 # ---------- grade ----------

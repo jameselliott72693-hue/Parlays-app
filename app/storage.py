@@ -19,6 +19,7 @@ Secrets come from environment variables / Streamlit secrets: GITHUB_TOKEN (fine-
 GH_REPO ("owner/name"), optional GH_DATA_BRANCH (default "ledger-data"). The token is never logged or shown.
 """
 import base64, json, os, threading, time, urllib.error, urllib.parse, urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SYNC_FILES = ["ledger/slips.jsonl", "ledger/user_results.jsonl", "ledger/grades.json",
@@ -141,6 +142,8 @@ class GitHubStorage:
         self._pulled_head, self._pulled_present = None, set()
 
     # -- low-level --
+    TIMEOUT_GET, TIMEOUT_WRITE = 12, 30  # a hung GitHub read must not hold the first page load for long
+
     def _req(self, method, path, body=None, accept="application/vnd.github+json", raw=False):
         url = self.API + path
         data = json.dumps(body).encode() if body is not None else None
@@ -148,7 +151,7 @@ class GitHubStorage:
             "Authorization": f"Bearer {self._token}", "Accept": accept, "X-GitHub-Api-Version": "2022-11-28",
             "User-Agent": "parlay-app", **({"Content-Type": "application/json"} if data else {})})
         try:
-            with urllib.request.urlopen(req, timeout=30) as r:
+            with urllib.request.urlopen(req, timeout=self.TIMEOUT_GET if method == "GET" else self.TIMEOUT_WRITE) as r:
                 b = r.read()
                 return r.status, (b if raw else (json.loads(b) if b else None))
         except urllib.error.HTTPError as e:
@@ -176,12 +179,18 @@ class GitHubStorage:
         if st not in (200, 201): raise RuntimeError(f"GitHub: could not create branch {self.branch} ({st}: {d.get('message', '')[:120]})")
         return base
 
-    def _get_file(self, path):
-        st, b = self._req("GET", f"/repos/{self.repo}/contents/{path}?ref={urllib.parse.quote(self.branch)}",
+    def _get_file(self, path, ref=None):
+        st, b = self._req("GET", f"/repos/{self.repo}/contents/{path}?ref={urllib.parse.quote(ref or self.branch)}",
                           accept="application/vnd.github.raw", raw=True)
         if st == 200: return b
         if st == 404: return None
         raise RuntimeError(f"GitHub: cannot read {path} ({st})")
+
+    def _get_files(self, paths, ref=None):
+        """Download several files in parallel (the first page load waits for these: 6 sequential round trips -> about 1)."""
+        if not paths: return {}
+        with ThreadPoolExecutor(max_workers=min(6, len(paths))) as ex:
+            return dict(zip(paths, ex.map(lambda p: self._get_file(p, ref), paths)))
 
     # -- public --
     def pull(self, force=False):
@@ -196,7 +205,7 @@ class GitHubStorage:
                 and all(os.path.exists(os.path.join(ROOT, p)) for p in SYNC_FILES if p in self._pulled_present)):
             self.last_pull = time.time()
             return f"up to date with {self.label}"
-        remote = {p: self._get_file(p) for p in SYNC_FILES}
+        remote = self._get_files(SYNC_FILES, head)  # read exactly the commit we record as pulled
         for p in SYNC_FILES:
             if p.endswith("page_contents.tsx.txt"): continue
             m = merge(p, _read(p), remote[p])
@@ -221,10 +230,11 @@ class GitHubStorage:
             st, commit = self._req("GET", f"/repos/{self.repo}/git/commits/{head}")
             if st != 200: raise RuntimeError(f"GitHub: cannot read commit ({st})")
             tree = []
+            remote = self._get_files([p for p in paths if _read(p) is not None], head)  # files as of the head we commit on top of
             for p in paths:
                 b = _read(p)
                 if b is None: continue
-                rb = self._get_file(p)  # file as of the branch head (may contain another writer's changes since our last pull)
+                rb = remote.get(p) if p in remote else self._get_file(p, head)  # may hold another writer's changes since our last pull
                 m = merge(p, b, rb)
                 if m is not None and m != b:
                     _write(p, m); b = m

@@ -427,10 +427,10 @@ def oa_get(url, key, budget, cost_estimate, cache=True):
             log(f"[oddsapi] cache write failed: {ex}")
     return d, h
 
-def oa_balance(key):
+def oa_balance(key, timeout=25):
     """Free call (0 credits): remaining credits on the account. Returns (remaining, used) or (None, None)."""
     try:
-        _, hdr = get_json(f"https://api.the-odds-api.com/v4/sports?apiKey={key}")
+        _, hdr = get_json(f"https://api.the-odds-api.com/v4/sports?apiKey={key}", timeout=timeout)
         h = {k.lower(): v for k, v in hdr.items()}
         rem = int(float(h["x-requests-remaining"])) if h.get("x-requests-remaining") else None
         used = int(float(h["x-requests-used"])) if h.get("x-requests-used") else None

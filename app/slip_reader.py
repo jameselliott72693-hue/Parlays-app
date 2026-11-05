@@ -73,8 +73,19 @@ SPLIT_BEFORE = re.compile(r"\s+(?=(?:wager|stake|risk|entry|to\s+pay|to\s+win|pa
                           r"cashed\s*out|placed|bet\s+id)\b)", re.I)
 
 
+# Sportsbook apps (and OCR) often print minus signs as U+2212 or an en / em dash: "−110", "Duke –3.5". Treat a dash
+# directly before a digit as an ASCII minus so odds and spreads are read (and not stripped as a bullet).
+DASH_MINUS = re.compile(r"[\u2212\u2013\u2014\u2012\ufe63\uff0d](?=\d)")
+NBSP = re.compile(r"[\u00a0\u2007\u202f]")
+
+
+def normalize_text(text):
+    t = NBSP.sub(" ", (text or "").replace("\r\n", "\n").replace("\r", "\n"))
+    return DASH_MINUS.sub("-", t)
+
+
 def _lines(text):
-    t = (text or "").replace("\r", "\n")
+    t = normalize_text(text)
     if t.count("\n") <= 1 and len(t) > 60 and not re.search(r"[|•·]", t):  # one long pasted line: split at the field labels
         t = SPLIT_BEFORE.sub("\n", t)
         t = re.sub(r",\s+", "\n", t)
@@ -108,7 +119,8 @@ def _strip_head(line):
     """Drop a leading book name / bet-type phrase ("Caesars 2 leg parlay Lakers -4.5" -> "Lakers -4.5")."""
     for _, bpat in BOOKS:
         line = re.sub(r"^(?:" + bpat + r")\s*", "", line, flags=re.I)
-    return re.sub(r"^(?:(?:straight|single|parlay|sgp|\d+\s*[- ]?\s*(?:leg|pick)s?)\b[:\s]*)+", "", line, flags=re.I).strip()
+    line = re.sub(r"^(?:(?:straight|single|parlay|sgp|\d+\s*[- ]?\s*(?:leg|pick)s?)\b[:\s]*)+", "", line, flags=re.I).strip()
+    return re.sub(r"^[\u2013\u2014:\-]+\s+(?=\S)", "", line).strip()  # "parlay – Bruins ML" -> "Bruins ML"
 
 
 def _is_odds_line(line): return bool(re.fullmatch(r"\s*(?:[+-]\d{3,5}|EVEN|EV)\s*", line, re.I))
@@ -327,8 +339,20 @@ def parse_slip(text, today=None):
 
 
 # ---------------- OCR (screenshots) ----------------
-def ocr_status():
-    """(available, message). Uses pytesseract + the tesseract binary (Streamlit Cloud: packages.txt `tesseract-ocr`)."""
+_OCR_STATUS = None
+
+
+def ocr_status(refresh=False):
+    """(available, message). Uses pytesseract + the tesseract binary (Streamlit Cloud: packages.txt `tesseract-ocr`).
+    Checked once per process (the app reruns on every click) and never raises, so a missing binary can't break the app."""
+    global _OCR_STATUS
+    if _OCR_STATUS is None or refresh:
+        try: _OCR_STATUS = _ocr_status()
+        except Exception as ex: _OCR_STATUS = (False, f"Screenshot reading is unavailable ({type(ex).__name__}). Paste the slip text instead.")
+    return _OCR_STATUS
+
+
+def _ocr_status():
     try:
         import pytesseract  # noqa: F401
     except Exception:

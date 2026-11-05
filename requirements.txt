@@ -1,2 +1,2 @@
-streamlit>=1.40
-pytesseract>=0.3.10  # screenshot bet-slip reader (needs the tesseract-ocr system package: packages.txt)
+streamlit>=1.66,<1.67  # tested range: a new Streamlit release cannot change the live app until this is bumped
+pytesseract>=0.3.10,<0.4  # screenshot bet-slip reader (needs the tesseract-ocr system package: packages.txt)

@@ -64,8 +64,11 @@ def norm_sport(sp):
 
 def parse_odds(o):
     """American odds (+250, -110) or a target (+200) -> (odds int or None, bucket label)."""
-    if o is None or o == "-": return None, None
-    v = int(str(o).replace("+", "").strip())
+    if o is None or str(o).strip() in ("", "-"): return None, None
+    t = re.sub(r"[\u2212\u2013\u2014]", "-", str(o)).replace(" ", "").strip()  # "−110" (Unicode minus) as pasted from apps
+    if t.upper() in ("EVEN", "EV", "EVS"): t = "100"
+    if not re.fullmatch(r"[+-]?\d+(?:\.0+)?", t): raise ValueError(f"bad American odds {o!r} (use e.g. +250 or -110)")
+    v = int(float(t))
     if -100 < v < 100: raise ValueError(f"bad American odds {o}")
     return v, odds_bucket(v)
 

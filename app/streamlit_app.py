@@ -27,10 +27,6 @@ for _k in ("ODDS_API_KEY", "ODDS_MAX_CREDITS_PER_RUN"):
     if not os.environ.get(_k) and cfg(_k):
         os.environ[_k] = str(cfg(_k))
 
-import services as S          # noqa: E402
-import slip_reader as SR      # noqa: E402
-from storage import get_storage  # noqa: E402
-
 CSS = """
 <style>
 .block-container {padding-top: 1.2rem; padding-bottom: 3rem; max-width: 760px;}
@@ -92,14 +88,27 @@ def gate():
 
 gate()
 
+# The heavier app modules (builder, grader, slip reader) load only after the password screen, so it paints at once.
+import services as S          # noqa: E402
+import slip_reader as SR      # noqa: E402
+from storage import get_storage, LocalStorage  # noqa: E402
+
 
 # ---------------- storage ----------------
-@st.cache_resource
+@st.cache_resource(show_spinner=False)
 def storage():
     return get_storage({k: cfg(k) for k in ("GITHUB_TOKEN", "GH_REPO", "GH_DATA_BRANCH", "STORAGE")})
 
 
-STORE = storage()
+try:
+    STORE = storage()
+except Exception as _ex:  # a malformed secret must not stop the app from opening
+    STORE = LocalStorage()
+    st.warning(f"GitHub storage is not set up correctly ({type(_ex).__name__}); using this server's files only.")
+if (STORE.kind == "local" and (cfg("STORAGE") or "").lower() != "local"
+        and bool(cfg("GITHUB_TOKEN")) != bool(cfg("GH_REPO"))):
+    st.warning("GitHub storage needs both GITHUB_TOKEN and GH_REPO in the app's Secrets; only one is set, so bets are saved on "
+               "this server only (lost when the app restarts).")
 
 
 def sync_down(force=False):
@@ -108,7 +117,9 @@ def sync_down(force=False):
     last = st.session_state.get("pulled_at", 0)
     if force or time.time() - last > 300:
         try:
-            STORE.pull()
+            if last: STORE.pull()
+            else:
+                with st.spinner("Loading your saved ledger..."): STORE.pull()  # first load of a session (cold start)
             st.session_state["pulled_at"] = time.time()
         except Exception as ex:
             st.session_state["pulled_at"] = time.time() - 240  # retry in about a minute, not on every rerun

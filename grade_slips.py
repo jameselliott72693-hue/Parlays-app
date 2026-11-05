@@ -494,10 +494,10 @@ def build_page_data(slips, graded):
     for r in user:
         if r.get("bets"):
             for bt in r["bets"]:
-                add_u({"book": bt.get("book"), "sport": bt.get("sport"), "odds": bt.get("bucket")},
+                add_u({"book": bt.get("book"), "sport": sport_label(bt.get("sport")), "odds": bt.get("bucket") or _bucket(bt.get("odds"))},
                       int(bt["result"] == "W"), int(bt["result"] == "L"), int(bt["result"] == "P"), bt.get("net"), None, bt.get("odds"))
         else:
-            add_u({"book": r.get("book"), "sport": r.get("sport"), "odds": r.get("bucket")},
+            add_u({"book": r.get("book"), "sport": sport_label(r.get("sport")), "odds": r.get("bucket") or _bucket(r.get("odds"))},
                   r["wins"], r["losses"], r.get("pushes") or 0, r.get("net"), r.get("units"), r.get("odds"))
     user_break = {dim: [{"k": k, **v, "dsum": round(v["dsum"], 4)} for k, v in sorted(d.items(), key=lambda kv: (kv[0] == "Untagged", kv[0]))] for dim, d in ub.items()}
     return {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "overall": tally(pairs),
@@ -520,6 +520,19 @@ def _bankroll(user):
 # "Unknown / not reported" bucket. Stake is never stored: it is derived only from a bet's own net and odds (loss: stake = -net;
 # win: stake = net / profit-per-$1 at those odds); pushes and unitemized days have no derivable stake. Nothing is guessed.
 UNK = "Unknown / not reported"
+def _bucket(o):
+    """Odds-target bucket for a bet that has odds but no stored bucket (same buckets as add_user_result.odds_bucket)."""
+    if not isinstance(o, (int, float)) or -100 < o < 100: return None
+    return "+100" if o < 150 else "+200" if o < 250 else "+300" if o < 350 else "+400"
+def sport_label(sp):
+    """One label per sport for the user's breakdowns, whatever was typed when the bet was logged ('NCAAM' / 'cbb' -> NCAAB,
+    'NHL+NCAAB' / 'NBA/NHL' -> 'Mixed (NCAAB + NHL)'), so the same sport never splits into two rows. Stored rows are not rewritten."""
+    if not sp: return None
+    try:
+        from add_user_result import norm_sport
+        return norm_sport(str(sp)) or None
+    except Exception:
+        return sp
 def _odds_range(o):
     if o is None: return UNK
     return "Under +100" if o < 100 else "+100 to +199" if o < 200 else "+200 to +399" if o < 400 else "+400 and up"
@@ -527,7 +540,7 @@ TYPE_LABEL = {"sgp": "SGP", "multi-game": "Multi-game", "multi": "Multi-game", "
 def _bet_type(bt):
     t = bt.get("type") or bt.get("kind")
     if t: return TYPE_LABEL.get(str(t).strip().lower(), t)
-    sp = bt.get("sport") or ""
+    sp = sport_label(bt.get("sport")) or ""
     return "Multi-game (cross-sport)" if sp.startswith("Mixed") else UNK
 def _stake(bt):
     if bt.get("stake") is not None: return float(bt["stake"])
@@ -539,7 +552,7 @@ def _stake(bt):
         return round(net / per, 2) if per > 0 else None
     return None
 def user_what_pays(user):
-    DIMS = {"sport": lambda b: b.get("sport") or UNK, "legs": lambda b: (f"{b['legs']} leg{'' if b['legs'] == 1 else 's'}" if b.get("legs") else UNK),
+    DIMS = {"sport": lambda b: sport_label(b.get("sport")) or UNK, "legs": lambda b: (f"{b['legs']} leg{'' if b['legs'] == 1 else 's'}" if b.get("legs") else UNK),
             "type": _bet_type, "odds": lambda b: _odds_range(b.get("odds")), "book": lambda b: b.get("book") or UNK}
     ORDER = {"odds": ["Under +100", "+100 to +199", "+200 to +399", "+400 and up"]}
     items = []  # (bet dict, n, w, l, p, net, stake, stake was logged)
