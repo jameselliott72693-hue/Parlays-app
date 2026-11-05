@@ -94,6 +94,13 @@ div[data-testid="stMetric"] {
 }
 div[data-testid="stMetric"] label {color: #8b9bb4 !important; font-size: .78rem !important;}
 div[data-testid="stMetricValue"] {font-size: 1.45rem !important; color: #e8eef7 !important;}
+/* Keep metric rows as a real 2x2 on phones (Streamlit otherwise stacks each column). */
+div[data-testid="stHorizontalBlock"]:has(div[data-testid="stMetric"]) {
+  flex-wrap: nowrap !important; gap: 0.5rem !important;
+}
+div[data-testid="stHorizontalBlock"]:has(div[data-testid="stMetric"]) > div[data-testid="stColumn"] {
+  flex: 1 1 50% !important; min-width: 0 !important; width: 50% !important;
+}
 
 /* ---- cards (slips) ---- */
 .card {
@@ -169,7 +176,10 @@ table.trk tr.you td {color: #60a5fa;}
   .card {padding: 12px;}
   .card .odds {font-size: 1.35rem;}
   .stTabs [data-baseweb="tab"] {padding: 0.3rem 0.7rem; font-size: .9rem;}
-  div[data-testid="stMetricValue"] {font-size: 1.2rem !important;}
+  div[data-testid="stMetric"] {padding: 8px 10px;}
+  div[data-testid="stMetricValue"] {font-size: 1.05rem !important;}
+  div[data-testid="stMetricLabel"] p {font-size: .7rem !important;}
+  div[data-testid="stMetricDelta"] {font-size: .72rem !important;}
 }
 </style>
 """
@@ -455,15 +465,28 @@ with tab_track:
     br, roi = d.get("bankroll"), (d.get("userPays") or {}).get("roi") or {}
     logged_roi = (roi.get("logged") or {})
     roi_val = logged_roi.get("roi")
+    roi_n = logged_roi.get("n") or 0
+    graded_n = o["hit"] + o["miss"]
+    # 2x2 metric grid: never put a signed P&L in a delta_color="inverse" slot, and never put a
+    # non-numeric caption in a slot that auto-picks an up/down arrow (that caused green losses).
     r1, r2 = st.columns(2)
-    r1.metric("Record", f"{o['hit']}-{o['miss']}", delta=f"{o['pending']} pending", delta_color="off")
-    r2.metric("Hit rate", hr, delta=units(o["profit"]), delta_color="normal" if o["profit"] >= 0 else "inverse")
+    r1.metric("Record", f"{o['hit']}-{o['miss']}",
+              delta=f"{o['pending']} pending", delta_color="off", delta_arrow="off",
+              help="Generated slips (regular lists). Pending = not yet graded.")
+    r2.metric("Hit rate", hr,
+              delta=(f"of {graded_n} graded" if graded_n else "no graded slips"),
+              delta_color="off", delta_arrow="off")
     r3, r4 = st.columns(2)
-    r3.metric("Bankroll", f"${br['current']:,.2f}" if br else "—",
-              delta=(f"stake ${br['stake_min']:.2f}–${br['stake_max']:.2f}" if br else "not set"), delta_color="off")
-    r4.metric("Your ROI", f"{roi_val:+.1f}%" if roi_val is not None else "—",
-              delta=(f"{uw}-{ul} · {'+' if unet >= 0 else '-'}${abs(unet):.2f}" if (uw + ul) else "no bets"),
-              delta_color="normal" if unet >= 0 else "inverse")
+    r3.metric("Net units", units(o["profit"]),
+              delta=float(o["profit"]), delta_color="normal", delta_arrow="auto",
+              delta_description="generated slips · 1u each",
+              help="Profit on generated slips at 1 unit each. Not your logged bets.")
+    your_net_val = (f"{'+' if unet >= 0 else '-'}${abs(unet):.2f}" if (uw + ul) else "—")
+    r4.metric("Your net", your_net_val,
+              delta=(float(unet) if (uw + ul) else None),
+              delta_color="normal", delta_arrow="auto",
+              delta_description=(f"record {uw}-{ul}" if (uw + ul) else "no bets"),
+              help="Your logged bets only (blue on the tables). ROI is shown below with its stake basis.")
     st.markdown(
         '<div class="legend">'
         '<span>regular slips</span>'
@@ -479,9 +502,13 @@ with tab_track:
     )
     pct = lambda r: (f"{r['roi']:+.1f}% ({r['n']} bet{'' if r['n'] == 1 else 's'})" if r and r.get("roi") is not None else "-")
     # Keep the literal "Bankroll $" substring for AppTest smoke checks
+    roi_logged_txt = (
+        f"ROI on {roi_n} logged stake{'s' if roi_n != 1 else ''} {roi_val:+.1f}%"
+        if roi_val is not None else "ROI on logged stakes -"
+    )
     st.markdown("<div class='blue'>" + (f"💰 Bankroll ${br['current']:,.2f} · flat 0.5-1% stake ${br['stake_min']:.2f}-${br['stake_max']:.2f}"
                                        if br else "💰 Bankroll not set (open the bankroll panel below)")
-                + f" · ROI on logged stakes {pct(roi.get('logged'))}"
+                + f" · {roi_logged_txt}"
                 + (f" · incl. derived stakes for {roi['all'].get('derived', 0)} older bets {pct(roi.get('all'))}" if roi.get("all") and roi["all"].get("derived") else "")
                 + "</div>", unsafe_allow_html=True)
     st.caption("Default = regular slips, red = flagged-price slips, blue = your own bets. Never added together. 1 unit per slip.")
