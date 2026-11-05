@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-st.set_page_config(page_title="Parlays", page_icon="\U0001F3AF", layout="centered", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Parlays", page_icon="🎯", layout="centered", initial_sidebar_state="collapsed")
 
 
 def cfg(name, default=None):
@@ -29,36 +29,148 @@ for _k in ("ODDS_API_KEY", "ODDS_MAX_CREDITS_PER_RUN"):
 
 CSS = """
 <style>
-.block-container {padding-top: 1.2rem; padding-bottom: 3rem; max-width: 760px;}
-.card {border: 1px solid #e3e6ea; border-radius: 14px; padding: 12px 14px; margin: 8px 0 12px; background: #fff;
-       box-shadow: 0 1px 2px rgba(0,0,0,.04);}
-.card.flag {border-color: #e57373; background: #fff6f6;}
+/* ---- layout & chrome ---- */
+.block-container {padding-top: 1rem; padding-bottom: 2.5rem; max-width: 760px;}
+header[data-testid="stHeader"] {background: transparent;}
+#MainMenu, footer, [data-testid="stToolbar"] {visibility: hidden; height: 0;}
+div[data-testid="stDecoration"] {display: none;}
+
+/* ---- pill tabs ---- */
+div[data-testid="stTabs"] [data-baseweb="tab-list"],
+div[data-testid="stTabs"] [role="tablist"] {
+  gap: 6px !important; background: #0f1520 !important; padding: 6px !important;
+  border-radius: 999px !important; border: 1px solid #243044 !important;
+  margin-bottom: 0.6rem !important;
+}
+div[data-testid="stTabs"] [data-baseweb="tab"],
+div[data-testid="stTabs"] [role="tab"] {
+  border-radius: 999px !important; padding: 0.4rem 1rem !important;
+  color: #9aacc4 !important; background: transparent !important; border: none !important;
+}
+div[data-testid="stTabs"] [role="tab"][aria-selected="true"],
+div[data-testid="stTabs"] [role="tab"][data-selected="true"],
+div[data-testid="stTabs"] [data-baseweb="tab"][aria-selected="true"] {
+  background: #1e293b !important; color: #e8eef7 !important;
+  box-shadow: 0 0 0 1px #38bdf855, inset 0 0 12px #38bdf811 !important;
+}
+div[data-testid="stTabs"] [data-baseweb="tab-highlight"],
+div[data-testid="stTabs"] [data-baseweb="tab-border"] {display: none !important; height: 0 !important;}
+
+/* ---- buttons ---- */
+.stButton > button, .stFormSubmitButton > button {
+  border-radius: 12px; font-weight: 600; letter-spacing: .01em;
+  border: 1px solid #2a3a52; transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  padding-top: 0.55rem; padding-bottom: 0.55rem;
+}
+.stButton > button[kind="primary"], .stFormSubmitButton > button[kind="primary"],
+.stButton > button[data-testid="baseButton-primary"], .stFormSubmitButton > button[data-testid="baseButton-primary"] {
+  background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 100%);
+  color: #041018; border: none;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, .28);
+}
+.stButton > button:hover, .stFormSubmitButton > button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.28);
+}
+.stButton > button[kind="primary"]:hover, .stFormSubmitButton > button[kind="primary"]:hover,
+.stButton > button[data-testid="baseButton-primary"]:hover, .stFormSubmitButton > button[data-testid="baseButton-primary"]:hover {
+  box-shadow: 0 6px 20px rgba(56, 189, 248, .4);
+}
+
+/* ---- inputs ---- */
+div[data-baseweb="select"] > div, .stTextInput input, .stNumberInput input, .stTextArea textarea,
+div[data-baseweb="input"] {
+  border-radius: 10px !important; border-color: #2a3a52 !important;
+  background-color: #121826 !important;
+}
+.stTextInput input:focus, .stNumberInput input:focus, .stTextArea textarea:focus {
+  border-color: #38bdf8 !important; box-shadow: 0 0 0 1px #38bdf855 !important;
+}
+
+/* ---- metrics ---- */
+div[data-testid="stMetric"] {
+  background: #151b24; border: 1px solid #243044; border-radius: 14px;
+  padding: 12px 14px; box-shadow: 0 1px 0 rgba(255,255,255,.03), 0 8px 24px rgba(0,0,0,.22);
+}
+div[data-testid="stMetric"] label {color: #8b9bb4 !important; font-size: .78rem !important;}
+div[data-testid="stMetricValue"] {font-size: 1.45rem !important; color: #e8eef7 !important;}
+
+/* ---- cards (slips) ---- */
+.card {
+  border: 1px solid #243044; border-radius: 16px; padding: 14px 16px; margin: 8px 0 12px;
+  background: linear-gradient(180deg, #171e2a 0%, #121826 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,.04), 0 10px 28px rgba(0,0,0,.28);
+}
+.card.flag {border-color: #7f1d1d; background: linear-gradient(180deg, #2a1518 0%, #1a1012 100);}
 .card .top {display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;}
-.card .odds {font-size: 1.5rem; font-weight: 700;}
-.card .book {font-weight: 600;}
-.badge {font-size: .72rem; padding: 2px 8px; border-radius: 999px; background: #eef1f5; color: #445;}
-.badge.red {background: #fde2e2; color: #b71c1c;}
-.card .sub {color: #667; font-size: .85rem; margin: 2px 0 6px;}
-.card ul {margin: 0 0 6px 0; padding-left: 18px;}
-.card li {margin: 3px 0; font-size: .93rem;}
-.card li small {color: #778;}
-.shop {display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;}
-.chip {font-size: .78rem; padding: 3px 8px; border-radius: 8px; background: #f2f4f7; color: #334;}
-.chip.best {background: #e3f6e8; color: #136c2e; font-weight: 700; border: 1px solid #9fd9b0;}
-.chip.this {outline: 1px dashed #99a;}
-.chip.off {background: #fde2e2; color: #b71c1c;}
-.chip.miss {background: transparent; color: #99a;}
+.card .odds {font-size: 1.55rem; font-weight: 700; color: #e8eef7; letter-spacing: -.02em;}
+.card .book {font-weight: 600; color: #cbd5e1;}
+.badge {font-size: .72rem; padding: 3px 9px; border-radius: 999px; background: #1e293b; color: #9aacc4; border: 1px solid #2a3a52;}
+.badge.red {background: #3f1215; color: #fca5a5; border-color: #7f1d1d;}
+.card .sub {color: #8b9bb4; font-size: .85rem; margin: 4px 0 8px;}
+.card ul {margin: 0 0 8px 0; padding-left: 18px;}
+.card li {margin: 4px 0; font-size: .93rem; color: #d5deea;}
+.card li small {color: #8b9bb4;}
+.shop {display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;}
+.chip {font-size: .78rem; padding: 4px 9px; border-radius: 999px; background: #1e293b; color: #cbd5e1; border: 1px solid #2a3a52;}
+.chip.best {background: #0c2a24; color: #6ee7b7; font-weight: 700; border-color: #134e4a;}
+.chip.this {outline: 1px dashed #64748b;}
+.chip.off {background: #3f1215; color: #fca5a5; border-color: #7f1d1d;}
+.chip.miss {background: transparent; color: #64748b; border-style: dashed;}
+
+/* ---- tracker table ---- */
 table.trk {width: 100%; border-collapse: collapse; font-size: .82rem; margin: 4px 0 14px;}
-table.trk th {text-align: left; color: #667; font-weight: 600; border-bottom: 1px solid #e3e6ea; padding: 4px 4px;}
-table.trk td {padding: 4px 4px; border-bottom: 1px solid #f1f2f4; white-space: nowrap;}
-table.trk tr.flag td {color: #c62828;}
-table.trk tr.you td {color: #0b5fd8;}
-.red {color: #c62828;} .blue {color: #0b5fd8;}
-.small {font-size: .8rem; color: #667;}
-.stats {display: flex; gap: 8px; margin: 4px 0 8px;}
-.stats div {flex: 1; background: #fff; border: 1px solid #e3e6ea; border-radius: 12px; padding: 8px 10px;}
-.stats b {display: block; font-size: 1.25rem;}
-.stats span {font-size: .72rem; color: #667;}
+table.trk th {text-align: left; color: #8b9bb4; font-weight: 600; border-bottom: 1px solid #243044; padding: 6px 6px;}
+table.trk td {padding: 6px 6px; border-bottom: 1px solid #1a2230; white-space: nowrap; color: #d5deea;}
+table.trk tr.flag td {color: #f87171;}
+table.trk tr.you td {color: #60a5fa;}
+.red {color: #f87171;} .blue {color: #60a5fa;}
+.small {font-size: .8rem; color: #8b9bb4;}
+
+/* ---- password gate ---- */
+.gate-wrap {max-width: 380px; margin: 12vh auto 0; text-align: center;}
+.gate-card {
+  background: linear-gradient(180deg, #171e2a 0%, #121826 100%);
+  border: 1px solid #243044; border-radius: 20px; padding: 28px 24px 22px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.04), 0 24px 48px rgba(0,0,0,.45);
+}
+.gate-card h1 {font-size: 1.55rem; margin: 0 0 4px; letter-spacing: -.02em;}
+.gate-card p {color: #8b9bb4; font-size: .9rem; margin: 0 0 18px;}
+.gate-icon {
+  width: 48px; height: 48px; margin: 0 auto 14px; border-radius: 14px;
+  background: linear-gradient(180deg, #1e3a4f 0%, #0f2740 100%);
+  border: 1px solid #2a4a66; display: flex; align-items: center; justify-content: center;
+  font-size: 1.35rem; color: #38bdf8;
+}
+
+/* ---- section header ---- */
+.app-head {display: flex; align-items: center; gap: 10px; margin: 0 0 0.4rem;}
+.app-head .mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(180deg, #1e3a4f 0%, #0f2740 100%);
+  border: 1px solid #2a4a66; display: flex; align-items: center; justify-content: center;
+  color: #38bdf8; font-size: 1.1rem; flex-shrink: 0;
+}
+.app-head h1 {font-size: 1.35rem; margin: 0; letter-spacing: -.02em; font-weight: 700;}
+.app-head span {color: #8b9bb4; font-size: .82rem;}
+
+/* ---- legend chips ---- */
+.legend {display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 10px;}
+.legend span {
+  font-size: .75rem; padding: 3px 10px; border-radius: 999px;
+  border: 1px solid #2a3a52; background: #151b24; color: #9aacc4;
+}
+.legend .you {color: #60a5fa; border-color: #1e3a5f; background: #0f1a2c;}
+.legend .flag {color: #f87171; border-color: #5c1d1d; background: #1a1012;}
+
+/* ---- mobile ---- */
+@media (max-width: 480px) {
+  .block-container {padding-left: 0.85rem; padding-right: 0.85rem;}
+  .card {padding: 12px;}
+  .card .odds {font-size: 1.35rem;}
+  .stTabs [data-baseweb="tab"] {padding: 0.3rem 0.7rem; font-size: .9rem;}
+  div[data-testid="stMetricValue"] {font-size: 1.2rem !important;}
+}
 </style>
 """
 st.markdown(CSS, unsafe_allow_html=True)
@@ -72,10 +184,18 @@ def gate():
         st.stop()
     if st.session_state.get("auth"):
         return
-    st.title("\U0001F512 Parlays")
+    st.markdown(
+        '<div class="gate-wrap"><div class="gate-card">'
+        '<div class="gate-icon">🔒</div>'
+        "<h1>Parlays</h1>"
+        "<p>Private tracker · enter your password to continue</p>"
+        "</div></div>",
+        unsafe_allow_html=True,
+    )
+    # nest the form under the visual card by keeping it tight; Streamlit can't put widgets inside raw HTML
     with st.form("login"):
-        p = st.text_input("Password", type="password")
-        ok = st.form_submit_button("Unlock", use_container_width=True)
+        p = st.text_input("Password", type="password", label_visibility="collapsed", placeholder="Password")
+        ok = st.form_submit_button("Unlock", type="primary", use_container_width=True)
     if ok:
         if hmac.compare_digest(p.encode("utf-8"), str(pw).encode("utf-8")):
             st.session_state["auth"] = True
@@ -166,14 +286,14 @@ def card(s):
     badges = []
     if s["estimate"]: badges.append('<span class="badge">SGP price is an estimate</span>')
     if s.get("kind"): badges.append(f'<span class="badge">{e(s["kind"])}</span>')
-    if s["flagged"]: badges.append('<span class="badge red">\U0001F534 flagged price: may be stale or a boost, check in app</span>')
+    if s["flagged"]: badges.append('<span class="badge red">flagged price · may be stale or a boost</span>')
     legs = "".join(
-        f'<li>{"&#128308; " if l["flagged"] else ""}<b>{e(l["label"])}</b> <span class="small">{fam(l["american"])}</span><br>'
+        f'<li>{"● " if l["flagged"] else ""}<b>{e(l["label"])}</b> <span class="small">{fam(l["american"])}</span><br>'
         f'<small>{e(l["event"])} · {e(et(l["start"]))} · fair {l["fair"]*100:.0f}% ({l["n_books_fair"]} books)</small></li>' for l in s["legs"])
     chips = []
     for o in s["shop"]:
         cls = "chip" + (" best" if o["best"] else "") + (" this" if o["this_slip"] else "") + (" off" if o["off_market"] else "")
-        tag = (" \U0001F3C6" if o["best"] else "") + (" · this slip" if o["this_slip"] else "") + (" · pick'em" if o["pickem"] else "") + (" · off-market" if o["off_market"] else "")
+        tag = (" ★" if o["best"] else "") + (" · this slip" if o["this_slip"] else "") + (" · pick'em" if o["pickem"] else "") + (" · off-market" if o["off_market"] else "")
         chips.append(f'<span class="{cls}">{e(o["name"])} {fam(o["american"])}{tag}</span>')
     if s["shop_missing"]:
         chips.append(f'<span class="chip miss">not at: {e(", ".join(s["shop_missing"]))}</span>')
@@ -213,8 +333,16 @@ def rec_cells(kind, label, a, with_odds):
 
 
 # ---------------- UI ----------------
-st.markdown("### \U0001F3AF Parlays")
-tab_build, tab_track, tab_log = st.tabs(["Build", "Tracker", "Log my bet"])
+st.markdown(
+    '<div class="app-head"><div class="mark">◎</div><div><h1>Parlays</h1>'
+    '<span>Build · track · log — private</span></div></div>',
+    unsafe_allow_html=True,
+)
+tab_build, tab_track, tab_log = st.tabs([
+    ":material/construction: Build",
+    ":material/monitoring: Tracker",
+    ":material/edit_note: Log my bet",
+])
 
 with tab_build:
     key_present = bool(os.environ.get("ODDS_API_KEY"))
@@ -234,24 +362,39 @@ with tab_build:
     t1, t2 = st.columns(2)
     flagged = t1.toggle("Show flagged slips", value=False, help="Slips using a price far off the other books (went 1-for-10). Red. Off by default.")
     long_multi = t2.toggle("Multi-game +300/+400", value=False)
-    mode = st.radio("Odds", ["Live odds", "Last snapshot (free, no logging)"], horizontal=True, label_visibility="collapsed")
+    try:
+        mode = st.segmented_control(
+            "Odds",
+            options=["Live odds", "Last snapshot (free, no logging)"],
+            default="Live odds",
+            key="odds_mode",
+            label_visibility="collapsed",
+        )
+    except Exception:
+        mode = st.radio("Odds", ["Live odds", "Last snapshot (free, no logging)"], horizontal=True, label_visibility="collapsed")
+    if mode is None:
+        mode = "Live odds"
     live = mode == "Live odds"
     if st.button("Build parlays", type="primary", use_container_width=True, disabled=not sports):
         if not live and not os.path.exists(S.SNAPSHOT):
             st.error("No saved snapshot yet: run once with live odds.")
         else:
-            with st.spinner("Fetching odds and building slips (about 30-60 s)..."):
+            with st.status("Fetching odds and building slips…", expanded=True) as status:
+                st.write("Pulling ledger / reading odds…")
                 if live: sync_down(force=True)  # a snapshot replay never logs, so it needs no fresh ledger
                 try:
                     res = S.build(sports, flagged=flagged, show_long_multi=long_multi, live=live)
                 except Exception as ex:
                     res = None
+                    status.update(label="Build failed", state="error")
                     st.error(f"Build failed: {type(ex).__name__}: {ex}")
                 if res is not None:
                     m = re.search(r": (\d+) new slips, (\d+) duplicate tags", res.get("ledger") or "")
                     if live and m and int(m.group(1)) + int(m.group(2)) > 0:  # skip the GitHub round trip when nothing was logged
+                        st.write("Saving new slips…")
                         res["saved"] = sync_up(["ledger/slips.jsonl"], f"Log parlay run {res['generated']}")
                     st.session_state["res"] = res
+                    status.update(label=f"Built {len(res['slips'])} slips", state="complete")
                 if live: balance.clear()
     res = st.session_state.get("res")
     if res:
@@ -263,7 +406,7 @@ with tab_build:
         if not res["slips"]:
             st.warning("No slips met the rules (or no data). See the fetch log below.")
         lists = [("sgp", "SGP"), ("multi", "Multi-game"), ("3leg", "3-leg")]
-        if any(s["flagged"] for s in res["slips"]): lists.append(("flagged", "\U0001F534 Flagged"))
+        if any(s["flagged"] for s in res["slips"]): lists.append(("flagged", "Flagged"))
         tabs = st.tabs([n for _, n in lists])
         for (lk, _), tb in zip(lists, tabs):
             with tb:
@@ -276,10 +419,10 @@ with tab_build:
                     st.markdown(f"**Target +{t}**" + ("" if len(ts) == 3 else f" <span class='small'>({len(ts)} of 3 met the rules)</span>"), unsafe_allow_html=True)
                     st.markdown("".join(card(s) for s in ts), unsafe_allow_html=True)
         if res["check_prices"]:
-            with st.expander(f"\U0001F534 Check these prices ({len(res['check_prices'])})"):
+            with st.expander(f":material/warning: Check these prices ({len(res['check_prices'])})"):
                 st.markdown(table(["Leg", "Book", "Price", "Others", "Gap"], [("flag", [c["label"], c["book"], fam(c["american"]),
                             ", ".join(f"{k} {fam(v)}" for k, v in c["others"].items()), f"{c['gap_pp']} pp"]) for c in res["check_prices"]]), unsafe_allow_html=True)
-        with st.expander("Full report / fetch log"):
+        with st.expander(":material/description: Full report / fetch log"):
             st.download_button("Download report (.md)", res["md"] or "", file_name="parlays.md", use_container_width=True)
             st.code("\n".join(res["log"][-60:]))
     st.caption("Not betting advice. Re-check every price in the sportsbook app. Flat 0.5-1% of bankroll per slip.")
@@ -287,38 +430,62 @@ with tab_build:
 with tab_track:
     top = st.columns([3, 2])
     if top[1].button("Grade now", use_container_width=True, help="Settles finished games from ESPN box scores (free, ~10-60 s)."):
-        with st.spinner("Grading from ESPN box scores..."):
+        with st.status("Grading from ESPN box scores…", expanded=False) as status:
             sync_down(force=True)
             try:
                 out, err = S.grade(), None
             except Exception as ex:
                 out, err = "", f"{type(ex).__name__}: {ex}"
             saved = None if err else sync_up(["ledger/grades.json", "ledger/page_contents.tsx.txt"], "Grade slips (app)")
-        if err: st.error(f"Grading failed (nothing saved): {err}")
-        else:
-            st.success("Graded. " + (saved or ""))
-            with st.expander("Grader output"): st.code(out[-3000:])
+            if err:
+                status.update(label="Grading failed", state="error")
+                st.error(f"Grading failed (nothing saved): {err}")
+            else:
+                status.update(label="Graded", state="complete")
+                st.success("Graded. " + (saved or ""))
+                st.toast("Grading done", icon="✅")
+                with st.expander("Grader output"): st.code(out[-3000:])
     d = tracker_cached(S.ledger_signature())
     top[0].caption(f"Last graded: {et(d['graded_at']) if d.get('graded_at') else 'never'} · storage: {STORE.label}")
     o, fl = d["overall"], d["flagged"]
     hr = f"{100*o['hit']/(o['hit']+o['miss']):.1f}%" if o["hit"] + o["miss"] else "-"
-    st.markdown(f"<div class='stats'><div><b>{o['hit']}-{o['miss']}</b><span>record · {o['pending']} pending</span></div>"
-                f"<div><b>{hr}</b><span>hit rate</span></div><div><b>{units(o['profit'])}</b><span>{o['staked']} staked</span></div></div>",
-                unsafe_allow_html=True)
     u = d["user"]
     uw, ul = sum(r["wins"] for r in u), sum(r["losses"] for r in u)
     unet = sum(r["net"] for r in u if r.get("net") is not None)
-    st.markdown(f"<div class='red'>\U0001F534 Flagged ({', '.join(d['flagKeys']) or 'none'}): {fl['hit']}-{fl['miss']} · {units(fl['profit'])} · {fl['pending']} pending</div>"
-                f"<div class='blue'>Your bets: {uw}-{ul} · net {'+' if unet >= 0 else '-'}${abs(unet):.2f} · {len({r['date'] for r in u})} days</div>", unsafe_allow_html=True)
     br, roi = d.get("bankroll"), (d.get("userPays") or {}).get("roi") or {}
+    logged_roi = (roi.get("logged") or {})
+    roi_val = logged_roi.get("roi")
+    r1, r2 = st.columns(2)
+    r1.metric("Record", f"{o['hit']}-{o['miss']}", delta=f"{o['pending']} pending", delta_color="off")
+    r2.metric("Hit rate", hr, delta=units(o["profit"]), delta_color="normal" if o["profit"] >= 0 else "inverse")
+    r3, r4 = st.columns(2)
+    r3.metric("Bankroll", f"${br['current']:,.2f}" if br else "—",
+              delta=(f"stake ${br['stake_min']:.2f}–${br['stake_max']:.2f}" if br else "not set"), delta_color="off")
+    r4.metric("Your ROI", f"{roi_val:+.1f}%" if roi_val is not None else "—",
+              delta=(f"{uw}-{ul} · {'+' if unet >= 0 else '-'}${abs(unet):.2f}" if (uw + ul) else "no bets"),
+              delta_color="normal" if unet >= 0 else "inverse")
+    st.markdown(
+        '<div class="legend">'
+        '<span>regular slips</span>'
+        '<span class="you">your bets</span>'
+        '<span class="flag">flagged price</span>'
+        "</div>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f'<div class="red">Flagged ({", ".join(d["flagKeys"]) or "none"}): {fl["hit"]}-{fl["miss"]} · {units(fl["profit"])} · {fl["pending"]} pending</div>'
+        f'<div class="blue">Your bets: {uw}-{ul} · net {"+" if unet >= 0 else "-"}${abs(unet):.2f} · {len({r["date"] for r in u})} days</div>',
+        unsafe_allow_html=True,
+    )
     pct = lambda r: (f"{r['roi']:+.1f}% ({r['n']} bet{'' if r['n'] == 1 else 's'})" if r and r.get("roi") is not None else "-")
+    # Keep the literal "Bankroll $" substring for AppTest smoke checks
     st.markdown("<div class='blue'>" + (f"💰 Bankroll ${br['current']:,.2f} · flat 0.5-1% stake ${br['stake_min']:.2f}-${br['stake_max']:.2f}"
                                        if br else "💰 Bankroll not set (open the bankroll panel below)")
                 + f" · ROI on logged stakes {pct(roi.get('logged'))}"
                 + (f" · incl. derived stakes for {roi['all'].get('derived', 0)} older bets {pct(roi.get('all'))}" if roi.get("all") and roi["all"].get("derived") else "")
                 + "</div>", unsafe_allow_html=True)
     st.caption("Default = regular slips, red = flagged-price slips, blue = your own bets. Never added together. 1 unit per slip.")
-    with st.expander("💰 Bankroll and what pays (your bets)"):
+    with st.expander(":material/account_balance_wallet: Bankroll and what pays (your bets)"):
         if br:
             import pandas as pd
             st.markdown(f"<div class='blue'>Started ${br['start']:,.2f} on {br['start_date']}"
@@ -328,7 +495,7 @@ with tab_track:
             if len(br["series"]) > 1:
                 df = pd.DataFrame(br["series"], columns=["date", "Bankroll $"])
                 df["date"] = pd.to_datetime(df["date"])
-                st.line_chart(df.set_index("date"), height=170, color="#0b5fd8")
+                st.line_chart(df.set_index("date"), height=170, color="#38bdf8")
         with st.form("bankroll", clear_on_submit=True):
             k1, k2, k3 = st.columns([3, 2, 2])
             kind = k1.selectbox("Bankroll entry", ["start", "deposit", "withdrawal"],
@@ -336,20 +503,32 @@ with tab_track:
             amt = k2.number_input("Amount $", min_value=0.0, value=None, step=10.0, format="%.2f")
             bdate = k3.date_input("Date", value=datetime.now(S.ET).date(), key="br_date")
             bnote = st.text_input("Note (optional)", key="br_note")
-            if st.form_submit_button("Save bankroll entry", use_container_width=True):
+            if st.form_submit_button("Save bankroll entry", type="primary", use_container_width=True):
                 try:
                     if amt is None: raise ValueError("enter an amount")
                     sync_down(force=True)
                     S.bankroll_add(kind, amt, bdate.strftime("%Y-%m-%d"), bnote or None)
                     saved = sync_up(["ledger/bankroll.jsonl"], f"Bankroll {kind} {bdate}")
                     st.success(f"Saved: {kind} ${amt:,.2f} on {bdate}. " + (saved or ""))
+                    st.toast("Bankroll updated", icon="💰")
                 except ValueError as ex:
                     st.error(f"Not saved: {ex}")
         st.caption("A new starting bankroll replaces the old one. Bets dated after its date (and that day's bets logged after you set it) move it; bets without a net $ can't.")
         up_ = d.get("userPays") or {}
         if up_.get("nBets"):
-            dim = st.radio("What pays, by", ["sport", "legs", "type", "odds", "book"], horizontal=True, key="pays_dim",
-                           format_func=lambda x: {"sport": "Sport", "legs": "Legs", "type": "Bet type", "odds": "Odds", "book": "Book"}[x])
+            try:
+                dim = st.segmented_control(
+                    "What pays, by",
+                    options=["sport", "legs", "type", "odds", "book"],
+                    format_func=lambda x: {"sport": "Sport", "legs": "Legs", "type": "Bet type", "odds": "Odds", "book": "Book"}[x],
+                    default="sport",
+                    key="pays_dim",
+                )
+            except Exception:
+                dim = st.radio("What pays, by", ["sport", "legs", "type", "odds", "book"], horizontal=True, key="pays_dim",
+                               format_func=lambda x: {"sport": "Sport", "legs": "Legs", "type": "Bet type", "odds": "Odds", "book": "Book"}[x])
+            if dim is None:
+                dim = "sport"
             rows = []
             for r in up_["dims"].get(dim, []) + [dict(up_["overall"], k="Overall")]:
                 rows.append(("you", [r["k"], r["n"], f"{r['w']}-{r['l']}-{r['p']}",
@@ -360,12 +539,12 @@ with tab_track:
             st.caption("Missing: " + "; ".join(up_.get("gaps", [])) + ".")
     strategies = sorted({x["s"] for x in d["facts"]} - set(d["flagKeys"]))
     f1, f2 = st.columns(2)
-    strat = f1.selectbox("Strategy", ["all"] + strategies + d["flagKeys"], format_func=lambda x: "All strategies" if x == "all" else ("\U0001F534 " + x if x.endswith("-flagged") else x))
+    strat = f1.selectbox("Strategy", ["all"] + strategies + d["flagKeys"], format_func=lambda x: "All strategies" if x == "all" else ("⚑ " + x if x.endswith("-flagged") else x))
     lst = f2.selectbox("List", ["all", "sgp", "multi", "3leg"], format_func=lambda x: {"all": "All lists", "sgp": "SGP", "multi": "Multi-game", "3leg": "3-leg"}[x])
     st.markdown("**By strategy**")
     rows = [("main", [t["k"], t["n"], f"{t['hit']}-{t['miss']}", t["pending"], f"{100*t['hit']/(t['hit']+t['miss']):.0f}%" if t["hit"] + t["miss"] else "-", units(t["profit"])])
             for t in d["breakdown"]["strategy"]]
-    rows += [("flag", ["\U0001F534 " + t["k"], t["n"], f"{t['hit']}-{t['miss']}", t["pending"], f"{100*t['hit']/(t['hit']+t['miss']):.0f}%" if t["hit"] + t["miss"] else "-", units(t["profit"])])
+    rows += [("flag", ["⚑ " + t["k"], t["n"], f"{t['hit']}-{t['miss']}", t["pending"], f"{100*t['hit']/(t['hit']+t['miss']):.0f}%" if t["hit"] + t["miss"] else "-", units(t["profit"])])
              for t in d["fBreakdown"]["strategy"]]
     st.markdown(table(["Strategy", "Slips", "W-L", "Pend.", "Hit", "Units"], rows), unsafe_allow_html=True)
     R = S.records(d, strat, lst)
@@ -385,7 +564,7 @@ with tab_track:
         sh = d["shop"]
         st.caption(f"Price shop (v3): another book paid more for the same legs on {sh['better']} of {sh['n']} slips"
                    + (f" (+{sh['avg_gain_pct']}% payout on average)." if sh["better"] else "."))
-    with st.expander("Your bets (latest first)"):
+    with st.expander(":material/history: Your bets (latest first)"):
         rows = []
         for r in reversed(u[-30:]):
             for b in (r.get("bets") or [None]):
@@ -427,7 +606,8 @@ with tab_log:
     st.caption("Adds one of YOUR bets (kept apart from the generated slips; shown in blue on the tracker).")
     if st.session_state.get("log_msg"):
         st.success(st.session_state.pop("log_msg"))
-    with st.expander("📋 Read a bet slip (paste the text or upload a screenshot)", expanded=not st.session_state.get("slip_parsed")):
+        st.toast("Bet saved", icon="✅")
+    with st.expander(":material/receipt_long: Read a bet slip (paste the text or upload a screenshot)", expanded=not st.session_state.get("slip_parsed")):
         st.caption("DraftKings, FanDuel, Caesars, theScore Bet, BetMGM, Underdog (others best-effort). Nothing is saved until you press Save below.")
         slip_txt = st.text_area("Bet slip text", key="slip_text", height=140, placeholder="Copy the bet from your sportsbook's bet history and paste it here")
         ocr_ok, ocr_msg = SR.ocr_status()
@@ -449,6 +629,7 @@ with tab_log:
                 p["raw"] = text
                 st.session_state["slip_parsed"] = p
                 prefill(p)
+                st.toast("Slip read — check the fields", icon="📋")
                 st.rerun()
     p = st.session_state.get("slip_parsed")
     if p:
@@ -461,8 +642,16 @@ with tab_log:
     for k, v in (("f_result", None), ("f_book", S.BOOK_CHOICES[0]), ("f_sport", S.SPORT_CHOICES[0]), ("f_date", datetime.now(S.ET).date()),
                  ("f_odds", ""), ("f_legs", None), ("f_type", "-"), ("f_stake", None), ("f_net", None), ("f_leglist", ""), ("f_note", "")):
         ss.setdefault(k, v)  # defaults live in session state, so prefilled values never clash with widget defaults
-    res_ = st.radio("Result", ["W", "L", "P"], horizontal=True, key="f_result",
-                    format_func=lambda x: {"W": "Won", "L": "Lost", "P": "Push / void"}[x])
+    try:
+        res_ = st.segmented_control(
+            "Result",
+            options=["W", "L", "P"],
+            format_func=lambda x: {"W": "Won", "L": "Lost", "P": "Push / void"}[x],
+            key="f_result",
+        )
+    except Exception:
+        res_ = st.radio("Result", ["W", "L", "P"], horizontal=True, key="f_result",
+                        format_func=lambda x: {"W": "Won", "L": "Lost", "P": "Push / void"}[x])
     a, b = st.columns(2)
     book = a.selectbox("Book", S.BOOK_CHOICES, key="f_book")
     sports = S.SPORT_CHOICES + ([ss["f_sport"]] if ss.get("f_sport") and ss["f_sport"] not in S.SPORT_CHOICES else [])

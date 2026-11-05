@@ -232,7 +232,11 @@ class AppSmokeTest(unittest.TestCase):
                     next(x for x in at.selectbox if x.label == "List").select("sgp").run()  # a filter change reruns the script (tracker data now cached)
                     self.assertFalse(at.exception, at.exception)
                     if snap:
-                        at.radio[0].set_value("Last snapshot (free, no logging)").run()
+                        odds_w = next((x for x in at.segmented_control if "Last snapshot (free, no logging)" in getattr(x, "options", [])), None)
+                        if odds_w is not None:
+                            odds_w.set_value("Last snapshot (free, no logging)").run()
+                        else:
+                            at.radio[0].set_value("Last snapshot (free, no logging)").run()
                         b = next(x for x in at.button if x.label == "Build parlays"); b.click().run()
                         self.assertFalse(at.exception, at.exception)
                         self.assertFalse([e.value for e in at.error if "Build failed" in e.value])
