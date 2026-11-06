@@ -1,5 +1,5 @@
 {
- "graded_at": "2026-11-06T14:06:37+00:00",
+ "graded_at": "2026-11-06T15:57:50+00:00",
  "slips": [
   {
    "slip_id": "0ffa44046861",
@@ -20834,9 +20834,9 @@
   {
    "slip_id": "f2d7f73ad3e8",
    "run_ts": "2026-11-05T19:52:00+00:00",
-   "result": "ungraded",
-   "settled_decimal": 4.7,
-   "profit": null,
+   "result": "hit",
+   "settled_decimal": 2.4404,
+   "profit": 1.4404,
    "legs": [
     {
      "espn_event": "401925684",
@@ -20855,8 +20855,10 @@
      "espn_event": "401873037",
      "sport": "nfl",
      "commence": "2026-11-06T01:15Z",
-     "result": "ungraded",
-     "reason": "player not in ESPN box score (inactive => would be void; not assumed)"
+     "result": "void",
+     "reason": "User approved a manual void on 2026-11-06 after ESPN reception data was unavailable; inactivity not established.",
+     "override": true,
+     "note": "Manual void only; applies to every slip containing this exact leg."
     },
     {
      "espn_event": "401921682",
@@ -21128,16 +21130,18 @@
   {
    "slip_id": "7b37742a8935",
    "run_ts": "2026-11-05T19:52:00+00:00",
-   "result": "ungraded",
-   "settled_decimal": 3.81,
-   "profit": null,
+   "result": "hit",
+   "settled_decimal": 1.9783,
+   "profit": 0.9783,
    "legs": [
     {
      "espn_event": "401873037",
      "sport": "nfl",
      "commence": "2026-11-06T01:15Z",
-     "result": "ungraded",
-     "reason": "player not in ESPN box score (inactive => would be void; not assumed)"
+     "result": "void",
+     "reason": "User approved a manual void on 2026-11-06 after ESPN reception data was unavailable; inactivity not established.",
+     "override": true,
+     "note": "Manual void only; applies to every slip containing this exact leg."
     },
     {
      "espn_event": "401921682",
@@ -21477,9 +21481,9 @@
   {
    "slip_id": "40022eed65ed",
    "run_ts": "2026-11-05T19:52:00+00:00",
-   "result": "ungraded",
-   "settled_decimal": 3.85,
-   "profit": null,
+   "result": "hit",
+   "settled_decimal": 1.6739,
+   "profit": 0.6739,
    "legs": [
     {
      "espn_event": "401873037",
@@ -21492,8 +21496,10 @@
      "espn_event": "401873037",
      "sport": "nfl",
      "commence": "2026-11-06T01:15Z",
-     "result": "ungraded",
-     "reason": "stat receiving_rec not found for Derrick Henry"
+     "result": "void",
+     "reason": "User approved a manual void on 2026-11-06 after ESPN reception data was unavailable; inactivity not established.",
+     "override": true,
+     "note": "Manual void only; applies to every slip containing this exact leg."
     }
    ]
   },
@@ -21576,15 +21582,17 @@
    "slip_id": "167202077028",
    "run_ts": "2026-11-05T19:52:00+00:00",
    "result": "miss",
-   "settled_decimal": 4.74,
+   "settled_decimal": 2.0609,
    "profit": -1.0,
    "legs": [
     {
      "espn_event": "401873037",
      "sport": "nfl",
      "commence": "2026-11-06T01:15Z",
-     "result": "ungraded",
-     "reason": "stat receiving_rec not found for Derrick Henry"
+     "result": "void",
+     "reason": "User approved a manual void on 2026-11-06 after ESPN reception data was unavailable; inactivity not established.",
+     "override": true,
+     "note": "Manual void only; applies to every slip containing this exact leg."
     },
     {
      "espn_event": "401873037",
@@ -21592,6 +21600,1020 @@
      "commence": "2026-11-06T01:15Z",
      "result": "loss",
      "actual": "3"
+    }
+   ]
+  },
+  {
+   "slip_id": "1eddcfb132fc",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.03,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "38884ad400f0",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.86,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "ceeb506a426c",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.1,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "11a8c47ffabd",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.79,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "bb6ab69780dd",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.16,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "04ad3f02e554",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.96,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "d31f0e63abbd",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 1.98,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401864533",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T02:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401921754",
+     "sport": "ncaab",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401864532",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T02:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "5d9fd1e4159c",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.37,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401856851",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401862820",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909552",
+     "sport": "ncaab",
+     "commence": "2026-11-06T21:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "03848553e81c",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.87,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401858515",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909552",
+     "sport": "ncaab",
+     "commence": "2026-11-06T21:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401869968",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T22:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "f79c7fac948b",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.93,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401860912",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401922059",
+     "sport": "ncaab",
+     "commence": "2026-11-06T23:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401856854",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "9445bc924c40",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.9,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401921754",
+     "sport": "ncaab",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "301a233a3a67",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.78,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401860912",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401858512",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909294",
+     "sport": "nba",
+     "commence": "2026-11-07T03:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "e1a1ac7bff4c",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.77,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401864532",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T02:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "result": "pending",
+     "reason": "game not yet on ESPN scoreboard"
+    }
+   ]
+  },
+  {
+   "slip_id": "9a264409a884",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.77,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909293",
+     "sport": "nba",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401856851",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "865a03db7dd9",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401858515",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401869968",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T22:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "fe27eabddd39",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.72,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909292",
+     "sport": "nba",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401864533",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T02:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "bc4b2d0dfe9b",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.81,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401869945",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401856850",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T20:45Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401864535",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "a818885c7006",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 1.9,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909552",
+     "sport": "ncaab",
+     "commence": "2026-11-06T21:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401869968",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T22:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "d1eb0d779da1",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 1.93,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401864532",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T02:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "7fd405a40102",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.0,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401860912",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401922059",
+     "sport": "ncaab",
+     "commence": "2026-11-06T23:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "57a7528cffbf",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909292",
+     "sport": "nba",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401906780",
+     "sport": "ncaab",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "658ec83bbf33",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.89,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401869945",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401864535",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "404ff4264c25",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.87,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401860912",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401856853",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "91626238eb5d",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.78,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909292",
+     "sport": "nba",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "8d892498977f",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.76,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401864535",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "3466d13615ee",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.87,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401906780",
+     "sport": "ncaab",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "result": "pending",
+     "reason": "game not yet on ESPN scoreboard"
+    }
+   ]
+  },
+  {
+   "slip_id": "a23f84c7d0b9",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.7,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401918956",
+     "sport": "ncaab",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "29c6b8cb6c2b",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.72,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909293",
+     "sport": "nba",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "151d3a8a6654",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.7,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909294",
+     "sport": "nba",
+     "commence": "2026-11-07T03:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401858289",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T17:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "fa4e4320696e",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.02,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "05b5b59aa20d",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.14,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "7208a1b5778b",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.16,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "f0bd726b8f74",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401869945",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401869945",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T18:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "5ce982a3d562",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.83,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892660",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892660",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "a728ab50dadf",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 2.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401869927",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T19:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401869927",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T19:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "bd404366cbbd",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.77,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "6baa1eba9804",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.82,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401864535",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401864535",
+     "sport": "ncaaf",
+     "commence": "2026-11-08T03:30Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "5ea21cf0f50a",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 3.81,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401871098",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T21:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401871098",
+     "sport": "ncaaf",
+     "commence": "2026-11-07T21:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "9cb9fd810d51",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.7,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892659",
+     "sport": "nhl",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "2e3254506741",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.86,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401909287",
+     "sport": "nba",
+     "commence": "2026-11-07T00:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    }
+   ]
+  },
+  {
+   "slip_id": "d3d1f47cd9f5",
+   "run_ts": "2026-11-06T14:20:00+00:00",
+   "result": "pending",
+   "settled_decimal": 4.71,
+   "profit": null,
+   "legs": [
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
+    },
+    {
+     "espn_event": "401892661",
+     "sport": "nhl",
+     "commence": "2026-11-07T01:00Z",
+     "result": "pending",
+     "reason": "Scheduled"
     }
    ]
   }
